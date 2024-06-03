@@ -1,12 +1,11 @@
 "use client";
-import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React, { useState } from "react";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Function to toggle the menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
