@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { Container } from "@mui/material";
+import moment from "moment";
 import ExamAddToCartCard from "./ExamAddToCartCard";
+import Link from "next/link";
 
-const ExamCart = () => {
+const ExamCart = ({ examData }) => {
   return (
-    <section class="pt-14 pb-24 px-2 ">
+    <section class="pt-14 pb-12 px-2">
       <div class="flex flex-wrap -m-4">
         <div class="w-full lg:w-7/12 p-4">
           <div class="rounded-2xl border border-gray-200 py-3 px-4 mb-4">
@@ -24,8 +25,8 @@ const ExamCart = () => {
           </div>
 
           <div class="rounded-2xl border border-gray-200 p-8">
-            <h2 class="font-heading uppercase text-3xl mb-4 max-w-xl">
-              (CISM) - Exam Questions - Certified Information Security Manager
+            <h2 class="font-heading uppercase text-3xl mb-4 max-w-4xl">
+              Exams Questions - {examData.exam_title}
             </h2>
             <div class="flex justify-center flex-wrap gap-1 mb-2">
               <img
@@ -36,32 +37,43 @@ const ExamCart = () => {
                 width={"300px"}
               />
             </div>
-            <p class="text-gray-500 font-semibold mb-4 text-xl max-w-xl">
+            <p class="text-gray-500 font-semibold mb-4 text-xl max-w-4xl">
               <div className="flex justify-between">
                 <span>Latest updated date:</span>{" "}
-                <span className="text-blue-500">March 31, 2024</span>
+                <span className="text-sky-500">
+                  {moment(examData?.exam_update_date).format("LL")}
+                </span>
               </div>
               <hr />
               <div className="flex justify-between">
                 <span>Latest Question & Answers:</span>{" "}
-                <span className="text-blue-500">258</span>
+                <span className="text-sky-500">{examData.exam_questions}</span>
               </div>
               <hr />
               <div className="flex justify-between">
                 <span>Exam Question Provider:</span>{" "}
-                <span className="text-blue-500">Isaca</span>
+                <span className="text-sky-500">
+                  {examData?.exam_vendor_title}
+                </span>
               </div>
               <hr />
               <div className="flex justify-between">
                 <span className="text-nowrap">Certification Name:</span>{" "}
-                <span className="text-right text-blue-500">
-                  Isaca certification, CISM,Isaca certification, CISM,Isaca
-                  certification, CISM,
+                <span className="text-right text-sky-500">
+                  {examData?.exam_certs?.map((item, i) => (
+                    <Link
+                      key={i}
+                      className="hover:underline text-sky-500"
+                      href={`/vendor-exam-questions/${examData?.exam_vendor_perma}/${item?.cert_perma}`}
+                    >
+                      {item.cert_title},{"  "}
+                    </Link>
+                  ))}
                 </span>
               </div>
               <hr />
             </p>
-            <div class="flex flex-wrap items-center gap-2">
+            <div class="flex flex-wrap items-center -mb-3 gap-2">
               <div class="flex gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,11 +136,13 @@ const ExamCart = () => {
                   ></path>
                 </svg>
               </div>
-              <span class="text-sm font-semibold">5.0 (7.932 reviews)</span>
+              <span class="text-sm font-semibold">
+                5.0 ({examData.exam_id} reviews)
+              </span>
             </div>
           </div>
         </div>
-        <ExamAddToCartCard />
+        <ExamAddToCartCard examData={examData} />
       </div>
     </section>
   );

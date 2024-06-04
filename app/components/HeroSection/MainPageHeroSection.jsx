@@ -28,7 +28,7 @@ const MainPageHeroSection = () => {
               </p>
               <div class="sm:flex items-center">
                 <Link
-                  class="inline-block w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading font-medium text-base text-white bg-blue-500 hover:bg-blue-600 border border-blue-500 hover:border-blue-600 border border-blue-500 hover:border-blue-600 rounded-sm transition duration-200"
+                  class="inline-block w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading font-medium text-base text-white bg-blue-500 hover:bg-blue-600 border border-blue-500 hover:border-blue-600 rounded-sm transition duration-200"
                   href="#"
                 >
                   View All Vendors

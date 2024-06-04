@@ -3,46 +3,10 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
 
-const ExamAddToCartCard = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const options = [
-    {
-      id: "full_premium",
-      name: "Full Premium Bundle",
-      price: "$69.99",
-      originalPrice: "$165.97",
-      discount: "70% Off",
-    },
-    {
-      id: "pdf_test_engine",
-      name: "PDF & Test Engine Bundle",
-      price: "$59.99",
-      originalPrice: "$140.98",
-      discount: "40% Off",
-    },
-    {
-      id: "training_course",
-      name: "Training Course Only",
-      price: "$14.99",
-      originalPrice: "$24.99",
-      discount: "40% Off",
-    },
-    {
-      id: "test_engine",
-      name: "Test Engine Only",
-      price: "$44.99",
-      originalPrice: "$74.99",
-      discount: "40% Off",
-    },
-    {
-      id: "pdf_only",
-      name: "PDF Only",
-      price: "$39.99",
-      originalPrice: "$65.99",
-      discount: "40% Off",
-    },
-  ];
+const ExamAddToCartCard = ({ examData }) => {
+  const [selectedOption, setSelectedOption] = useState(
+    examData.exam_prices[0].type
+  );
 
   // Handle change in radio buttons
   const handleChange = (optionId) => {
@@ -57,38 +21,45 @@ const ExamAddToCartCard = () => {
             {selectedOption && (
               <div className="flex justify-between">
                 <div className="rounded-lg py-2 text-nowrap text-xl font-bold">
-                  {options.find((option) => option.id === selectedOption).name}
+                  {
+                    examData.exam_prices.find(
+                      (option) => option.type === selectedOption
+                    ).title
+                  }
                 </div>
                 <div className="bg-green-100 text-green-500 rounded-lg py-2 text-nowrap px-3">
                   {
-                    options.find((option) => option.id === selectedOption)
-                      .discount
+                    examData.exam_prices.find(
+                      (option) => option.type === selectedOption
+                    ).off
                   }
+                  % Off
                 </div>
               </div>
             )}
           </p>
         </div>
         <div className="py-3">
-          {options.map((option) => (
-            <div key={option.id}>
+          {examData.exam_prices.map((option) => (
+            <div key={option.type}>
               <label className="flex">
                 <input
                   type="radio"
                   name="pricingOption"
-                  checked={selectedOption === option.id}
-                  onChange={() => handleChange(option.id)}
+                  checked={selectedOption === option.type}
+                  onChange={() => handleChange(option.type)}
                 />
                 <Box
                   className="w-full flex px-3 ml-2"
                   sx={{
                     width: "100%",
-                    bgcolor: selectedOption === option.id ? "#f2f7ff" : "white",
+                    bgcolor:
+                      selectedOption === option.type ? "#f2f7ff" : "white",
                     border:
-                      selectedOption === option.id ? "1px solid #7fb2ff" : "",
+                      selectedOption === option.type ? "1px solid #7fb2ff" : "",
                     borderRadius: "8px",
                     boxShadow:
-                      selectedOption === option.id
+                      selectedOption === option.type
                         ? "0px 0px 8px rgba(0, 0, 0, 0.5)"
                         : "",
                     padding: "0px",
@@ -101,26 +72,28 @@ const ExamAddToCartCard = () => {
                     <img
                       className="rounded-md h-20"
                       src="/product2.png"
-                      alt={option.name}
+                      alt={option.title}
                     />
                   </div>
                   <div className="flex items-center w-full justify-between">
                     <div className="text-lg font-semibold mr-1">
-                      {option.discount === "70% Off" ? (
-                        <span className="bg-purple-200 px-3 py-1 rounded-md text-purple-500">Best Selling</span>
+                      {option.off === "70" ? (
+                        <span className="bg-purple-200 px-3 py-1 rounded-md text-purple-500">
+                          Best Selling
+                        </span>
                       ) : (
                         ""
                       )}
-                      {option.discount === "70% Off" && <br />}
-                      {option.name}
+                      {option.off === "70" && <br />}
+                      {option.title}
                     </div>
                     <div>
                       <span className="text-2xl text-green-500 font-semibold">
-                        {option.price}
+                        ${option.price}
                       </span>
                       <br />
                       <span className="text-base text-red-500 line-through font-semibold">
-                        {option.originalPrice}
+                        ${option.full_price}
                       </span>
                     </div>
                   </div>
@@ -133,18 +106,25 @@ const ExamAddToCartCard = () => {
         <br />
         <div className="flex justify-between items-center flex-wrap gap-4">
           <p className="text-gray-500 font-semibold">Full Price :</p>
-          <p className="text-2xl font-semibold">
+          <p className="text-2xl text-red-500 font-semibold">
+            $
             {
-              options.find((option) => option.id === selectedOption)
-                ?.originalPrice
+              examData.exam_prices.find(
+                (option) => option.type === selectedOption
+              )?.full_price
             }
           </p>
         </div>
         <hr className="my-2" />
         <div className="flex justify-between items-center flex-wrap gap-4 mb-10">
           <p className="text-gray-500 font-semibold">Discounted Price :</p>
-          <p className="text-2xl font-semibold">
-            {options.find((option) => option.id === selectedOption)?.price}
+          <p className="text-2xl text-green-500 font-semibold">
+            $
+            {
+              examData.exam_prices.find(
+                (option) => option.type === selectedOption
+              )?.price
+            }
           </p>
         </div>
         <button className="bg-gray-900 rounded-md mb-4 hover:bg-gray-800 focus:ring-4 focus:ring-gray-200 h-12 py-3 px-4 w-full flex items-center justify-center transition duration-200 text-white text-sm font-semibold">
