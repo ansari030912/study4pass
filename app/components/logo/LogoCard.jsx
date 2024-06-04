@@ -3,9 +3,9 @@ import React from "react";
 
 const LogoCard = () => {
   return (
-    <section className="bg-white py-24 2xl:pt-44 2xl:pb-48">
+    <section className="bg-white pb-12 -mt-10 lg:-mt-36">
       <div className="container px-4 mx-auto">
-        <h2 className="mb-16 font-heading font-medium text-center text-4xl leading-relaxed">
+        <h2 className="mb-16 mt-12 font-heading font-medium text-center text-4xl leading-relaxed">
           <span className="text-blue-500 font-bold">1500+</span> Trusted brands
           all over the world
           <span className="text-blue-500 font-bold">!</span>

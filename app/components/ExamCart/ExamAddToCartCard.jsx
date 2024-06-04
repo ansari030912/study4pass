@@ -59,7 +59,7 @@ const ExamAddToCartCard = () => {
                 <div className="rounded-lg py-2 text-nowrap text-xl font-bold">
                   {options.find((option) => option.id === selectedOption).name}
                 </div>
-                <div className="bg-red-100 rounded-lg py-2 text-nowrap px-2">
+                <div className="bg-green-100 text-green-500 rounded-lg py-2 text-nowrap px-3">
                   {
                     options.find((option) => option.id === selectedOption)
                       .discount
@@ -106,6 +106,12 @@ const ExamAddToCartCard = () => {
                   </div>
                   <div className="flex items-center w-full justify-between">
                     <div className="text-lg font-semibold mr-1">
+                      {option.discount === "70% Off" ? (
+                        <span className="bg-purple-200 px-3 py-1 rounded-md text-purple-500">Best Selling</span>
+                      ) : (
+                        ""
+                      )}
+                      {option.discount === "70% Off" && <br />}
                       {option.name}
                     </div>
                     <div>

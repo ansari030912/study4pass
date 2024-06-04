@@ -12,7 +12,7 @@ const NavBar = () => {
 
   return (
     <section className="text-gray-700 font-heading font-medium relative bg-gray-50 bg-opacity-50">
-      <nav className="flex justify-between px-6 lg:px-12 py-6 lg:py-3">
+      <nav className="flex justify-between px-6 lg:px-12 py-6 xl:py-3">
         <div className="flex w-full items-center">
           <Link href="/">
             <img className="h-4" src="/img/examprince_dark_svg.svg" alt="" />
