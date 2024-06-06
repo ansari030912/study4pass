@@ -7,17 +7,17 @@ const HotExamCard = ({ data }) => {
     return (
       <Grid container spacing={5} justifyContent="center">
         {items?.slice(0, 10)?.map((item, index) => (
-          <Grid key={index} item xs={12} md={6}>
-            <div className="md:flex items-center -mx-4 py-8">
-              <div className="flex items-center">
-                <div className="flex justify-center mb-8 md:mb-0 md:w-2/12">
+          <Grid key={index} item xs={12} lg={6}>
+            <div className="md:flex items-center -mx-4 py-4 px-3 rounded-xl min-h-44 border-2 border-gray-200 bg-white">
+              <div className="md:flex md:items-center">
+                <div className="flex justify-center md:w-2/12">
                   <img src="/product2.png" alt="" width={"100%"} />
                 </div>
-                <div className="w-full px-4 mr-auto mb-8 md:mb-0 md:w-8/12">
+                <div className="w-full px-4 mr-auto mb-8 md:mb-0 md:w-9/12">
                   <Link
                     href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
                   >
-                    <div className="max-w-xl">
+                    <div className="max-w-5xl">
                       <span className="block mb-3 pl-3">
                         <span className="text-gray-900 opacity-90 font-bold text-xl">
                           {item.vendor_title}
@@ -36,7 +36,7 @@ const HotExamCard = ({ data }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="px-4 hidden lg:block flex-shrink-0 md:w-2/12">
+                <div className="mx-4 hidden md:block flex-shrink-0 md:w-1/12">
                   <Link
                     className="group"
                     href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}

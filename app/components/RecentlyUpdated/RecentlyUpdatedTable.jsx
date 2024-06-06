@@ -28,7 +28,7 @@ const RecentlyUpdatedTable = async () => {
           </h2>
           <div className="flex flex-wrap -m-3">
             {Array.isArray(data) &&
-              data.slice(0, 12).map((item, index) => (
+              data.slice(0, 20).map((item, index) => (
                 <div key={index} className="w-full md:w-1/2 xl:w-1/4 p-3">
                   <div
                     style={{ minHeight: "280px" }}
