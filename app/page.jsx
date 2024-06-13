@@ -6,6 +6,7 @@ import RecentlyUpdatedTable from "./components/RecentlyUpdated/RecentlyUpdatedTa
 import FlipCard from "./components/SixFlipCard/FlipCard";
 import LogoCard from "./components/logo/LogoCard";
 import HotExamIndex from "./components/HotExams/HotExamIndex";
+import HomeCerts from "./components/HomeCertifications/HomeCerts";
 
 const page = () => {
   return (
@@ -20,6 +21,7 @@ const page = () => {
         <FlipCard />
       </Container>
       <HotExamIndex />
+      <HomeCerts />
       {/* <ExamCart /> */}
     </>
   );

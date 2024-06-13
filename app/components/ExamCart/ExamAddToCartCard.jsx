@@ -78,7 +78,7 @@ const ExamAddToCartCard = ({ examData }) => {
                   <div className="flex items-center w-full justify-between">
                     <div className="text-lg font-semibold mr-1">
                       {option.off === "70" ? (
-                        <span className="bg-purple-200 px-3 py-1 rounded-md text-purple-500">
+                        <span className="bg-purple-200 px-3 py-1 text-xs font-semibold rounded-md text-purple-500">
                           Best Selling
                         </span>
                       ) : (
