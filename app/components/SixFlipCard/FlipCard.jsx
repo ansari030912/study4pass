@@ -35,7 +35,10 @@ const FlipCard = () => {
   ];
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }} className="-mt-44 lg:-mt-48">
+    <Box
+      sx={{ display: "flex", justifyContent: "center" }}
+      className="-mt-44 lg:-mt-48"
+    >
       <Grid container spacing={1}>
         {features.map((item, index) => (
           <Grid
@@ -62,7 +65,7 @@ const FlipCard = () => {
                     <Typography
                       gutterBottom
                       variant="h6"
-                      color={"blue"}
+                      className="text-blue-500"
                       component="div"
                       fontSize={18}
                     >
