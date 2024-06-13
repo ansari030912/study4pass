@@ -311,7 +311,7 @@ const HomeCerts = () => {
 
   return (
     <div>
-      <section className="py-20 overflow-hidden">
+      <section className="py-6 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="lg:flex -mx-4 mb-12">
             <div className="flex">
@@ -361,7 +361,7 @@ const HomeCerts = () => {
               </select>
             </div>
           </div>
-          <hr className="mb-4 -mt-8" />
+          <hr className="mb-4 pt-8 -py-8 -mt-8" />
           <div className="relative">
             <div className="relative flex flex-wrap -mx-2">
               {filteredExams.map((exam, index) => (

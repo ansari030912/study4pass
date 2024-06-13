@@ -13,17 +13,17 @@ const AboutCard = () => {
           Use Exmaprince Test Engine to Open PDF & ZIP file.
         </p>
         <div class="flex flex-wrap justify-center gap-4 pb-16">
-          <Link
+          {/* <Link
             href="#"
             class="bg-black h-16 rounded-full px-6 py-4 inline-flex items-center justify-center hover:bg-gray-800 focus:bg-gray-700 focus:ring-2 focus:ring-gray-600 transition duration-200 tracking-tight font-bold text-white"
           >
-            Check Now
-          </Link>
+            Unlimited Access
+          </Link> */}
           <Link
             href="#"
-            class="bg-white h-16 border border-gray-200 rounded-full px-6 py-2 inline-flex items-center justify-center hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-200 transition duration-200 tracking-tight font-bold"
+            class="bg-white h-16 border-gray-600 border-2 rounded-full px-6 py-2 inline-flex items-center justify-center hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-200 transition duration-200 tracking-tight font-bold"
           >
-            Download Demo
+            Unlimited Access
           </Link>
         </div>
         <img class="mx-auto" src="/shapes2.svg" alt="" />

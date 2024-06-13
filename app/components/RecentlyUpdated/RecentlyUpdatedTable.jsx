@@ -3,6 +3,7 @@ import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
 import { Container } from "@mui/material";
 import moment from "moment";
+import Link from "next/link";
 import React from "react";
 
 const RecentlyUpdatedTable = async () => {
@@ -34,7 +35,6 @@ const RecentlyUpdatedTable = async () => {
                     style={{ minHeight: "280px" }}
                     className="bg-white border border-gray-100 shadow-dashboard rounded-xl flex flex-col"
                   >
-                    {/* Top content */}
                     <div className="flex-grow flex flex-col justify-start items-center px-4 pt-8">
                       <img
                         className="mb-4"
@@ -48,8 +48,7 @@ const RecentlyUpdatedTable = async () => {
                         {item.exam_title}
                       </h3>
                     </div>
-                    {/* Button */}
-                    <hr /> {/* Bottom content */}
+                    <hr />
                     <div className="flex-grow-0 flex flex-wrap pt-4 pb-4 -m-2">
                       <div className="w-full md:w-1/2 p-1">
                         <div className="text-center">
@@ -64,7 +63,10 @@ const RecentlyUpdatedTable = async () => {
                         </div>
                       </div>
                       <div className="w-full md:w md:w-1/2 p-1 px-4">
-                        <button className="flex items-center md:-ml-4  justify-center w-full px-2 py-2 font-medium text-sm text-white bg-blue-500 hover:bg-blue-600 rounded-md">
+                        <Link
+                          href={`/exam-questions/${item.exam_vendor_perma}/${item.exam_perma}`}
+                          className="flex items-center md:-ml-4  justify-center w-full px-2 py-2 font-medium text-sm text-white bg-blue-500 hover:bg-blue-600 rounded-md"
+                        >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="2em"
@@ -76,7 +78,7 @@ const RecentlyUpdatedTable = async () => {
                             />
                           </svg>
                           <p>Buy Now</p>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

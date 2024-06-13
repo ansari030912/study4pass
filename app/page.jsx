@@ -7,6 +7,7 @@ import FlipCard from "./components/SixFlipCard/FlipCard";
 import LogoCard from "./components/logo/LogoCard";
 import HotExamIndex from "./components/HotExams/HotExamIndex";
 import HomeCerts from "./components/HomeCertifications/HomeCerts";
+import TestimonialReviews from "./components/Testimonials/TestimonialReviews";
 
 const page = () => {
   return (
@@ -22,7 +23,7 @@ const page = () => {
       </Container>
       <HotExamIndex />
       <HomeCerts />
-      {/* <ExamCart /> */}
+      <TestimonialReviews />
     </>
   );
 };

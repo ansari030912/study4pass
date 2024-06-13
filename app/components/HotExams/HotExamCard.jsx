@@ -8,7 +8,7 @@ const HotExamCard = ({ data }) => {
       <Grid container spacing={5} justifyContent="center">
         {items?.slice(0, 10)?.map((item, index) => (
           <Grid key={index} item xs={12} lg={6}>
-            <div className="md:flex items-center -mx-4 py-4 px-3 rounded-xl min-h-44 border-2 border-gray-200 bg-white">
+            <div className="md:flex items-center -mx-3 -my-3 px-3 rounded-xl min-h-40 border-2 border-gray-200 bg-white">
               <div className="md:flex md:items-center">
                 <div className="flex justify-center md:w-2/12">
                   <img src="/product2.png" alt="" width={"100%"} />
@@ -41,7 +41,7 @@ const HotExamCard = ({ data }) => {
                     className="group"
                     href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
                   >
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full border hover:bg-gray-800 bg-gray-500 border-gray-500 transition duration-200">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full border hover:bg-blue-500 bg-gray-500 border-gray-500 hover:border-blue-300 transition duration-200">
                       <svg
                         width="24"
                         height="24"
