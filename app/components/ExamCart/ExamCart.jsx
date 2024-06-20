@@ -37,36 +37,25 @@ const ExamCart = ({ examData }) => {
                 width={"300px"}
               />
             </div>
-            <p class="text-gray-500 font-semibold mb-4 text-xl max-w-4xl">
-              <div className="flex justify-between">
-                <span>Latest updated date:</span>{" "}
-                <span className="text-sky-500">
-                  {moment(examData?.exam_update_date).format("LL")}
-                </span>
-              </div>
-              <hr />
-              <div className="flex justify-between">
-                <span>Latest Question & Answers:</span>{" "}
-                <span className="text-sky-500">{examData.exam_questions}</span>
-              </div>
-              <hr />
-              <div className="flex justify-between">
+            <p class="text-gray-500 font-semibold mb-4 text-lg max-w-4xl">
+              <div className="flex justify-between my-2">
                 <span>Exam Question Provider:</span>{" "}
                 <span className="text-sky-500">
                   {examData?.exam_vendor_title}
                 </span>
               </div>
               <hr />
-              <div className="flex justify-between">
+              <div className="flex justify-between my-2">
                 <span className="text-nowrap">Certification Name:</span>{" "}
                 <span className="text-right text-sky-500">
                   {examData?.exam_certs?.map((item, i) => (
                     <Link
                       key={i}
-                      className="hover:underline text-sky-500"
+                      className="hover:underline text-lg text-sky-500"
                       href={`/vendor-exam-questions/${examData?.exam_vendor_perma}/${item?.cert_perma}`}
                     >
-                      {item.cert_title},{"  "}
+                      {item.cert_title}
+                      <br />
                     </Link>
                   ))}
                 </span>

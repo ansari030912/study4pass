@@ -17,9 +17,9 @@ const ExamAddToCartCard = ({ examData }) => {
     <div className="w-full lg:w-5/12 p-4">
       <div className="rounded-2xl border border-gray-200 p-6">
         <div className="pb-4 border-b border-gray-200">
-          <p className="text-2xl font-semibold">
+          <p className="text-2xl text-center md:text-left font-semibold">
             {selectedOption && (
-              <div className="flex justify-between">
+              <div className="md:flex justify-between">
                 <div className="rounded-lg py-2 text-nowrap text-xl font-bold">
                   {
                     examData.exam_prices.find(
@@ -27,7 +27,7 @@ const ExamAddToCartCard = ({ examData }) => {
                     ).title
                   }
                 </div>
-                <div className="bg-green-100 text-green-500 rounded-lg py-2 text-nowrap px-3">
+                <div className="bg-green-100 text-lg text-green-500 rounded-lg py-2 md:text-nowrap px-3">
                   {
                     examData.exam_prices.find(
                       (option) => option.type === selectedOption

@@ -8,10 +8,10 @@ const HotExamCard = ({ data }) => {
       <Grid container spacing={5} justifyContent="center">
         {items?.slice(0, 10)?.map((item, index) => (
           <Grid key={index} item xs={12} lg={6}>
-            <div className="md:flex items-center -mx-3 -my-3 px-3 rounded-xl min-h-40 border-2 border-gray-200 bg-white">
+            <div className="md:flex items-center -mx-3 -my-3 px-3 rounded-xl min-h-30 border-2 border-gray-200 bg-white">
               <div className="md:flex md:items-center">
                 <div className="flex justify-center md:w-2/12">
-                  <img src="/product2.png" alt="" width={"100%"} />
+                  <img src="/product2.png" alt="" width={"80%"} />
                 </div>
                 <div className="w-full px-4 mr-auto mb-8 md:mb-0 md:w-9/12">
                   <Link
@@ -30,7 +30,7 @@ const HotExamCard = ({ data }) => {
                           {item.exam_code}
                         </span>
                       </span>
-                      <h4 className="text-lg font-semibold pl-3 pr-6 text-gray-500 hover:text-blue-500">
+                      <h4 className="text-sm font-semibold pl-3 pr-6 text-gray-500 hover:text-blue-500">
                         {item.exam_title}
                       </h4>
                     </div>
@@ -41,10 +41,10 @@ const HotExamCard = ({ data }) => {
                     className="group"
                     href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
                   >
-                    <div className="flex items-center justify-center w-14 h-14 rounded-full border hover:bg-blue-500 bg-gray-500 border-gray-500 hover:border-blue-300 transition duration-200">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border hover:bg-blue-500 bg-gray-500 border-gray-500 hover:border-blue-300 transition duration-200">
                       <svg
-                        width="24"
-                        height="24"
+                        width="20"
+                        height="20"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
