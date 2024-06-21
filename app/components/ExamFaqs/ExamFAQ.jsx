@@ -12,7 +12,7 @@ const ExamFAQ = ({ examData }) => {
     <section className="py-6 mb-6 bg-white overflow-hidden">
       <div className="container mx-auto">
         <div className="mb-10">
-          <h2 className="font-heading text-2xl md:text-3xl lg:text-5xl text-center text-blue-500 font-black tracking-tight">
+          <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-center text-blue-500 font-black tracking-tight">
             Frequently Asked Questions
           </h2>
         </div>

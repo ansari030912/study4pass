@@ -71,7 +71,7 @@ const HotExamCard = ({ data }) => {
         <div className="relative container mx-auto px-6">
           <Container maxWidth="xl">
             <div className="relative text-center mb-12">
-              <h2 className="font-heading text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-medium text-blue-500 tracking-tight mb-6">
+              <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-center text-blue-500 font-black tracking-tight">
                 Hot Exams{" "}
                 <span className="text-gray-700">Monthly & Weekly</span>!
               </h2>

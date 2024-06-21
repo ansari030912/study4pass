@@ -8,7 +8,13 @@ const ExamCart = ({ examData }) => {
     <section class="pt-14 pb-12 px-2">
       <div class="flex flex-wrap -m-4">
         <div class="w-full lg:w-7/12 p-4">
-          <div class="rounded-2xl border border-gray-200 py-3 px-4 mb-4">
+          <div
+            style={{
+              boxShadow:
+                "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
+            }}
+            class="rounded-2xl border border-gray-200 py-3 px-4 mb-4"
+          >
             <div class="flex items-center justify-between flex-wrap gap-2">
               <div>
                 <h2 class="font-heading uppercase px-2 font-semibold text-3xl mb-1">
@@ -24,7 +30,13 @@ const ExamCart = ({ examData }) => {
             </div>
           </div>
 
-          <div class="rounded-2xl border border-gray-200 p-8">
+          <div
+            style={{
+              boxShadow:
+                "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
+            }}
+            class="rounded-2xl border border-gray-200 p-8"
+          >
             <h2 class="font-heading uppercase text-3xl mb-4 max-w-4xl">
               Exams Questions - {examData.exam_title}
             </h2>

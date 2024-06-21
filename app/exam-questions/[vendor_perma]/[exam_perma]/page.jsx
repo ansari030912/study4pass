@@ -1,5 +1,7 @@
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
+import AddComment from "@/app/components/Comment/AddComment";
+import AllComments from "@/app/components/Comment/AllComments";
 import ExamCart from "@/app/components/ExamCart/ExamCart";
 import ExamFAQ from "@/app/components/ExamFaqs/ExamFAQ";
 import ExamsStats from "@/app/components/ExamStats/ExamsStats";
@@ -58,6 +60,8 @@ const page = async ({ params, searchParams }) => {
         vendorData={vendorData}
         data={examData}
       />
+      <AddComment />
+      <AllComments examData={examData}/>
     </>
   );
 };

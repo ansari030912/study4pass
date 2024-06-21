@@ -15,7 +15,13 @@ const ExamAddToCartCard = ({ examData }) => {
 
   return (
     <div className="w-full lg:w-5/12 p-4">
-      <div className="rounded-2xl border border-gray-200 p-6">
+      <div
+        style={{
+          boxShadow:
+            "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
+        }}
+        className="rounded-2xl border border-gray-200 p-6"
+      >
         <div className="pb-4 border-b border-gray-200">
           <p className="text-2xl text-center md:text-left font-semibold">
             {selectedOption && (
@@ -39,6 +45,8 @@ const ExamAddToCartCard = ({ examData }) => {
             )}
           </p>
         </div>
+        <hr />
+        <br />
         <div className="py-3">
           {examData.exam_prices.map((option) => (
             <div key={option.type}>
@@ -104,6 +112,7 @@ const ExamAddToCartCard = ({ examData }) => {
         </div>
         <hr />
         <br />
+        {/*
         <div className="flex justify-between items-center flex-wrap gap-4">
           <p className="text-gray-500 font-semibold">Full Price :</p>
           <p className="text-2xl text-red-500 font-semibold">
@@ -126,7 +135,7 @@ const ExamAddToCartCard = ({ examData }) => {
               )?.price
             }
           </p>
-        </div>
+        </div> */}
         <button className="bg-gray-900 rounded-md mb-4 hover:bg-gray-800 focus:ring-4 focus:ring-gray-200 h-12 py-3 px-4 w-full flex items-center justify-center transition duration-200 text-white text-sm font-semibold">
           Buy Now
         </button>
