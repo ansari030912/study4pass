@@ -12,6 +12,7 @@ import TestimonialReviews from "./components/Testimonials/TestimonialReviews";
 const page = () => {
   return (
     <>
+    <div>Hello USER</div>
       <MainPageHeroSection />
       <Container maxWidth={"xl"}>
         <LogoCard />
