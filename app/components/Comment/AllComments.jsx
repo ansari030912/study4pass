@@ -164,15 +164,15 @@ const AllComments = ({ examData }) => {
   };
 
   return (
-    <section class="bg-blueGray-100 bg-gray-50 overflow-hidden">
-      <div class="container px-12 mx-auto">
-        <div class="flex flex-wrap -mx-2 mb-14">
-          <div class="w-full xl:w-3/5 px-2 mb-4 xl:mb-0"></div>
-          <div class="w-full md:w-1/2 xl:w-1/5 px-2 mb-4 md:mb-0"></div>
-          <div class="w-full md:w-1/2 xl:w-1/5 px-2"></div>
+    <section className="bg-blueGray-100 bg-gray-50 overflow-hidden">
+      <div className="container px-12 mx-auto">
+        <div className="flex flex-wrap -mx-2 mb-14">
+          <div className="w-full xl:w-3/5 px-2 mb-4 xl:mb-0"></div>
+          <div className="w-full md:w-1/2 xl:w-1/5 px-2 mb-4 md:mb-0"></div>
+          <div className="w-full md:w-1/2 xl:w-1/5 px-2"></div>
         </div>
         <a
-          class="inline-block mb-14 text-xl font-heading font-medium underline hover:text-darkBlueGray-700"
+          className="inline-block mb-14 text-xl font-heading font-medium underline hover:text-darkBlueGray-700"
           href="#"
         >
          Recent Comments
@@ -183,33 +183,33 @@ const AllComments = ({ examData }) => {
           return (
             <div
               key={index}
-              class="my-4 shadow-lg rounded-tr-3xl rounded-b-3xl overflow-hidden"
+              className="my-4 shadow-lg rounded-tr-3xl rounded-b-3xl overflow-hidden"
             >
-              <div class=" px-4 md:px-8 bg-blue-100 bg-opacity-40">
-                <div class="flex  py-3 items-center">
+              <div className=" px-4 md:px-8 bg-blue-100 bg-opacity-40">
+                <div className="flex  py-3 items-center">
                   <img
-                    class="mr-6 h-12 rounded-full"
+                    className="mr-6 h-12 rounded-full"
                     src="/img/user.jpg"
                     alt=""
                   />
-                  <h4 class="w-full md:w-auto text-xl font-heading font-medium">
+                  <h4 className="w-full md:w-auto text-xl font-heading font-medium">
                     {name}{" "}
                   </h4>
-                  <div class="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
-                  <span class="mr-4 text-xl font-heading font-medium text-gray-400">
+                  <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
+                  <span className="mr-4 text-xl font-heading font-medium text-gray-400">
                     {country}
                   </span>
                 </div>
               </div>
-              <div class="px-4 overflow-hidden md:px-8 py-4 bg-white">
-                <div class="flex flex-wrap">
-                  <div class="w-full md:w-10/12 mb-6 md:mb-0">
-                    <p class="max-w-7xl text-darkBlueGray-400 leading-loose">
+              <div className="px-4 overflow-hidden md:px-8 py-4 bg-white">
+                <div className="flex flex-wrap">
+                  <div className="w-full md:w-10/12 mb-6 md:mb-0">
+                    <p className="max-w-7xl text-darkBlueGray-400 leading-loose">
                       {decodedComment}
                     </p>
                   </div>
-                  <div class="w-full md:w-2/12 text-right">
-                    <p class="mb-8 text-sm text-gray-300">
+                  <div className="w-full md:w-2/12 text-right">
+                    <p className="mb-8 text-sm text-gray-300">
                       {" -- "} {moment(date).format("LL")}
                     </p>
                   </div>
@@ -218,8 +218,8 @@ const AllComments = ({ examData }) => {
             </div>
           );
         })}
-        <div class="text-right my-3">
-          <button class="inline-block w-full md:w-auto h-full py-2 px-10 leading-8 font-heading font-medium tracking-tighter text-xl text-white bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl">
+        <div className="text-right my-3">
+          <button className="inline-block w-full md:w-auto h-full py-2 px-10 leading-8 font-heading font-medium tracking-tighter text-xl text-white bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-xl">
             See all
           </button>
         </div>

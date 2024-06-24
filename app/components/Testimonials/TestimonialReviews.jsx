@@ -4,22 +4,22 @@ import React from "react";
 
 const TestimonialReviews = () => {
   return (
-    <section class="pt-20 overflow-x-hidden bg-blue-50 bg-cover bg-fixed">
+    <section className="pt-20 overflow-x-hidden bg-blue-50 bg-cover bg-fixed">
       <Container maxWidth={"xl"}>
-        <div class="container mx-auto px-4">
-          <div class="max-w-xl mx-auto mb-16 text-center">
-            <span class="text-lg font-semibold bg-blue-100 rounded-3xl p-3 text-blue-500">
+        <div className="container mx-auto px-4">
+          <div className="max-w-xl mx-auto mb-16 text-center">
+            <span className="text-lg font-semibold bg-blue-100 rounded-3xl p-3 text-blue-500">
               User Reviews
             </span>
-            <h2 class="mt-6 text-4xl text-gray-700 font-semibold uppercase font-heading">
+            <h2 className="mt-6 text-4xl text-gray-700 font-semibold uppercase font-heading">
               What User&apos;s Says About <span className="text-blue-400">ExamPrince.com</span>
             </h2>
           </div>
         </div>
-        <div class="flex flex-wrap  mb-24">
-          <div class="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+        <div className="flex flex-wrap  mb-24">
+          <div className="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -34,32 +34,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.94 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Kathy Ramsey
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -74,32 +74,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   8.71 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Peter Dimebag
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 border-b-2 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 border-b-2 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -114,32 +114,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.32 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Tom Clarks
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -154,32 +154,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.68 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Benny Hill
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 border-b-2 md:border-r-2 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -194,32 +194,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   8.37 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Craig Hoffmann
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 border-b-2 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 border-b-2 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -234,32 +234,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.52 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Clara Osborne
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 md:border-r-2 border-b-2 md:border-b-0 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 md:border-r-2 border-b-2 md:border-b-0 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -274,32 +274,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.75 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Benny Hill
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 md:border-r-2 border-b-2 md:border-b-0 border-blue-300 border-opacity-20">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 md:border-r-2 border-b-2 md:border-b-0 border-blue-300 border-opacity-20">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -314,32 +314,32 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.96 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Craig Hoffmann
                   </h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/2 lg:w-1/3 ">
-            <div class="p-8 md:p-12">
-              <div class="flex justify-between mb-8">
+          <div className="w-full md:w-1/2 lg:w-1/3 ">
+            <div className="p-8 md:p-12">
+              <div className="flex justify-between mb-8">
                 <span>
                   <svg
                     width="26"
@@ -354,23 +354,23 @@ const TestimonialReviews = () => {
                     ></path>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-700 font-semibold font-heading">
+                <span className="text-sm text-gray-700 font-semibold font-heading">
                   9.31 / 10
                 </span>
               </div>
-              <p class="mb-8 text-lg text-gray-600">
+              <p className="mb-8 text-lg text-gray-600">
                 If you have ever wondered how to develop your brand, this is the
                 place for you. Take a big step forward in growing your business
                 with this great tool.
               </p>
-              <div class="flex items-center">
+              <div className="flex items-center">
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src="/avatar-online.png"
                   alt=""
                 />
-                <div class="ml-6">
-                  <h3 class="text-lg text-gray-700 font-semibold font-heading mb-1">
+                <div className="ml-6">
+                  <h3 className="text-lg text-gray-700 font-semibold font-heading mb-1">
                     Clara Osborne
                   </h3>
                 </div>

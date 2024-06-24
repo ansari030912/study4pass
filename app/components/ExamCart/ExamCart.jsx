@@ -5,26 +5,26 @@ import Link from "next/link";
 
 const ExamCart = ({ examData }) => {
   return (
-    <section class="pt-14 pb-12 px-2">
-      <div class="flex flex-wrap -m-4">
-        <div class="w-full lg:w-7/12 p-4">
+    <section className="pt-14 pb-12 px-2">
+      <div className="flex flex-wrap -m-4">
+        <div className="w-full lg:w-7/12 p-4">
           <div
             style={{
               boxShadow:
                 "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
             }}
-            class="rounded-2xl border border-gray-200 py-3 px-4 mb-4"
+            className="rounded-2xl border border-gray-200 py-3 px-4 mb-4"
           >
-            <div class="flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center justify-between flex-wrap gap-2">
               <div>
-                <h2 class="font-heading uppercase px-2 font-semibold text-3xl mb-1">
+                <h2 className="font-heading uppercase px-2 font-semibold text-3xl mb-1">
                   40-70% OFF
                 </h2>
-                <p class="text-green-500  bg-green-100 p-1 px-3 rounded-lg text-base font-semibold">
+                <p className="text-green-500  bg-green-100 p-1 px-3 rounded-lg text-base font-semibold">
                   <span>MEGASALE coupon applied.</span>
                 </p>
               </div>
-              <span class="inline-block px-4 py-3 bg-red-50 rounded-md text-red-700 text-sm font-semibold">
+              <span className="inline-block px-4 py-3 bg-red-50 rounded-md text-red-700 text-sm font-semibold">
                 Until Jun, 2023
               </span>
             </div>
@@ -35,21 +35,21 @@ const ExamCart = ({ examData }) => {
               boxShadow:
                 "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
             }}
-            class="rounded-2xl border border-gray-200 p-8"
+            className="rounded-2xl border border-gray-200 p-8"
           >
-            <h2 class="font-heading uppercase text-3xl mb-4 max-w-4xl">
+            <h2 className="font-heading uppercase text-3xl mb-4 max-w-4xl">
               Exams Questions - {examData.exam_title}
             </h2>
-            <div class="flex justify-center flex-wrap gap-1 mb-2">
+            <div className="flex justify-center flex-wrap gap-1 mb-2">
               <img
-                class="rounded-md object-cover"
+                className="rounded-md object-cover"
                 src="/product2.png"
                 alt=""
                 height={"300px"}
                 width={"300px"}
               />
             </div>
-            <p class="text-gray-500 font-semibold mb-4 text-lg max-w-4xl">
+            <p className="text-gray-500 font-semibold mb-4 text-lg max-w-4xl">
               <div className="flex justify-between my-2">
                 <span>Exam Question Provider:</span>{" "}
                 <span className="text-sky-500">
@@ -74,8 +74,8 @@ const ExamCart = ({ examData }) => {
               </div>
               <hr />
             </p>
-            <div class="flex flex-wrap items-center -mb-3 gap-2">
-              <div class="flex gap-1">
+            <div className="flex flex-wrap items-center -mb-3 gap-2">
+              <div className="flex gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -137,7 +137,7 @@ const ExamCart = ({ examData }) => {
                   ></path>
                 </svg>
               </div>
-              <span class="text-sm font-semibold">
+              <span className="text-sm font-semibold">
                 5.0 ({examData.exam_id} reviews)
               </span>
             </div>

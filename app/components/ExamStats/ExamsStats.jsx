@@ -237,32 +237,42 @@ const ExamsStats = ({ examData }) => {
           </div>
           <div className="mb-6">
             <div className="flex flex-wrap -mx-3 -mb-6">
-              <div className="w-full md:w-1/2 lg:w-1/4 px-3 mb-6">
+              <div className="w-full sm:w-1/2 xl:w-1/4 px-3 mb-6">
                 <div
                   style={{
                     boxShadow:
                       "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
                   }}
-                  className="h-full max-w-sm mx-auto p-6 bg-gray-50 rounded-xl"
+                  className="max-w-xs md:max-w-none mx-auto p-6 bg-gray-50 rounded-xl"
                 >
-                  <div className="flex flex-shrink-0 w-12 h-12 mb-4 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="2em"
-                      height="2em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M7.375 21.025q-.9-.025-1.713-.462t-1.537-1.288q-1-1.2-1.562-2.862T2 13q0-2.075.788-3.9t2.137-3.175T8.1 3.788T12 3t3.9.8t3.175 2.175T21.213 9.2T22 13.175q0 1.925-.625 3.6T19.6 19.6q-.7.7-1.475 1.063t-1.575.362q-.45 0-.9-.112t-.9-.338l-1.4-.7q-.3-.15-.638-.225T12 19.575t-.712.075t-.638.225l-1.4.7q-.475.25-.937.363t-.938.087m.05-2q.225 0 .463-.05t.462-.175l1.4-.7q.525-.275 1.088-.4t1.137-.125t1.15.125t1.1.4l1.425.7q.225.125.45.175t.45.05q.475 0 .9-.25t.85-.75q.8-.95 1.25-2.275t.45-2.725q0-3.35-2.325-5.687T12 5T6.325 7.35T4 13.05q0 1.425.462 2.775T5.75 18.1q.425.5.825.713t.85.212M12 15q.825 0 1.413-.588T14 13q0-.2-.038-.4t-.112-.4l1.25-1.675q.275.35.45.712t.3.763t.375.7t.65.3q.5 0 .788-.438t.162-.962q-.5-2.025-2.125-3.312T12 7Q9.9 7 8.287 8.288T6.176 11.6q-.125.525.163.963t.787.437q.4 0 .65-.3t.375-.7q.35-1.325 1.413-2.162T12 9q.4 0 .788.075t.737.225l-1.275 1.725q-.05 0-.125-.013T12 11q-.825 0-1.412.588T10 13t.588 1.413T12 15"
-                      />
-                    </svg>
+                  <div className="flex flex-wrap items-center -m-2">
+                    <div className="w-auto p-2">
+                      <div className="flex flex-shrink-0 w-12 h-12 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M7.375 21.025q-.9-.025-1.713-.462t-1.537-1.288q-1-1.2-1.562-2.862T2 13q0-2.075.788-3.9t2.137-3.175T8.1 3.788T12 3t3.9.8t3.175 2.175T21.213 9.2T22 13.175q0 1.925-.625 3.6T19.6 19.6q-.7.7-1.475 1.063t-1.575.362q-.45 0-.9-.112t-.9-.338l-1.4-.7q-.3-.15-.638-.225T12 19.575t-.712.075t-.638.225l-1.4.7q-.475.25-.937.363t-.938.087m.05-2q.225 0 .463-.05t.462-.175l1.4-.7q.525-.275 1.088-.4t1.137-.125t1.15.125t1.1.4l1.425.7q.225.125.45.175t.45.05q.475 0 .9-.25t.85-.75q.8-.95 1.25-2.275t.45-2.725q0-3.35-2.325-5.687T12 5T6.325 7.35T4 13.05q0 1.425.462 2.775T5.75 18.1q.425.5.825.713t.85.212M12 15q.825 0 1.413-.588T14 13q0-.2-.038-.4t-.112-.4l1.25-1.675q.275.35.45.712t.3.763t.375.7t.65.3q.5 0 .788-.438t.162-.962q-.5-2.025-2.125-3.312T12 7Q9.9 7 8.287 8.288T6.176 11.6q-.125.525.163.963t.787.437q.4 0 .65-.3t.375-.7q.35-1.325 1.413-2.162T12 9q.4 0 .788.075t.737.225l-1.275 1.725q-.05 0-.125-.013T12 11q-.825 0-1.412.588T10 13t.588 1.413T12 15"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="w-auto p-2">
+                      <h5 className="text-base text-gray-600 mb-1 leading-5 font-bold">
+                        Average Score In Real Exam
+                      </h5>
+                    </div>
                   </div>
-                  <h5 className="text-lg text-gray-500 font-bold mb-8">
-                    Average Score In Real Exam
-                  </h5>
+                  <br />
                   <div className="flex mb-2 items-center justify-between">
-                    <span className="text-xs text-blue-500 font-bold">
+                    <span className="text-base text-gray-600 font-bold">
+                      Our Exams
+                    </span>
+                    <span className="text-base text-blue-500 font-bold">
                       {startCount && (
                         <CountUp
                           start={0}
@@ -271,9 +281,6 @@ const ExamsStats = ({ examData }) => {
                           suffix="%"
                         />
                       )}
-                    </span>
-                    <span className="text-xs text-gray-700 font-bold">
-                      100 %
                     </span>
                   </div>
                   <div className="relative py-1">
@@ -286,38 +293,73 @@ const ExamsStats = ({ examData }) => {
                       ></div>
                     </div>
                   </div>
+                  <div className="flex mb-2 items-center justify-between">
+                    <span className="text-base text-gray-600 font-bold">
+                      Other&apos;s Exams
+                    </span>
+                    <span className="text-base text-red-500 font-bold">
+                      {startCount && (
+                        <CountUp
+                          start={0}
+                          end={43}
+                          duration={2}
+                          suffix="%"
+                        />
+                      )}
+                    </span>
+                  </div>
+                  <div className="relative py-1">
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                      <div
+                        className="bg-red-500 h-2.5 rounded-full dark:bg-red-500"
+                        style={{
+                          width: `43%`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="w-full md:w-1/2 lg:w-1/4 px-3 mb-6">
+              <div className="w-full sm:w-1/2 xl:w-1/4 px-3 mb-6">
                 <div
                   style={{
                     boxShadow:
                       "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
                   }}
-                  className="h-full max-w-sm mx-auto p-6 bg-gray-50 rounded-xl"
+                  className="max-w-xs md:max-w-none mx-auto p-6 bg-gray-50 rounded-xl"
                 >
-                  <div className="flex flex-shrink-0 w-12 h-12 mb-4 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="2em"
-                      height="2em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M8 9h8m-8 4h6m.5 5.5L12 21l-3-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v4.5M19 22v.01M19 19a2.003 2.003 0 0 0 .914-3.782a1.98 1.98 0 0 0-2.414.483"
-                      />
-                    </svg>
+                  <div className="flex flex-wrap items-center -m-2">
+                    <div className="w-auto p-2">
+                      <div className="flex flex-shrink-0 w-12 h-12 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="2em"
+                          height="2em"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M8 9h8m-8 4h6m.5 5.5L12 21l-3-3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v4.5M19 22v.01M19 19a2.003 2.003 0 0 0 .914-3.782a1.98 1.98 0 0 0-2.414.483"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="w-auto p-2">
+                      <h5 className="text-base text-gray-600 mb-1 leading-5 font-bold">
+                        Questions (word to word)
+                      </h5>
+                    </div>
                   </div>
-                  <h5 className="text-lg text-gray-500 font-bold mb-8">
-                    Questions (word to word)
-                  </h5>
+                  <br />
                   <div className="flex mb-2 items-center justify-between">
-                    <span className="text-xs text-blue-500 font-bold">
+                    <span className="text-base text-gray-600 font-bold">
+                      Our Exams
+                    </span>
+                    <span className="text-base text-blue-500 font-bold">
                       {startCount && (
                         <CountUp
                           start={0}
@@ -326,9 +368,6 @@ const ExamsStats = ({ examData }) => {
                           suffix="%"
                         />
                       )}
-                    </span>
-                    <span className="text-xs text-gray-700 font-bold">
-                      100 %
                     </span>
                   </div>
                   <div className="relative py-1">
@@ -341,9 +380,33 @@ const ExamsStats = ({ examData }) => {
                       ></div>
                     </div>
                   </div>
+                  <div className="flex mb-2 items-center justify-between">
+                    <span className="text-base text-gray-600 font-bold">
+                      Other&apos;s Exams
+                    </span>
+                    <span className="text-base text-red-500 font-bold">
+                      {startCount && (
+                        <CountUp
+                          start={0}
+                          end={39}
+                          duration={2}
+                          suffix="%"
+                        />
+                      )}
+                    </span>
+                  </div>
+                  <div className="relative py-1">
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                      <div
+                        className="bg-red-500 h-2.5 rounded-full dark:bg-red-500"
+                        style={{
+                          width: `39%`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
               <div className="w-full lg:w-2/4 px-3 mb-6">
                 <div
                   style={{
@@ -384,10 +447,10 @@ const ExamsStats = ({ examData }) => {
                               <div className="w-full p-2">
                                 <div className="flex items-center justify-between px-3 py-2 bg-gray-100 rounded-full">
                                   <div className="flex items-center">
-                                    <div className="w-auto mr-2 pt-1">
+                                    <div className="w-auto mr-2 ">
                                       <svg
-                                        width="12"
-                                        height="12"
+                                        width="18"
+                                        height="18"
                                         viewBox="0 0 12 12"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -398,12 +461,12 @@ const ExamsStats = ({ examData }) => {
                                         ></path>
                                       </svg>
                                     </div>
-                                    <p className="text-sm text-gray-900 font-bold">
+                                    <p className="text-sm text-gray-700 font-bold">
                                       {question_type}
                                     </p>
                                   </div>
-                                  <p className="text-sm text-gray-900 font-bold">
-                                    {question_type_count} Questions
+                                  <p className="text-sm text-blue-500 font-bold">
+                                    {question_type_count} <span className="text-gray-700">Questions</span>
                                   </p>
                                 </div>
                               </div>

@@ -109,25 +109,25 @@ const NavBar = () => {
           onClick={toggleMenu}
         ></div>
         <nav className="relative flex flex-col py-8 h-full w-full bg-white overflow-y-auto">
-          <div class="flex items-center pl-16 mb-8">
-            <a class="text-2xl text-gray-800 font-bold" href="#">
-              <img class="h-12" src="/uinel-gray-black.svg" alt="" />
+          <div className="flex items-center pl-16 mb-8">
+            <a className="text-2xl text-gray-800 font-bold" href="#">
+              <img className="h-12" src="/uinel-gray-black.svg" alt="" />
             </a>
           </div>
-          <div class="flex items-center mb-10 px-10">
-            <a class="flex items-center ml-1" href="#">
+          <div className="flex items-center mb-10 px-10">
+            <a className="flex items-center ml-1" href="#">
               <img
-                class="ml-6"
+                className="ml-6"
                 src="uinel-assets/elements/navigations/avatar-online.png"
                 alt=""
               />
               <img
-                class="ml-6"
+                className="ml-6"
                 src="uinel-assets/elements/navigations/arrow-down-gray.svg"
                 alt=""
               />
             </a>
-            <a class="text-gray-500 hover:text-blue-500 ml-auto" href="#">
+            <a className="text-gray-500 hover:text-blue-500 ml-auto" href="#">
               <svg
                 width="20"
                 height="23"
@@ -161,22 +161,22 @@ const NavBar = () => {
           </div>
           <div>
             <ul>
-              <li class="mb-1 px-10">
+              <li className="mb-1 px-10">
                 <a
-                  class="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                  className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                   href="#"
                 >
                   New tools
                 </a>
               </li>
-              <li class="mb-1 px-10">
+              <li className="mb-1 px-10">
                 <a
-                  class="flex items-center pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                  className="flex items-center pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                   href="#"
                 >
                   <span>Products</span>
                   <svg
-                    class="ml-4"
+                    className="ml-4"
                     width="8"
                     height="5"
                     viewbox="0 0 8 5"
@@ -190,9 +190,9 @@ const NavBar = () => {
                   </svg>
                 </a>
               </li>
-              <li class="mb-1 px-10">
+              <li className="mb-1 px-10">
                 <a
-                  class="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                  className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                   href="#"
                 >
                   Pricing
@@ -200,12 +200,12 @@ const NavBar = () => {
               </li>
             </ul>
           </div>
-          <div class="mt-auto px-10">
-            <button class="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
-              <span class="block mt-px">New project</span>
+          <div className="mt-auto px-10">
+            <button className="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
+              <span className="block mt-px">New project</span>
             </button>
-            <p class="mt-6 mb-4 text-center">
-              <span class="text-sm text-darkBlueGray-400">
+            <p className="mt-6 mb-4 text-center">
+              <span className="text-sm text-darkBlueGray-400">
                 2021 © Uinel. All rights reserved.
               </span>
             </p>

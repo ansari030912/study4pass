@@ -27,7 +27,7 @@ const LogoCard = () => {
           </div>
           <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/5 px-2 mb-6 xl:mb-0">
             <div
-              className="flex items-center py-4 px-5 lg:mt-16 bg-gray-50"
+              className="flex items-center py-4 px-5  bg-gray-50"
               style={{ borderRadius: "20px" }}
             >
               <div
@@ -41,7 +41,7 @@ const LogoCard = () => {
           </div>
           <div className="hidden xl:block xl:w-1/5 px-2 mb-6 xl:mb-0">
             <div
-              className="flex items-center py-4 px-5 lg:mt-16 bg-gray-50"
+              className="flex items-center py-4 px-5  bg-gray-50"
               style={{ borderRadius: "20px" }}
             >
               <div
@@ -55,7 +55,7 @@ const LogoCard = () => {
           </div>
           <div className="w-full md:w-1/2 lg:w-1/4 xl:w-1/5 px-2 mb-6 lg:mb-0">
             <div
-              className="flex items-center py-4 px-5 lg:mt-16 bg-gray-50"
+              className="flex items-center py-4 px-5  bg-gray-50"
               style={{ borderRadius: "20px" }}
             >
               <div
