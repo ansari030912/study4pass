@@ -55,74 +55,76 @@ const ExamLinks = ({ vendorData, vendorTitle, data }) => {
 
   return (
     <div className="px-6 pt-8 pb-8 bg-gray-50">
-      <div className="-mx-3 -mb-4 items-center">
-        <div className="px-3 mb-4">
-          <h2 className="font-heading text-lg md:text-xl lg:text-2xl text-gray-600 px-4 font-black tracking-tight">
-            OTHER USEFUL RELATED EXAMS BY -{" "}
-            <span className="text-blue-500">
-              {storedVendorData?.vendor_title}
-            </span>
-          </h2>
+      <div className="mx-auto container">
+        <div className="-mx-3 -mb-4 items-center">
+          <div className="px-3 mb-4">
+            <h2 className="font-heading text-lg md:text-xl lg:text-2xl text-gray-600 px-4 font-black tracking-tight">
+              OTHER USEFUL RELATED EXAMS BY -{" "}
+              <span className="text-blue-500">
+                {storedVendorData?.vendor_title}
+              </span>
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="w-full mt-6 py-4 px-2 overflow-x-auto">
-        <table className="w-full min-w-max ">
-          <tbody>
-            {displayedExams.map((topic, index) => (
-              <tr
-                style={{
-                  boxShadow:
-                    index % 2 === 0
-                      ? "0px 4px 4px rgba(0, 0, 0, 0.04), 0px -4px 4px rgba(0, 0, 0, 0.04), 4px 0px 4px rgba(0, 0, 0, 0.04), -4px 0px 4px rgba(0, 0, 0, 0.04)"
-                      : "",
-                }}
-                key={topic.exam_id}
-                className="hover:text-blue-500 text-gray-700 rounded-xl"
-              >
-                <td className="p-0">
-                  <div
-                    className={`h-16 p-5 ${
+        <div className="w-full mt-6 py-4 px-2 overflow-x-auto">
+          <table className="w-full min-w-max ">
+            <tbody>
+              {displayedExams.map((topic, index) => (
+                <tr
+                  style={{
+                    boxShadow:
                       index % 2 === 0
-                        ? "bg-white rounded-l-xl border-l-2  border-b-2 border-t-2 border-gray-200"
-                        : ""
-                    }`}
-                  >
-                    <Link
-                      href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
-                      onClick={handleLinkClick}
-                      className="font-black hover:underline"
+                        ? "0px 4px 4px rgba(0, 0, 0, 0.04), 0px -4px 4px rgba(0, 0, 0, 0.04), 4px 0px 4px rgba(0, 0, 0, 0.04), -4px 0px 4px rgba(0, 0, 0, 0.04)"
+                        : "",
+                  }}
+                  key={topic.exam_id}
+                  className="hover:text-blue-500 text-gray-700 rounded-xl"
+                >
+                  <td className="p-0">
+                    <div
+                      className={`h-16 p-5 ${
+                        index % 2 === 0
+                          ? "bg-white rounded-l-xl border-l-2  border-b-2 border-t-2 border-gray-200"
+                          : ""
+                      }`}
                     >
-                      <h5 className="text-base font-medium ">
-                        {topic.exam_title}
-                      </h5>
-                    </Link>
-                  </div>
-                </td>
-                <td className="p-0 text-center">
-                  <div
-                    className={`h-16 p-5 ${
-                      index % 2 === 0
-                        ? "bg-white rounded-r-xl border-r-2 border-b-2 border-t-2 border-gray-200"
-                        : ""
-                    }`}
-                  >
-                    <Link
-                      href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
-                      onClick={handleLinkClick}
-                      className="font-black"
+                      <Link
+                        href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
+                        onClick={handleLinkClick}
+                        className="font-black hover:underline"
+                      >
+                        <h5 className="text-base font-medium ">
+                          {topic.exam_title}
+                        </h5>
+                      </Link>
+                    </div>
+                  </td>
+                  <td className="p-0 text-center">
+                    <div
+                      className={`h-16 p-5 ${
+                        index % 2 === 0
+                          ? "bg-white rounded-r-xl border-r-2 border-b-2 border-t-2 border-gray-200"
+                          : ""
+                      }`}
                     >
-                      <span className="text-base font-medium">
-                        <span className="font-semibold">
-                          {topic.exam_questions} Questions
+                      <Link
+                        href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
+                        onClick={handleLinkClick}
+                        className="font-black"
+                      >
+                        <span className="text-base font-medium">
+                          <span className="font-semibold">
+                            {topic.exam_questions} Questions
+                          </span>
                         </span>
-                      </span>
-                    </Link>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                      </Link>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

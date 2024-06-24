@@ -3,11 +3,11 @@ import React from "react";
 
 const AddComment = () => {
   return (
-    <section className="relative ">
+    <section className="relative bg-gray-50">
       <div className="hidden lg:block absolute top-0 right-0 h-full  w-6/12"></div>
-      <div className="container px-4 mx-auto">
+      <div className="container mx-auto">
         <div className="max-w-9xl mx-auto">
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap mx-4">
             <div className="w-full bg-white lg:w-6/12 px-8 py-10 pb-10">
               <div className="pb-16 mb-8 border-b border-gray-400">
                 <span className="text-lg text-blue-400 font-bold">
