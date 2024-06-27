@@ -1,9 +1,9 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
 import axios from "axios";
 import moment from "moment";
-/* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -175,7 +175,7 @@ const AllComments = ({ examData }) => {
           className="inline-block mb-14 text-xl font-heading font-medium underline hover:text-darkBlueGray-700"
           href="#"
         >
-         Recent Comments
+          Recent Comments
         </a>
         {comments?.comments?.slice(0, 10).map((item, index) => {
           const { date, name, country, comment } = item;
