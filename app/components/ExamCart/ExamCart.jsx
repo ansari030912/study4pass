@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import moment from "moment";
-import ExamAddToCartCard from "./ExamAddToCartCard";
 import Link from "next/link";
+import ExamAddToCartCard from "./ExamAddToCartCard";
 
 const ExamCart = ({ examData }) => {
   return (
