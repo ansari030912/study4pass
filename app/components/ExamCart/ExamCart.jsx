@@ -53,7 +53,8 @@ const ExamCart = ({ examData }) => {
               <div className="flex justify-between my-2">
                 <span>Exam Question Provider:</span>{" "}
                 <span className="text-sky-500">
-                  {examData?.exam_vendor_title}
+                  <Link className="hover:underline" href={`/exam-provider/${examData?.exam_vendor_perma}`}>
+                  {examData?.exam_vendor_title}</Link>
                 </span>
               </div>
               <hr />
