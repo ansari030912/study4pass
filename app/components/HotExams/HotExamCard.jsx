@@ -1,8 +1,16 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import { Box, Container, Grid } from "@mui/material";
 import Link from "next/link";
+import { useState } from "react";
 
 const HotExamCard = ({ data }) => {
+  const [selected, setSelected] = useState("monthly");
+
+  const handleClick = (type) => {
+    setSelected(type);
+  };
+
   const renderRows = (items) => {
     return (
       <Grid container spacing={5} justifyContent="center">
@@ -64,6 +72,23 @@ const HotExamCard = ({ data }) => {
       </Grid>
     );
   };
+  const commonStyle = {
+    cursor: "pointer",
+    textDecoration: "none",
+    position: "relative",
+    paddingBottom: "6px",
+  };
+
+  const underlineStyle = {
+    content: "''",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    height: "5px",
+    backgroundColor: "#3B82F6",
+    transition: "transform 0.3s ease-in-out",
+  };
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -73,10 +98,31 @@ const HotExamCard = ({ data }) => {
             <div className="relative text-center mb-12">
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-center text-blue-500 font-black tracking-tight">
                 Hot Exams{" "}
-                <span className="text-gray-700">Monthly & Weekly</span>!
+                <span
+                  className="text-gray-600 font-black"
+                  onClick={() => handleClick("monthly")}
+                  style={{
+                    ...commonStyle,
+                  }}
+                >
+                  Monthly
+                  {selected === "monthly" && <div style={underlineStyle}></div>}
+                </span>{" "}
+                &{" "}
+                <span
+                  className="text-gray-600 font-black"
+                  onClick={() => handleClick("weekly")}
+                  style={{
+                    ...commonStyle,
+                  }}
+                >
+                  Weekly
+                  {selected === "weekly" && <div style={underlineStyle}></div>}
+                </span>{" "}
+                !
               </h2>
             </div>
-            {renderRows(data?.month)}
+            {renderRows(selected === "monthly" ? data?.month : data?.week)}
           </Container>
         </div>
       </section>

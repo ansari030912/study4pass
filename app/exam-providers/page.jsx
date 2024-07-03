@@ -15,7 +15,7 @@ const page = async () => {
   }
 
   const vendorData = await vendorResponce.json();
-  const certsResponce = await fetch(`${Base_URL}/v1/vendors`, {
+  const certsResponce = await fetch(`${Base_URL}/v1/certifications`, {
     headers: {
       "x-api-key": X_API_Key,
     },

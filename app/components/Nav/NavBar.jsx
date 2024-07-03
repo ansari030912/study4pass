@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,33 +18,27 @@ const NavBar = () => {
             <img className="h-4" src="/img/examprince_dark_svg.svg" alt="" />
           </Link>
           <ul className="hidden xl:flex px-4 ml-32">
-            <li className="mr-16">
-              <Link className="text-gray-500 hover:text-blue-500" href="/">
+            <li className="mr-4">
+              <Link
+                className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                href="/"
+              >
                 Home
               </Link>
             </li>
-            <li className="mr-16">
+            <li className="mr-4 relative group">
               <Link
-                className="flex items-center text-gray-500 hover:text-blue-500"
-                href="#"
+                className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                href="/exam-providers"
               >
-                <span className="mr-4">Vendors / Certs</span>
-                <svg
-                  width="8"
-                  height="5"
-                  viewBox="0 0 8 5"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.97291 0.193232C7.20854 -0.0644107 7.58938 -0.0644107 7.82328 0.193232C8.05804 0.450875 8.05978 0.867141 7.82328 1.12478L4.42529 4.80677C4.19053 5.06441 3.81056 5.06441 3.57406 4.80677L0.176073 1.12478C-0.0586909 0.868102 -0.0586909 0.450875 0.176073 0.193232C0.411706 -0.0644107 0.792544 -0.0644107 1.02644 0.193232L4.00098 3.21284L6.97291 0.193232Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
+                <span>Vendors / Certs</span>
               </Link>
             </li>
-            <li>
-              <Link className="text-gray-500 hover:text-blue-500" href="#">
+            <li className="mr-4">
+              <Link
+                className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                href="#"
+              >
                 Video Courses
               </Link>
             </li>
@@ -70,17 +64,17 @@ const NavBar = () => {
               </svg>
             </a>
             <div className="w-px h-8 bg-gray-200 bg-opacity-50 ml-9 mr-11"></div>
-            {/* <a className="flex items-center mr-12" href="#">
+            <a className="flex items-center mr-12" href="#">
               <span>Hussnain</span>
               <img className="ml-6" src="/avatar-online.png" alt="" />
               <img className="ml-6" src="/arrow-down-gray.svg" alt="" />
             </a>
             <button className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
               <span className="block mt-px">LOGOUT</span>
-            </button> */}
-            <button className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
-              <span className="block mt-px">Login / Register</span>
             </button>
+            {/* <button className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
+              <span className="block text-gray-600 mt-px">Login / Register</span>
+            </button> */}
           </div>
         </div>
         <button

@@ -3,7 +3,8 @@
 import { Avatar, Card } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
+import HotExamCard from "../HotExams/HotExamCard";
 
 const VendorAndCerts = ({ vendorData, data, certData }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -48,54 +49,71 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                 <div class="w-full px-4 flex justify-between md:justify-start sm:w-1/2 p-2">
                   <h3
                     onClick={() => handleTabClick("vendors")}
-                    class="font-heading text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105"
+                    class={`font-heading ${
+                      activeTab === "vendors" && "border-2 border-blue-300"
+                    } text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105`}
                   >
                     Vendors
                   </h3>
 
                   <h3
                     onClick={() => handleTabClick("certs")}
-                    class="font-heading text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4"
+                    class={`font-heading ${
+                      activeTab === "certs" && "border-2 border-blue-300"
+                    } text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4`}
                   >
                     Certifications
                   </h3>
-                </div>
-                <div class="w-full sm:w-1/2 p-2">
-                  <div class="relative h-full sm:max-w-md ml-auto">
-                    <input
-                      className="appearance-none py-2 pl-3.5 pr-10 text-sm w-full h-full bg-white hover:bg-gray-50 outline-none border border-neutral-200 focus:border-neutral-600 cursor-pointer rounded-lg"
-                      id="inputsSelect4-1"
-                      type="text"
-                      value={searchTerm}
-                      onChange={handleSearchChange}
-                      placeholder="Search..."
-                    />
 
-                    <svg
-                      class="absolute top-1/2 right-4 transform -translate-y-1/2"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"
-                      />
-                    </svg>
-                  </div>
+                  <h3
+                    onClick={() => handleTabClick("exams")}
+                    class={`font-heading ${
+                      activeTab === "exams" && "border-2 border-blue-300"
+                    } text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4`}
+                  >
+                    Hot Exams
+                  </h3>
                 </div>
+                {activeTab === "exams" ? (
+                  ""
+                ) : (
+                  <div class="w-full sm:w-1/2 p-2">
+                    <div class="relative h-full sm:max-w-md ml-auto">
+                      <input
+                        className="appearance-none py-2 pl-3.5 pr-10 text-sm w-full h-full bg-white hover:bg-gray-50 outline-none border border-neutral-200 focus:border-neutral-600 cursor-pointer rounded-lg"
+                        id="inputsSelect4-1"
+                        type="text"
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        placeholder="Search..."
+                      />
+
+                      <svg
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </section>
         {activeTab === "vendors" && (
           <div class="flex flex-wrap -mx-3 -mb-6">
-            {filteredData.slice(0, 10).map((item, index) => (
+            {filteredData.map((item, index) => (
               <div
                 key={item.vendor_id}
                 class="w-full md:w-1/2 lg:w-1/5 px-3 mb-6"
@@ -117,15 +135,17 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     </Link>
                   </div>
                   <div className="flex mb-5 justify-center">
-                    <img
-                      className="h-36"
-                      src="/allvendors.png"
-                      alt="All Vendors"
-                    />
+                    <Link href={`/exam-provider/${item.vendor_perma}`}>
+                      <img
+                        className="h-36"
+                        src="/allvendors.png"
+                        alt="All Vendors"
+                      />
+                    </Link>
                   </div>
                   <Link
                     class="group relative inline-block h-12 w-full bg-blueGray-900 rounded overflow-hidden"
-                    href="#"
+                    href={`/exam-provider/${item.vendor_perma}`}
                   >
                     <div class="absolute inset-0">
                       <div class="flex h-full w-full items-center justify-center bg-white hover:bg-gray-600 hover:text-white border-2 border-gray-300 rounded">
@@ -164,33 +184,37 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     />
                     <Link href={`/exam-provider/${item.vendor_perma}`}>
                       <h4
-                        class="text-xl ml-3 text-blue-500 font-medium"
+                        class="text-lg ml-3 text-blue-500 font-medium"
                         style={{ marginTop: "6px" }}
                       >
                         {item.vendor_title}
                       </h4>
                     </Link>
                   </div>
-                  <div className="flex mb-5 justify-center">
+                  <Link
+                    href={`/exam-provider/${item.vendor_perma}`}
+                    className="flex mb-5 justify-center"
+                  >
                     <img
                       className="h-36"
                       src="/allvendors.png"
                       alt="All Vendors"
                     />
-                  </div>
+                  </Link>
                   <Link
                     class="group relative inline-block h-12 w-full bg-blueGray-900 rounded overflow-hidden"
-                    href="#"
+                    href={`/exam-provider/${item.vendor_perma}`}
                   >
                     <div class="absolute inset-0">
                       <div class="flex h-full w-full items-center justify-center bg-white hover:bg-gray-600 hover:text-white border-2 border-gray-300 rounded">
                         <span class="text-base font-semibold uppercase">
                           <div className="">
-                            <p class="max-w-4xl text-center">
-                              Total Exams <span className="text-xl">:</span>{" "}
-                              <span className="text-blue-500 text-lg">
+                            <p class="max-w-4xl text-sm text-center">
+                              Total Certifications{" "}
+                              <span className="text-base">:</span>{" "}
+                              <span className="text-blue-500 text-base">
                                 {" "}
-                                {item.vendor_exams}
+                                {item.vendor_certs}
                               </span>
                             </p>
                           </div>
@@ -203,6 +227,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
             ))}
           </div>
         )}
+        {activeTab === "exams" && <HotExamCard data={data} />}
       </div>
     </section>
   );

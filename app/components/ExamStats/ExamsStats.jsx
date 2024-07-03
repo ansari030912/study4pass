@@ -174,7 +174,7 @@ const ExamsStats = ({ examData }) => {
                           </span>
                         </div>
                         <div className="w-auto p-1">
-                          <span className="relative bottom-0.5 inline-block py-2 px-2 text-xs text-green-700 font-medium bg-green-200 rounded-full">
+                          <span className="relative bottom-0.5 inline-block py-1 px-2 text-xs text-green-700 font-medium bg-green-200 rounded-full">
                             Last 6 Month
                           </span>
                         </div>
@@ -224,7 +224,7 @@ const ExamsStats = ({ examData }) => {
                           </span>
                         </div>
                         <div className="w-auto p-1">
-                          <span className="relative bottom-0.5 inline-block py-2 px-2 text-xs text-yellow-600 font-medium bg-yellow-100 rounded-full">
+                          <span className="relative bottom-0.5 inline-block py-1 px-2 text-xs text-yellow-600 font-medium bg-yellow-100 rounded-full">
                             Yearly
                           </span>
                         </div>
@@ -299,12 +299,7 @@ const ExamsStats = ({ examData }) => {
                     </span>
                     <span className="text-base text-red-500 font-bold">
                       {startCount && (
-                        <CountUp
-                          start={0}
-                          end={43}
-                          duration={2}
-                          suffix="%"
-                        />
+                        <CountUp start={0} end={43} duration={2} suffix="%" />
                       )}
                     </span>
                   </div>
@@ -386,12 +381,7 @@ const ExamsStats = ({ examData }) => {
                     </span>
                     <span className="text-base text-red-500 font-bold">
                       {startCount && (
-                        <CountUp
-                          start={0}
-                          end={39}
-                          duration={2}
-                          suffix="%"
-                        />
+                        <CountUp start={0} end={39} duration={2} suffix="%" />
                       )}
                     </span>
                   </div>
@@ -413,27 +403,28 @@ const ExamsStats = ({ examData }) => {
                     boxShadow:
                       "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
                   }}
-                  className="relative h-full max-w-sm md:max-w-none mx-auto p-6 bg-gray-50 rounded-xl"
+                  className="relative max-w-sm md:max-w-none mx-auto p-6 bg-gray-50 rounded-xl"
                 >
                   <div className="flex flex-wrap items-center justify-between -mx-2">
                     <div className="w-full px-2 mb-6 md:-mb-5">
-                      <div className="flex max-w-xxs pr-12">
+                      <div className="flex justify-center max-w-xxs pr-12">
                         <div className="flex flex-shrink-0 w-12 h-12 mb-9 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
                           <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 20 20"
-                            fill="none"
                             xmlns="http://www.w3.org/2000/svg"
+                            width="2em"
+                            height="2em"
+                            viewBox="0 0 24 24"
                           >
                             <path
-                              d="M20 12.86V12.81C19.9879 12.6169 19.9544 12.4257 19.9 12.24L18.26 2.51003C18.1428 1.80198 17.7757 1.15939 17.2253 0.698869C16.6749 0.238344 15.9776 -0.00960096 15.26 2.60161e-05H4.69C3.98097 0.00232221 3.29566 0.255676 2.75565 0.715148C2.21563 1.17462 1.85581 1.81051 1.74 2.51003L0.12 12.22C0.0656405 12.4057 0.0321011 12.5969 0.02 12.79V12.84C-1.86265e-08 12.91 0 13 0 13V17C0 17.7957 0.316071 18.5587 0.87868 19.1213C1.44129 19.684 2.20435 20 3 20H17C17.7956 20 18.5587 19.684 19.1213 19.1213C19.6839 18.5587 20 17.7957 20 17V13C20 13 20 12.91 20 12.86ZM3.71 2.83003C3.75048 2.59523 3.87346 2.38261 4.05679 2.23044C4.24013 2.07827 4.47177 1.99656 4.71 2.00003H15.31C15.5482 1.99656 15.7799 2.07827 15.9632 2.23044C16.1465 2.38261 16.2695 2.59523 16.31 2.83003L17.51 10.05C17.342 10.0168 17.1712 10.0001 17 10H3C2.83546 10.0013 2.67141 10.0181 2.51 10.05L3.71 2.83003ZM18 17C18 17.2652 17.8946 17.5196 17.7071 17.7071C17.5196 17.8947 17.2652 18 17 18H3C2.73478 18 2.48043 17.8947 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V13.08L2.08 12.62C2.15502 12.4374 2.28242 12.2811 2.44614 12.1707C2.60986 12.0604 2.80257 12.001 3 12H17C17.1974 12.001 17.3901 12.0604 17.5539 12.1707C17.7176 12.2811 17.845 12.4374 17.92 12.62L18 13.08V17ZM15 14C14.8022 14 14.6089 14.0587 14.4444 14.1686C14.28 14.2784 14.1518 14.4346 14.0761 14.6173C14.0004 14.8001 13.9806 15.0011 14.0192 15.1951C14.0578 15.3891 14.153 15.5673 14.2929 15.7071C14.4327 15.847 14.6109 15.9422 14.8049 15.9808C14.9989 16.0194 15.2 15.9996 15.3827 15.9239C15.5654 15.8482 15.7216 15.72 15.8315 15.5556C15.9414 15.3911 16 15.1978 16 15C16 14.7348 15.8946 14.4805 15.7071 14.2929C15.5196 14.1054 15.2652 14 15 14Z"
-                              fill="#194BFB"
-                            ></path>
+                              fill="currentColor"
+                              d="m9.675 13.7l.875-2.85L8.25 9h2.85l.9-2.8l.9 2.8h2.85l-2.325 1.85l.875 2.85l-2.3-1.775zM6 23v-7.725q-.95-1.05-1.475-2.4T4 10q0-3.35 2.325-5.675T12 2t5.675 2.325T20 10q0 1.525-.525 2.875T18 15.275V23l-6-2zm6-7q2.5 0 4.25-1.75T18 10t-1.75-4.25T12 4T7.75 5.75T6 10t1.75 4.25T12 16m-4 4.025L12 19l4 1.025v-3.1q-.875.5-1.888.788T12 18t-2.113-.288T8 16.926zm4-1.55"
+                            />
                           </svg>
                         </div>
-                        <h5 className="text-lg ml-4 text-gray-500 font-bold pt-2">
-                          What is in the Premium File?
+                        <h5 className="text-xl ml-4 text-purple-600  font-bold pt-2">
+                          <span className="bg-purple-200 px-3 py-2 rounded-3xl">
+                            What is in the Premium File?
+                          </span>
                         </h5>
                       </div>
                     </div>
@@ -465,8 +456,11 @@ const ExamsStats = ({ examData }) => {
                                       {question_type}
                                     </p>
                                   </div>
-                                  <p className="text-sm text-blue-500 font-bold">
-                                    {question_type_count} <span className="text-gray-700">Questions</span>
+                                  <p className="text-sm text-purple-700 font-bold">
+                                    {question_type_count}{" "}
+                                    <span className="text-gray-700">
+                                      Questions
+                                    </span>
                                   </p>
                                 </div>
                               </div>

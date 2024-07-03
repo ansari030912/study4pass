@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const MainPageHeroSection = () => {
   return (
-    <section className="pb-12 lg:pb-32">
+    <section className="pb-12 lg:pb-32 -z-40">
       <div
         className="mb-40 md:mb-12 py-20 bg-cover bg-no-repeat bg-center"
         style={{
@@ -31,13 +31,13 @@ const MainPageHeroSection = () => {
                   className="inline-block w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading font-medium text-base text-white bg-blue-500 hover:bg-blue-600 border border-blue-500 hover:border-blue-600 rounded-sm transition duration-200"
                   href="#"
                 >
-                  View All Vendors
+                  Dwonload Free PDF
                 </Link>
                 <Link
                   className="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-white hover:text-blue-500 border border-white hover:border-blue-500 rounded-sm transition duration-150"
                   href="#"
                 >
-                  Unlimited Access
+                  Dwonload Free Test Engine
                 </Link>
               </div>
             </div>
