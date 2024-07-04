@@ -72,6 +72,7 @@ const HotExamCard = ({ data }) => {
       </Grid>
     );
   };
+  
   const commonStyle = {
     cursor: "pointer",
     textDecoration: "none",
