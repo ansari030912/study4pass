@@ -37,7 +37,7 @@ const NavBar = () => {
             <li className="mr-4">
               <Link
                 className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
-                href="#"
+                href="/video-courses"
               >
                 Video Courses
               </Link>
