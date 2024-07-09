@@ -1,13 +1,23 @@
 "use client";
+import { IconButton, Menu, MenuItem } from "@mui/material";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { useState } from "react";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleHover = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -64,11 +74,50 @@ const NavBar = () => {
               </svg>
             </a>
             <div className="w-px h-8 bg-gray-200 bg-opacity-50 ml-9 mr-11"></div>
-            <a className="flex items-center mr-12" href="#">
-              <span>Hussnain</span>
-              <img className="ml-6" src="/avatar-online.png" alt="" />
-              <img className="ml-6" src="/arrow-down-gray.svg" alt="" />
-            </a>
+            <div onMouseLe ave={handleClose}>
+              <span className="flex items-center mr-12" href="#">
+                <span onMouseEnter={handleHover}>Hussnain</span>
+
+                <img
+                  onMouseEnter={handleHover}
+                  className="ml-6"
+                  src="/avatar-online.png"
+                  alt=""
+                />
+                <IconButton
+                  aria-controls="simple-menu"
+                  aria-haspopup="true"
+                  onMouseEnter={handleHover}
+                >
+                  <img className="ml-6" src="/arrow-down-gray.svg" alt="" />
+                </IconButton>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                  className="mt-6"
+                >
+                  <Link href={"/products"}>
+                    <MenuItem onClick={handleClose}>Products</MenuItem>
+                  </Link>
+                  <Link href={"/login-history"}>
+                    <MenuItem onClick={handleClose}>Login History</MenuItem>
+                  </Link>
+                  <Link href={"/download-history"}>
+                    <MenuItem onClick={handleClose}>Download History</MenuItem>
+                  </Link>
+                  <Link href={"/setting"}>
+                    <MenuItem onClick={handleClose}>Setting</MenuItem>
+                  </Link>
+                  <Link href={"/logout"}>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  </Link>
+                </Menu>
+              </span>
+            </div>
+
             <button className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
               <span className="block mt-px">LOGOUT</span>
             </button>
