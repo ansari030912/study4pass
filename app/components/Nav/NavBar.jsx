@@ -1,12 +1,106 @@
 "use client";
-import { IconButton, Menu, MenuItem } from "@mui/material";
 /* eslint-disable @next/next/no-img-element */
+import { IconButton, Menu, MenuItem } from "@mui/material";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [loginResponse, setLoginResponse] = useState(null);
+  const [certificationData, setCertificationData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
+  const [vendorData, setVendorData] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  const [cartResponce, setCartResponce] = useState(null);
+
+  const handleSignOut = () => {
+    localStorage.removeItem("loginResponse");
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    const fetchCuppon = async () => {
+      try {
+        const response = await axios.get(`${Base_URL}/v1/coupons`, {
+          headers: {
+            "x-api-key": X_API_Key,
+          },
+        });
+        localStorage.setItem("coupons", JSON.stringify(response.data));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchCuppon();
+  }, []);
+
+  useEffect(() => {
+    if (typeof localStorage !== "undefined") {
+      const storedLoginResponse = localStorage.getItem("loginResponse");
+      if (storedLoginResponse) {
+        setLoginResponse(JSON.parse(storedLoginResponse));
+      }
+    }
+    if (typeof localStorage !== "undefined") {
+      const storedLoginResponse = localStorage.getItem("CartProducts");
+      if (storedLoginResponse) {
+        setCartResponce(JSON.parse(storedLoginResponse));
+      }
+    }
+  }, []);
+  const fetchData = async () => {
+    try {
+      if (typeof window !== "undefined" && window.localStorage) {
+        const storedExamData = localStorage.getItem("searchData");
+        if (storedExamData) {
+          setSearchData(JSON.parse(storedExamData));
+        } else {
+          const examResponse = await axios.get(
+            `https://dumpsarena.com/exam-search`
+          );
+          setSearchData(examResponse.data);
+          localStorage.setItem("searchData", JSON.stringify(examResponse.data));
+        }
+
+        const storedVendorData = localStorage.getItem("vendorData");
+        if (storedVendorData) {
+          setVendorData(JSON.parse(storedVendorData));
+        } else {
+          const vendorResponse = await axios.get(
+            `https://dumpsarena.com/vendor-search`
+          );
+          setVendorData(vendorResponse.data);
+          localStorage.setItem(
+            "vendorData",
+            JSON.stringify(vendorResponse.data)
+          );
+        }
+
+        const storedCertificationData =
+          localStorage.getItem("certificationData");
+        if (storedCertificationData) {
+          setCertificationData(JSON.parse(storedCertificationData));
+        } else {
+          const certificationResponse = await axios.get(
+            `https://dumpsarena.com/certification-search`
+          );
+          setCertificationData(certificationResponse.data);
+          localStorage.setItem(
+            "certificationData",
+            JSON.stringify(certificationResponse.data)
+          );
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -73,57 +167,66 @@ const NavBar = () => {
                 />
               </svg>
             </a>
-            <div className="w-px h-8 bg-gray-200 bg-opacity-50 ml-9 mr-11"></div>
-            <div onMouseLe ave={handleClose}>
-              <span className="flex items-center mr-12" href="#">
-                <span onMouseEnter={handleHover}>Hussnain</span>
+            {!loginResponse?.is_logged_in ? (
+              <button className="uppercase ml-4 text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
+                <span className="block text-gray-600 mt-px">
+                  <Link href={"/login"}>Login</Link> /{" "}
+                  <Link href={"/register"}>Register</Link>
+                </span>
+              </button>
+            ) : (
+              <>
+                <div className="w-px h-8 bg-gray-200 bg-opacity-50 ml-9 mr-11"></div>
+                <div onMouseLe ave={handleClose}>
+                  <span className="flex items-center mr-12" href="#">
+                    <span onMouseEnter={handleHover}>Hussnain</span>
 
-                <img
-                  onMouseEnter={handleHover}
-                  className="ml-6"
-                  src="/avatar-online.png"
-                  alt=""
-                />
-                <IconButton
-                  aria-controls="simple-menu"
-                  aria-haspopup="true"
-                  onMouseEnter={handleHover}
+                    <img
+                      onMouseEnter={handleHover}
+                      className="ml-6"
+                      src="/avatar-online.png"
+                      alt=""
+                    />
+                    <IconButton
+                      aria-controls="simple-menu"
+                      aria-haspopup="true"
+                      onMouseEnter={handleHover}
+                    >
+                      <img className="ml-6" src="/arrow-down-gray.svg" alt="" />
+                    </IconButton>
+                    <Menu
+                      id="simple-menu"
+                      anchorEl={anchorEl}
+                      keepMounted
+                      open={Boolean(anchorEl)}
+                      onClose={handleClose}
+                      className="mt-6"
+                    >
+                      <Link href={"/products"}>
+                        <MenuItem onClick={handleClose}>Products</MenuItem>
+                      </Link>
+                      <Link href={"/login-history"}>
+                        <MenuItem onClick={handleClose}>Login History</MenuItem>
+                      </Link>
+                      <Link href={"/download-history"}>
+                        <MenuItem onClick={handleClose}>
+                          Download History
+                        </MenuItem>
+                      </Link>
+                      <Link href={"/setting"}>
+                        <MenuItem onClick={handleClose}>Setting</MenuItem>
+                      </Link>
+                    </Menu>
+                  </span>
+                </div>
+                <button
+                  onClick={handleSignOut}
+                  className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300"
                 >
-                  <img className="ml-6" src="/arrow-down-gray.svg" alt="" />
-                </IconButton>
-                <Menu
-                  id="simple-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                  className="mt-6"
-                >
-                  <Link href={"/products"}>
-                    <MenuItem onClick={handleClose}>Products</MenuItem>
-                  </Link>
-                  <Link href={"/login-history"}>
-                    <MenuItem onClick={handleClose}>Login History</MenuItem>
-                  </Link>
-                  <Link href={"/download-history"}>
-                    <MenuItem onClick={handleClose}>Download History</MenuItem>
-                  </Link>
-                  <Link href={"/setting"}>
-                    <MenuItem onClick={handleClose}>Setting</MenuItem>
-                  </Link>
-                  <Link href={"/logout"}>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
-                  </Link>
-                </Menu>
-              </span>
-            </div>
-
-            <button className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
-              <span className="block mt-px">LOGOUT</span>
-            </button>
-            {/* <button className="uppercase text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
-              <span className="block text-gray-600 mt-px">Login / Register</span>
-            </button> */}
+                  <span className="block mt-px">LOGOUT</span>
+                </button>
+              </>
+            )}
           </div>
         </div>
         <button

@@ -188,15 +188,23 @@ const VendorExamsTable = ({ vendorData }) => {
                           </td>
                           <td className="py-2.5 pr-4">
                             <div className="flex flex-wrap items-center">
-                              <span className="font-semibold">
-                                {item.cert_title}
+                              <span className="font-semibold hover:text-blue-500">
+                                <Link
+                                  href={`/vendor-exam-questions/${vendorData?.vendor_perma}/${item?.cert_perma}`}
+                                >
+                                  {item.cert_title}
+                                </Link>
                               </span>
                             </div>
                           </td>
 
                           <td className="py-2.5 pr-4">
-                            <span className="font-medium">
-                              {item.cert_name}
+                            <span className="font-semibold hover:text-blue-500">
+                              <Link
+                                href={`/vendor-exam-questions/${vendorData?.vendor_perma}/${item?.cert_perma}`}
+                              >
+                                {item.cert_title}
+                              </Link>
                             </span>
                           </td>
 

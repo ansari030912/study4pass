@@ -1,11 +1,9 @@
+"use client";
+import loginAuth from "../auth/LoginAuth";
 import LoginForm from "../components/Forms/LoginForm";
 
 const page = () => {
-  return (
-    <div>
-      <LoginForm />
-    </div>
-  );
+  return <LoginForm />;
 };
 
-export default page;
+export default loginAuth(page);

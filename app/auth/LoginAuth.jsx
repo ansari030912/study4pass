@@ -15,6 +15,7 @@ export default function loginAuth(Component) {
     useEffect(() => {
       if (loginResponse?.is_logged_in) {
         router.push("/");
+      
       }
     }, [loginResponse, router]);
 
@@ -22,6 +23,6 @@ export default function loginAuth(Component) {
       return <Component {...props} />;
     }
 
-    return null; 
+    return null;
   };
 }

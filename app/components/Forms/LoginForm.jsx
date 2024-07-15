@@ -1,21 +1,96 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import axios from "axios";
+import { X_API_Key } from "@/app/URL's/Api_X_Key";
+import { Base_URL } from "@/app/URL's/Base_URL";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const LoginForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const router = useRouter();
+  const [isLogin, setIsLogin] = useState({});
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [ip, setIp] = useState("");
+  const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Email: ${email}\nName: ${name}\nPassword: ${password}`);
-    setName("");
-    setEmail("");
-    setPassword("");
-    setRememberMe(false);
+  const fetchIP = async () => {
+    try {
+      const response = await axios.get(`${Base_URL}/v1/my-ip`, {
+        headers: {
+          "x-api-key": X_API_Key,
+        },
+      });
+      setIp(response.data);
+    } catch (error) {
+      console.error("Error fetching IP:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchIP();
+  }, []);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setEmailError("");
+    setPasswordError("");
+
+    if (!email) {
+      setEmailError("Email is required");
+    }
+
+    if (!password) {
+      setPasswordError("Password is required");
+    }
+
+    if (password.length < 8) {
+      setPasswordError("Password must be at least 8 characters long");
+    }
+
+    if (emailError || passwordError) {
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `${Base_URL}/v1/account/login`,
+        {
+          email,
+          password,
+          ip,
+        },
+        {
+          headers: {
+            "x-api-key": X_API_Key,
+          },
+        }
+      );
+      setIsLogin(response.data);
+      setOpenSnackbar(true);
+
+      if (response.data.is_logged_in) {
+        const currentTime = Date.now();
+        const twoHoursInMillis = 2 * 60 * 60 * 1000;
+        const expiryTime = currentTime + twoHoursInMillis;
+
+        localStorage.setItem(
+          "loginResponse",
+          JSON.stringify({ ...response.data, expiryTime })
+        );
+        window.location.reload();
+      } else {
+        router.push("/login");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   return (
@@ -58,6 +133,9 @@ const LoginForm = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
+                    {emailError && (
+                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                    )}
                   </div>
                   <div className="mb-6">
                     <label
@@ -82,6 +160,9 @@ const LoginForm = () => {
                         />
                       </button>
                     </div>
+                    {passwordError && (
+                      <p className="text-red-500 text-xs mt-1">{passwordError}</p>
+                    )}
                   </div>
                   <div className="flex mb-6 items-center">
                     <input
@@ -180,8 +261,10 @@ const LoginForm = () => {
                           src="/avatar-purple-border-2.png"
                           alt=""
                         />
-                      <div className="flex -ml-3 items-center justify-center w-10 h-10 border-2 border-purple-600 bg-gray-50 rounded-full">
-                          <span className="text-gray-900 text-sm font-medium">13k+</span>
+                        <div className="flex -ml-3 items-center justify-center w-10 h-10 border-2 border-purple-600 bg-gray-50 rounded-full">
+                          <span className="text-gray-900 text-sm font-medium">
+                            13k+
+                          </span>
                         </div>
                       </div>
                       <div>
