@@ -1,6 +1,5 @@
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
-import React from "react";
 import HotExamCard from "./HotExamCard";
 
 const HotExamIndex = async () => {

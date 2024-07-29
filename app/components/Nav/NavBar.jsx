@@ -148,7 +148,7 @@ const NavBar = () => {
             </li>
           </ul>
           <div className="hidden xl:flex items-center ml-auto">
-            <a className="text-gray-500 hover:text-blue-500" href="#">
+            <Link className="text-gray-500 hover:text-blue-500" href="/cart">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.8em"
@@ -166,7 +166,7 @@ const NavBar = () => {
                   clip-rule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
             {!loginResponse?.is_logged_in ? (
               <button className="uppercase ml-4 text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
                 <span className="block text-gray-600 mt-px">

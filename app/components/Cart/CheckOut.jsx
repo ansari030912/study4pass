@@ -1,22 +1,49 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
 
 const CheckOut = () => {
+  const [formData, setFormData] = useState({
+    country: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    city: "",
+    zipCode: "",
+    address: "",
+    voucher: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // handle form submission
+    console.log("Form Data Submitted:", formData);
+  };
+
   return (
-    <section>
-      <div class="container mx-auto bg-gray-50 p-4 md:p-10 ">
-        <div class="flex flex-wrap items-center gap-2 mb-14">
-          <a href="#" class="group">
-            <div class="flex flex-wrap items-center">
-              <span class="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
+    <section className="overflow-x-hidden">
+      <div className="container mx-auto bg-gray-50 p-4 md:p-10">
+        <div className="flex flex-wrap items-center gap-2 mb-14">
+          <a href="#" className="group">
+            <div className="flex flex-wrap items-center">
+              <span className="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
                 Cart
               </span>
-              <div class="text-gray-500 group-hover:text-gray-900 transition duration-200">
+              <div className="text-gray-500 group-hover:text-gray-900 transition duration-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
-                  viewbox="0 0 20 20"
+                  viewBox="0 0 20 20"
                   fill="none"
                 >
                   <path
@@ -27,17 +54,17 @@ const CheckOut = () => {
               </div>
             </div>
           </a>
-          <a href="#" class="group">
-            <div class="flex flex-wrap items-center">
-              <span class="text-xs text-gray-900 transition duration-200 font-semibold">
+          <a href="#" className="group">
+            <div className="flex flex-wrap items-center">
+              <span className="text-xs text-gray-900 transition duration-200 font-semibold">
                 Checkout
               </span>
-              <div class="text-gray-500 group-hover:text-gray-900 transition duration-200">
+              <div className="text-gray-500 group-hover:text-gray-900 transition duration-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
-                  viewbox="0 0 20 20"
+                  viewBox="0 0 20 20"
                   fill="none"
                 >
                   <path
@@ -50,23 +77,25 @@ const CheckOut = () => {
           </a>
           <a
             href="#"
-            class="text-xs text-gray-500 hover:text-gray-900 transition duration-200"
+            className="text-xs text-gray-500 hover:text-gray-900 transition duration-200"
           >
             Payment
           </a>
         </div>
-        <div class="flex flex-wrap -m-8 xl:-m-16">
-          <div class="w-full md:w-7/12 p-8 xl:p-16">
-            <h6 class="mb-4 text-lg font-semibold">
-              1. Select country
-            </h6>
-            <div class="relative mb-8">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-wrap -mx-8 xl:-mx-16"
+        >
+          <div className="w-full md:w-7/12 px-8 xl:px-16">
+            <h6 className="mb-4 text-lg font-semibold">1. Select country</h6>
+            <div className="relative mb-8">
               <select
                 name="country"
-                id="select-01-2"
-                class="appearance-none block py-3 px-4 w-full text-sm text-gray-500 placeholder-gray-500 outline-none border border-gray-200 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                value={formData.country}
+                onChange={handleChange}
+                className="appearance-none block py-3 px-4 w-full text-sm text-gray-500 placeholder-gray-500 outline-none border border-gray-200 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
               >
-                <option value="" selected="" disabled="" hidden="">
+                <option value="" disabled hidden>
                   Select country
                 </option>
                 <option value="poland">Poland</option>
@@ -75,10 +104,10 @@ const CheckOut = () => {
                 <option value="australia">Australia</option>
               </select>
               <svg
-                class="absolute top-1/2 right-5 transform -translate-y-1/2"
+                className="absolute top-1/2 right-5 transform -translate-y-1/2"
                 width="12"
                 height="8"
-                viewbox="0 0 12 8"
+                viewBox="0 0 12 8"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -88,217 +117,236 @@ const CheckOut = () => {
                 ></path>
               </svg>
             </div>
-            <h6 class="mb-8 text-lg font-semibold">2. Address</h6>
-            <div class="flex flex-wrap -m-4 mb-2">
-              <div class="w-full md:w-1/2 p-4">
-                <div class="mb-6">
+            <h6 className="mb-8 text-lg font-semibold">2. Address</h6>
+            <div className="flex flex-wrap -mx-4 mb-2">
+              <div className="w-full md:w-1/2 px-4">
+                <div className="mb-6">
                   <label
-                    for="input-01-1"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-1"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     First name
                   </label>
                   <input
                     id="input-01-1"
-                    name="first-name"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
-                    placeholder="Enter your fist name"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    placeholder="Enter your first name"
                   />
                 </div>
-                <div class="mb-6">
+                <div className="mb-6">
                   <label
-                    for="input-01-2"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-2"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     Email
                   </label>
                   <input
                     id="input-01-2"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
                     placeholder="Enter your email"
                   />
                 </div>
                 <div>
                   <label
-                    for="input-01-3"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-3"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     City
                   </label>
                   <input
                     id="input-01-3"
                     name="city"
+                    value={formData.city}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
                     placeholder="Enter your city"
                   />
                 </div>
               </div>
-              <div class="w-full md:w-1/2 p-4">
-                <div class="mb-6">
+              <div className="w-full md:w-1/2 px-4">
+                <div className="mb-6">
                   <label
-                    for="input-01-4"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-4"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     Last name
                   </label>
                   <input
                     id="input-01-4"
-                    name="last-name"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
                     placeholder="Enter your last name"
                   />
                 </div>
-                <div class="mb-6">
+                <div className="mb-6">
                   <label
-                    for="input-01-5"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-5"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     Phone number
                   </label>
                   <input
                     id="input-01-5"
-                    name="phone-number"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
                     placeholder="Enter your phone"
                   />
                 </div>
                 <div>
                   <label
-                    for="input-01-6"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-6"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     ZIP code
                   </label>
                   <input
                     id="input-01-6"
-                    name="zip-code"
+                    name="zipCode"
+                    value={formData.zipCode}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
                     placeholder="Enter your ZIP code"
                   />
                 </div>
               </div>
-              <div class="w-full p-4">
+              <div className="w-full px-4">
                 <div>
                   <label
-                    for="input-01-7"
-                    class="mb-1.5 inline-block text-sm font-semibold"
+                    htmlFor="input-01-7"
+                    className="mb-1.5 inline-block text-sm font-semibold"
                   >
                     Address
                   </label>
                   <input
                     id="input-01-7"
                     name="address"
+                    value={formData.address}
+                    onChange={handleChange}
                     type="text"
-                    class="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
+                    className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
                     placeholder="Enter your address"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <div class="w-full md:w-5/12 p-8 xl:p-16">
-            <h6 class="mb-6 text-lg font-semibold">Billing Address</h6>
-            <div class="pb-6 border-b border-dashed border-gray-200">
-              <div class="flex flex-wrap -m-2">
-                <div class="w-full md:w-3/4 p-2">
-                  <div class="flex flex-wrap -m-2">
-                    <div class="w-auto p-2">
+          <div className="w-full md:w-5/12 px-8 xl:px-16">
+            <h6 className="mb-6 text-lg font-semibold">Billing Address</h6>
+            <div className="pb-6 border-b border-dashed border-gray-200">
+              <div className="flex flex-wrap -m-2">
+                <div className="w-full md:w-3/4 p-2">
+                  <div className="flex flex-wrap -m-2">
+                    <div className="w-auto p-2">
                       <img
-                        class="w-24 h-24 object-cover rounded-lg"
+                        className="w-24 h-24 object-cover rounded-lg"
                         src="/product2.png"
                         alt=""
                       />
                     </div>
-                    <div class="flex-1 p-2">
-                      <p class="mb-1.5">Converse high</p>
-                      <p class="mb-1.5">Black</p>
+                    <div className="flex-1 p-2">
+                      <p className="mb-1.5">Converse high</p>
+                      <p className="mb-1.5">Black</p>
                       <p>x1</p>
                     </div>
                   </div>
                 </div>
-                <div class="w-full md:w-1/4 p-2">
-                  <p class="flex justify-end font-semibold">$ 300.00</p>
+                <div className="w-full md:w-1/4 p-2">
+                  <p className="flex justify-end font-semibold">$ 300.00</p>
                 </div>
               </div>
             </div>
-            <div class="pt-6 pb-4 border-b border-dashed border-gray-200">
-              <h6 class="mb-2 text-lg font-semibold">Discount Code</h6>
+            <div className="pt-6 pb-4 border-b border-dashed border-gray-200">
+              <h6 className="mb-2 text-lg font-semibold">Discount Code</h6>
               <form action="#">
-                <div class="flex flex-wrap items-center -m-2 mb-0.5">
-                  <div class="w-full lg:flex-1 p-2">
+                <div className="flex flex-wrap items-center -mx-2 mb-0.5">
+                  <div className="w-full lg:flex-1 px-2">
                     <input
                       type="text"
                       name="voucher"
-                      class="py-3 px-4 w-full text-sm placeholder-gray-400 bg-white outline-none focus:ring focus:ring-gray-100 border border-gray-100 rounded-lg transition duration-200"
+                      value={formData.voucher}
+                      onChange={handleChange}
+                      className="py-3 px-4 w-full text-sm placeholder-gray-400 bg-white outline-none focus:ring focus:ring-gray-100 border border-gray-100 rounded-lg transition duration-200"
                       placeholder="Enter your voucher"
                     />
                   </div>
-                  <div class="w-full lg:w-auto p-2">
-                    <button class="py-3 px-7 w-full text-sm font-semibold bg-white hover:bg-gray-50 border border-gray-200 hover:border-transparent focus:border-transparent focus:bg-gray-50 focus:ring-4 focus:ring-gray-200 rounded-4xl transition duration-300">
+                  <div className="w-full lg:w-auto px-2">
+                    <button className="py-3 px-7 w-full text-sm font-semibold bg-white hover:bg-gray-50 border border-gray-200 hover:border-transparent focus:border-transparent focus:bg-gray-50 focus:ring-4 focus:ring-gray-200 rounded-4xl transition duration-300">
                       Apply
                     </button>
                   </div>
                 </div>
               </form>
-              <p class="text-sm">
+              <p className="text-sm">
                 New customer?{" "}
                 <a
                   href="#"
-                  class="inline-block text-green-800 hover:text-green-900 font-semibold"
+                  className="inline-block text-green-800 hover:text-green-900 font-semibold"
                 >
                   Sign up
                 </a>{" "}
                 to get better deals
               </p>
             </div>
-            <div class="pt-4 pb-2 border-b border-dashed">
-              <div class="flex flex-wrap justify-between -m-2">
-                <div class="w-auto p-2">
-                  <span class="text-gray-500">Subtotal</span>
+            <div className="pt-4 pb-2 border-b border-dashed">
+              <div className="flex flex-wrap justify-between -mx-2">
+                <div className="w-auto px-2">
+                  <span className="text-gray-500">Subtotal</span>
                 </div>
-                <div class="w-auto p-2">
-                  <span class="font-semibold">$300.00</span>
-                </div>
-              </div>
-              <div class="flex flex-wrap justify-between -m-2">
-                <div class="w-auto p-2">
-                  <span class="text-gray-500">Discount</span>
-                </div>
-                <div class="w-auto p-2">
-                  <span class="font-semibold text-gray-500">-$0</span>
+                <div className="w-auto px-2">
+                  <span className="font-semibold">$300.00</span>
                 </div>
               </div>
-              <div class="flex flex-wrap justify-between -m-2">
-                <div class="w-auto p-2">
-                  <span class="text-gray-500">Shipment cost</span>
+              <div className="flex flex-wrap justify-between -mx-2">
+                <div className="w-auto px-2">
+                  <span className="text-gray-500">Discount</span>
                 </div>
-                <div class="w-auto p-2">
-                  <span class="font-semibold text-gray-500">$5</span>
+                <div className="w-auto px-2">
+                  <span className="font-semibold text-gray-500">-$0</span>
                 </div>
               </div>
-            </div>
-            <div class="pt-2.5 mb-9">
-              <div class="flex flex-wrap items-center justify-between -m-2">
-                <div class="w-auto p-2">
-                  <p class="font-semibold">Grand total</p>
+              <div className="flex flex-wrap justify-between -mx-2">
+                <div className="w-auto px-2">
+                  <span className="text-gray-500">Shipment cost</span>
                 </div>
-                <div class="w-auto p-2">
-                  <p class="text-2xl font-semibold">$305.00</p>
+                <div className="w-auto px-2">
+                  <span className="font-semibold text-gray-500">$5</span>
                 </div>
               </div>
             </div>
-            <button class="py-3 px-7 w-full text-sm text-white font-semibold bg-gray-900 hover:bg-gray-800 focus:bg-gray-800 focus:ring-4 focus:ring-gray-200 rounded-4xl transition duration-300">
+            <div className="pt-2.5 mb-9">
+              <div className="flex flex-wrap items-center justify-between -mx-2">
+                <div className="w-auto px-2">
+                  <p className="font-semibold">Grand total</p>
+                </div>
+                <div className="w-auto px-2">
+                  <p className="text-2xl font-semibold">$305.00</p>
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="py-3 px-7 w-full text-sm text-white font-semibold bg-blue-500 hover:bg-green-600 rounded-4xl transition duration-300 animate-bounce"
+            >
               Continue to payment
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );

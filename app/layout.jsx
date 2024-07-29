@@ -1,3 +1,4 @@
+import { AuthGuard } from "./auth/AuthGuard";
 import Footer from "./components/Foot/Footer";
 import NavBar from "./components/Nav/NavBar";
 import "./globals.css";
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavBar />
-        {children}
+        <AuthGuard>{children}</AuthGuard>
         <Footer />
       </body>
     </html>
