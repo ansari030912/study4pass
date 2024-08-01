@@ -30,11 +30,12 @@ const ExamFAQ = ({ examData }) => {
                     >
                       {faq?.faq_q}
                     </h3>
-                  
                   </div>
                   {/* {openIndex === i && ( */}
                   <div>
-                    <p className="text-gray-500 font-semibold text-base text-justify">{faq?.faq_a}</p>
+                    <p className="text-gray-500 font-semibold text-base text-justify">
+                      {faq?.faq_a}
+                    </p>
                   </div>
                   {/* )} */}
                 </div>
