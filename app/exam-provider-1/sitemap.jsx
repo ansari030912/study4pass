@@ -13,7 +13,7 @@ export default async function sitemap() {
   
 
   return data.map((item) => ({
-    url: `https://exam-hero.netlify.app/exam-provider/${item.vendor_perma}`,
+    url: `https://study4pass.com/exam-provider/${item.vendor_perma}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));

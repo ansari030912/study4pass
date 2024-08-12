@@ -16,7 +16,7 @@ export default async function sitemap() {
   
 
   return data?.certs?.map((item) => ({
-    url: `https://exam-hero.netlify.app/vendor-exam-questions/${
+    url: `https://study4pass.com/vendor-exam-questions/${
       item?.vendor_perma
     }/${item?.cert_perma.replace(/&/g, "&amp;")}`,
     lastModified: "2024-04-17",
