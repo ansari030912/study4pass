@@ -13,7 +13,7 @@ export default async function sitemap() {
   
 
   return data?.exams?.map((item) => ({
-    url: `https://study4pass.com/exam-questions/${item?.vendor_perma}/${item?.exam_perma}`,
+    url: `https://study4pass.com/study-meterial/${item?.vendor_perma}/${item?.exam_perma}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));

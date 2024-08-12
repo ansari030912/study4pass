@@ -371,7 +371,7 @@ const HomeCerts = () => {
                 >
                   <Link
                     className="block p-4 border bg-gray-50 rounded-lg"
-                    href={`/vendor-exam-questions/${exam?.vendorPerma}/${exam?.perma}`}
+                    href={`/study-meterial-certification/${exam?.vendorPerma}/${exam?.perma}`}
                   >
                     <div className="flex justify-between">
                       <span className="flex items-center">

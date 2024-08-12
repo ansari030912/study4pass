@@ -125,7 +125,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                       alt={item.vendor_title}
                       src="/static/images/avatar/1.jpg"
                     />
-                    <Link href={`/exam-provider/${item.vendor_perma}`}>
+                    <Link href={`/study-meterial-provider/${item.vendor_perma}`}>
                       <h4
                         class="text-xl ml-3 text-blue-500 font-medium"
                         style={{ marginTop: "6px" }}
@@ -135,7 +135,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     </Link>
                   </div>
                   <div className="flex mb-5 justify-center">
-                    <Link href={`/exam-provider/${item.vendor_perma}`}>
+                    <Link href={`/study-meterial-provider/${item.vendor_perma}`}>
                       <img
                         className="h-36"
                         src="/allvendors.png"
@@ -145,7 +145,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                   </div>
                   <Link
                     class="group relative inline-block h-12 w-full bg-blueGray-900 rounded overflow-hidden"
-                    href={`/exam-provider/${item.vendor_perma}`}
+                    href={`/study-meterial-provider/${item.vendor_perma}`}
                   >
                     <div class="absolute inset-0">
                       <div class="flex h-full w-full items-center justify-center bg-white hover:bg-gray-600 hover:text-white border-2 border-gray-300 rounded">
@@ -182,7 +182,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                       alt={item.vendor_title}
                       src="/static/images/avatar/1.jpg"
                     />
-                    <Link href={`/exam-provider/${item.vendor_perma}`}>
+                    <Link href={`/study-meterial-provider/${item.vendor_perma}`}>
                       <h4
                         class="text-lg ml-3 text-blue-500 font-medium"
                         style={{ marginTop: "6px" }}
@@ -192,7 +192,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     </Link>
                   </div>
                   <Link
-                    href={`/exam-provider/${item.vendor_perma}`}
+                    href={`/study-meterial-provider/${item.vendor_perma}`}
                     className="flex mb-5 justify-center"
                   >
                     <img
@@ -203,7 +203,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                   </Link>
                   <Link
                     class="group relative inline-block h-12 w-full bg-blueGray-900 rounded overflow-hidden"
-                    href={`/exam-provider/${item.vendor_perma}`}
+                    href={`/study-meterial-provider/${item.vendor_perma}`}
                   >
                     <div class="absolute inset-0">
                       <div class="flex h-full w-full items-center justify-center bg-white hover:bg-gray-600 hover:text-white border-2 border-gray-300 rounded">

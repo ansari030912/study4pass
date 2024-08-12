@@ -133,7 +133,7 @@ const NavBar = () => {
             <li className="mr-4 relative group">
               <Link
                 className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
-                href="/exam-providers"
+                href="/study-meterial-providers"
               >
                 <span>Vendors / Certs</span>
               </Link>

@@ -114,7 +114,7 @@ const VendorExamsTable = ({ vendorData }) => {
                             <div className="flex flex-wrap items-center">
                               <span className="font-semibold hover:text-blue-500">
                                 <Link
-                                  href={`/exam-questions/${vendorData?.vendor_perma}/${item?.exam_perma}`}
+                                  href={`/study-meterial/${vendorData?.vendor_perma}/${item?.exam_perma}`}
                                 >
                                   {item.exam_title}
                                 </Link>
@@ -190,7 +190,7 @@ const VendorExamsTable = ({ vendorData }) => {
                             <div className="flex flex-wrap items-center">
                               <span className="font-semibold hover:text-blue-500">
                                 <Link
-                                  href={`/vendor-exam-questions/${vendorData?.vendor_perma}/${item?.cert_perma}`}
+                                  href={`/study-meterial-certification/${vendorData?.vendor_perma}/${item?.cert_perma}`}
                                 >
                                   {item.cert_title}
                                 </Link>
@@ -201,7 +201,7 @@ const VendorExamsTable = ({ vendorData }) => {
                           <td className="py-2.5 pr-4">
                             <span className="font-semibold hover:text-blue-500">
                               <Link
-                                href={`/vendor-exam-questions/${vendorData?.vendor_perma}/${item?.cert_perma}`}
+                                href={`/study-meterial-certification/${vendorData?.vendor_perma}/${item?.cert_perma}`}
                               >
                                 {item.cert_title}
                               </Link>

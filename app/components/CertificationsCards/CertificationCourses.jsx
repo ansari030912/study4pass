@@ -135,7 +135,7 @@ const CertificationCourses = ({ data }) => {
                                 <td className="py-5 px-6 font-medium">
                                   <Link
                                     className="hover:text-blue-500"
-                                    href={`/exam-questions/${exam.exam_vendor_perma}/${exam.exam_perma}`}
+                                    href={`/study-meterial/${exam.exam_vendor_perma}/${exam.exam_perma}`}
                                   >
                                     {exam.exam_title}
                                   </Link>
@@ -189,7 +189,7 @@ const CertificationCourses = ({ data }) => {
                                   <td className="py-5 px-6 font-medium">
                                     <Link
                                       className="hover:text-blue-500"
-                                      href={`/exam-questions/${exam.exam_vendor_perma}/${exam.exam_perma}`}
+                                      href={`/study-meterial/${exam.exam_vendor_perma}/${exam.exam_perma}`}
                                     >
                                       {exam.exam_title}
                                     </Link>

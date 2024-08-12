@@ -64,7 +64,7 @@ const RecentlyUpdatedTable = async () => {
                       </div>
                       <div className="w-full md:w md:w-1/2 p-1 px-4">
                         <Link
-                          href={`/exam-questions/${item.exam_vendor_perma}/${item.exam_perma}`}
+                          href={`/study-meterial/${item.exam_vendor_perma}/${item.exam_perma}`}
                           className="flex items-center md:-ml-4  justify-center w-full px-2 py-2 font-medium text-sm text-white bg-blue-500 hover:bg-blue-600 rounded-md"
                         >
                           <svg

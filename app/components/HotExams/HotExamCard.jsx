@@ -23,7 +23,7 @@ const HotExamCard = ({ data }) => {
                 </div>
                 <div className="w-full px-4 mr-auto mb-8 md:mb-0 md:w-9/12">
                   <Link
-                    href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
+                    href={`/study-meterial/${item.vendor_perma}/${item.exam_perma}`}
                   >
                     <div className="max-w-5xl">
                       <span className="block mb-3 pl-3">
@@ -47,7 +47,7 @@ const HotExamCard = ({ data }) => {
                 <div className="mx-4 hidden md:block flex-shrink-0 md:w-1/12">
                   <Link
                     className="group"
-                    href={`/exam-questions/${item.vendor_perma}/${item.exam_perma}`}
+                    href={`/study-meterial/${item.vendor_perma}/${item.exam_perma}`}
                   >
                     <div className="flex items-center justify-center w-10 h-10 rounded-full border hover:bg-blue-500 bg-gray-500 border-gray-500 hover:border-blue-300 transition duration-200">
                       <svg

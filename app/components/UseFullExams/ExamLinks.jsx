@@ -89,7 +89,7 @@ const ExamLinks = ({ vendorData, vendorTitle, data }) => {
                       }`}
                     >
                       <Link
-                        href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
+                        href={`/study-meterial/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
                         onClick={handleLinkClick}
                         className="font-black hover:underline"
                       >
@@ -108,7 +108,7 @@ const ExamLinks = ({ vendorData, vendorTitle, data }) => {
                       }`}
                     >
                       <Link
-                        href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
+                        href={`/study-meterial/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
                         onClick={handleLinkClick}
                         className="font-black"
                       >
