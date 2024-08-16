@@ -143,7 +143,9 @@ const ExamCart = ({ examData }) => {
             </div>
           </div>
         </div>
+        <div className="w-full lg:w-5/12 ">
         <ExamAddToCartCard examData={examData} />
+        </div>
       </div>
     </section>
   );

@@ -50,7 +50,7 @@ const page = async ({ params, searchParams }) => {
       <HotExamIndex />
       <Container maxWidth={"xl"}>
         <Grid container>
-          <Grid item lg={12}>
+          <Grid item xs={12}>
             <ExamFAQ examData={examData} />
           </Grid>
         </Grid>

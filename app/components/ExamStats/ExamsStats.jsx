@@ -53,7 +53,7 @@ const ExamsStats = ({ examData }) => {
     <>
       <section className="py-1" ref={sectionRef}>
         <div className="container mx-auto">
-          <div className="mb-6">
+          <div className="mb-6 w-full">
             <div className="flex flex-wrap items-center -mx-3 -mb-6">
               <div className="w-full sm:w-1/2 xl:w-1/4 px-3 mb-6">
                 <div
@@ -315,7 +315,7 @@ const ExamsStats = ({ examData }) => {
                   </div>
                 </div>
               </div>
-              <div className="w-full sm:w-1/2 xl:w-1/4 px-3 mb-6">
+              <div className="w-full sm:w-1/2 xl:w-1/4 px-1 mb-6">
                 <div
                   style={{
                     boxShadow:
@@ -397,7 +397,7 @@ const ExamsStats = ({ examData }) => {
                   </div>
                 </div>
               </div>
-              <div className="w-full lg:w-2/4 px-3 mb-6">
+              <div className="w-full lg:w-2/4 px-2 mb-6">
                 <div
                   style={{
                     boxShadow:
@@ -405,10 +405,10 @@ const ExamsStats = ({ examData }) => {
                   }}
                   className="relative max-w-sm md:max-w-none mx-auto p-6 bg-gray-50 rounded-xl"
                 >
-                  <div className="flex flex-wrap items-center justify-between -mx-2">
-                    <div className="w-full px-2 mb-6 md:-mb-5">
-                      <div className="flex justify-center max-w-xxs pr-12">
-                        <div className="flex flex-shrink-0 w-12 h-12 mb-9 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
+                  <div className="flex flex-wrap items-center justify-center lg:justify-between ">
+                    <div className="px-2 mb-6 md:-mb-5">
+                      <div className="flex justify-center max-w-3xl lg:pr-12">
+                        <div className="hidden lg:inline-flex flex-shrink-0 w-12 h-12 mb-9 items-center justify-center bg-blue-500 bg-opacity-20 text-blue-500 rounded-xl">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="2em"
@@ -421,7 +421,7 @@ const ExamsStats = ({ examData }) => {
                             />
                           </svg>
                         </div>
-                        <h5 className="text-xl ml-4 text-purple-600  font-bold pt-2">
+                        <h5 className="text-xl lg:ml-4 text-purple-600 font-bold pt-2">
                           <span className="bg-purple-200 px-3 py-2 rounded-3xl">
                             What is in the Premium File?
                           </span>

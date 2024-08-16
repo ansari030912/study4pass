@@ -11,8 +11,8 @@ const Footer = () => {
             <div className="flex flex-wrap items-center">
               <div className="w-full lg:w-auto flex justify-center md:justify-start px-2">
                 <img
-                  className="h-5"
-                  src="/img/examprince_dark_svg.svg"
+                  className="h-8"
+                  src="/img/study4pass.png"
                   alt="ExamPrince"
                 />
               </div>

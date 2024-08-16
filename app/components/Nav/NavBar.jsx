@@ -119,7 +119,7 @@ const NavBar = () => {
       <nav className="flex justify-between px-6 lg:px-12 py-6 xl:py-3">
         <div className="flex w-full items-center">
           <Link href="/">
-            <img className="h-4" src="/img/examprince_dark_svg.svg" alt="" />
+            <img className="h-7" src="/img/study4pass.png" alt="Study 4 Pass" />
           </Link>
           <ul className="hidden xl:flex px-4 ml-32">
             <li className="mr-4">
@@ -246,7 +246,7 @@ const NavBar = () => {
         </button>
       </nav>
       <div
-        className={`navbar-menu ${
+        className={`navbar-menu xl:hidden ${
           isMenuOpen ? "" : "hidden"
         } fixed top-0 left-0 bottom-0 w-5/6 max-w-sm z-50`}
       >
@@ -256,55 +256,15 @@ const NavBar = () => {
         ></div>
         <nav className="relative flex flex-col py-8 h-full w-full bg-white overflow-y-auto">
           <div className="flex items-center pl-16 mb-8">
-            <a className="text-2xl text-gray-800 font-bold" href="#">
-              <img className="h-12" src="/uinel-gray-black.svg" alt="" />
-            </a>
-          </div>
-          <div className="flex items-center mb-10 px-10">
-            <a className="flex items-center ml-1" href="#">
+            <Link className="text-2xl text-gray-800 font-bold" href="/">
               <img
-                className="ml-6"
-                src="uinel-assets/elements/navigations/avatar-online.png"
-                alt=""
+                className="h-8"
+                src="/img/study4pass.png"
+                alt="Study 4 Pass"
               />
-              <img
-                className="ml-6"
-                src="uinel-assets/elements/navigations/arrow-down-gray.svg"
-                alt=""
-              />
-            </a>
-            <a className="text-gray-500 hover:text-blue-500 ml-auto" href="#">
-              <svg
-                width="20"
-                height="23"
-                viewbox="0 0 20 23"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.5219 18.016H2.70312V8.5933C2.70313 6.719 3.48375 4.92147 4.87328 3.59614C6.2628 2.27081 8.1474 1.52625 10.1125 1.52625C12.0776 1.52625 13.9622 2.27081 15.3517 3.59614C16.7412 4.92147 17.5219 6.719 17.5219 8.5933V18.016Z"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M1 18.0121H19"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-                <path
-                  d="M8.87891 22H10.8789"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-            </a>
+            </Link>
           </div>
+
           <div>
             <ul>
               <li className="mb-1 px-10">
@@ -348,7 +308,7 @@ const NavBar = () => {
           </div>
           <div className="mt-auto px-10">
             <button className="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
-              <span className="block mt-px">New project</span>
+              <span className="block mt-px">Login / Register</span>
             </button>
             <p className="mt-6 mb-4 text-center">
               <span className="text-sm text-darkBlueGray-400">
