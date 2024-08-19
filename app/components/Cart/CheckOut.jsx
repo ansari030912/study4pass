@@ -36,6 +36,7 @@ const CheckOut = () => {
   useEffect(() => {
     fetchIpAddress();
     loadCartData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchIpAddress = async () => {
