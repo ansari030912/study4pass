@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Box, Alert, AlertTitle } from "@mui/material";
+import { Box, Alert } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -20,10 +20,13 @@ const ExamAddToCartCard = ({ examData }) => {
       (option) => option.type === selectedOption
     );
 
-    // Save the cart value to local storage
-    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-    cartItems.push(selectedExam.cart);
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    // Save the cart value to local storage with the specified structure
+    const cartData = {
+      cart: selectedExam.cart,
+      saveExam: true,
+    };
+    localStorage.removeItem("CartProducts");
+    localStorage.setItem("CartProducts", JSON.stringify(cartData));
 
     // Show alert notification
     setShowAlert(true);
@@ -141,7 +144,6 @@ const ExamAddToCartCard = ({ examData }) => {
                     width: "100%",
                     paddingLeft: "8px",
                     paddingRight: "8px",
-                    // padding: "0.75rem",
                     marginLeft: "0.5rem",
                     backgroundColor:
                       selectedOption === option.type ? "#f2f7ff" : "white",

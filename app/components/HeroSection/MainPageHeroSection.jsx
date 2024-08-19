@@ -52,7 +52,7 @@ const MainPageHeroSection = () => {
         </div>
       </div>
       <div className="relative container px-4 mx-auto">
-        <a className="inline-block text-gray-900" href="#">
+        <span className="inline-block text-gray-900" href="#">
           <svg
             width="26"
             height="30"
@@ -68,7 +68,7 @@ const MainPageHeroSection = () => {
               stroke-linejoin="round"
             ></path>
           </svg>
-        </a>
+        </span>
       </div>
     </section>
   );
