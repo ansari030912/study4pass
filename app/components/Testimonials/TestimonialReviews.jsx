@@ -12,7 +12,7 @@ const TestimonialReviews = () => {
               User Reviews
             </span>
             <h2 className="mt-6 text-4xl text-gray-700 font-semibold uppercase font-heading">
-              What User&apos;s Says About <span className="text-blue-400">ExamPrince.com</span>
+              What User&apos;s Says About <span className="text-blue-400">Study4Pass.com</span>
             </h2>
           </div>
         </div>

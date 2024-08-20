@@ -35,7 +35,7 @@ const AddComment = () => {
                       </svg>
                     </span>
                     <p className="text-lg font-bold text-gray-500">
-                      sales@examprince.com
+                      sales@study4pass.com
                     </p>
                   </div>
                 </div>

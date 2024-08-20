@@ -13,7 +13,7 @@ const Footer = () => {
                 <img
                   className="h-8"
                   src="/img/study4pass.png"
-                  alt="ExamPrince"
+                  alt="Study4Pass"
                 />
               </div>
               <div className="w-full flex justify-center md:justify-end text-center mb-6 md:-mb-20 lg:mb-0 lg:flex-1 p-4">
@@ -65,12 +65,12 @@ const Footer = () => {
           <div className="flex flex-wrap items-start divide-x divide-gray-200 pb-20">
             <div className="w-full sm:w-8/12 p-6">
               <div className="mb-10 pt-10 font-heading text-lg lg:text-xl">
-                ExamPrince does not provide real Microsoft exam questions.
-                Similarly, ExamPrince does not supply real Amazon exam
-                questions. The materials offered by ExamPrince lack real
+                Study4Pass does not provide real Microsoft exam questions.
+                Similarly, Study4Pass does not supply real Amazon exam
+                questions. The materials offered by Study4Pass lack real
                 questions and answers from Cisco&apos;s certification exams. The
                 CFA Institute neither endorses nor assures the accuracy or
-                quality of ExamPrince content. CFA® and Chartered Financial
+                quality of Study4Pass content. CFA® and Chartered Financial
                 Analyst® are registered trademarks held by the CFA Institute.
               </div>
               <div className="mb-6 flex items-center gap-4">
@@ -100,7 +100,7 @@ const Footer = () => {
                   </svg>
                 </div>
                 <span className="text-xl font-medium">
-                  sales@examprince.com
+                  sales@study4pass.com
                 </span>
               </div>
             </div>
@@ -199,7 +199,7 @@ const Footer = () => {
               <div className="flex flex-wrap justify-center">
                 <div className="w-auto p-2">
                   <p className="text-gray-500 font-medium">
-                    © Shuffle 2023. All rights reserved.
+                    © study4pass.com 2024. All rights reserved.
                   </p>
                 </div>
               </div>

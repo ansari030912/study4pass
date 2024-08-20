@@ -113,7 +113,7 @@ const LoginForm = () => {
                 <div className="flex mb-6 items-center">
                   <div className="w-full h-px bg-gray-300"></div>
                   <span className="mx-4 text-sm font-semibold text-gray-500">
-                    Examprince.com
+                    Study4Pass.com
                   </span>
                   <div className="w-full h-px bg-gray-300"></div>
                 </div>
@@ -161,7 +161,9 @@ const LoginForm = () => {
                       </button>
                     </div>
                     {passwordError && (
-                      <p className="text-red-500 text-xs mt-1">{passwordError}</p>
+                      <p className="text-red-500 text-xs mt-1">
+                        {passwordError}
+                      </p>
                     )}
                   </div>
                   <div className="flex mb-6 items-center">
@@ -215,7 +217,7 @@ const LoginForm = () => {
                 <div className="absolute bottom-0 w-full left-0 h-full flex items-center justify-center p-10">
                   <div className="max-w-md mx-auto">
                     <h4 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-8">
-                      ExamPrince.com By IT Professional
+                      Study4Pass.com By IT Professional
                     </h4>
                     <div className="md:flex mb-20">
                       <div className="mb-6 md:mb-0 md:mr-8 pt-3 text-gray-600">

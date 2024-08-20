@@ -27,17 +27,19 @@ const MainPageHeroSection = () => {
                 training programs.
               </p>
               <div className="sm:flex items-center">
-                <Link
+                {/* <Link
                   className="inline-block w-full sm:w-auto py-4 px-6 mb-4 sm:mb-0 sm:mr-4 text-center font-heading font-medium text-base text-white bg-blue-500 hover:bg-blue-600 border border-blue-500 hover:border-blue-600 rounded-sm transition duration-200"
                   href="#"
                 >
-                  Dwonload Free PDF
-                </Link>
+                  Get PDF & Test Engine Unlimited Access
+                </Link> */}
                 <Link
-                  className="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-white hover:text-blue-500 border border-white hover:border-blue-500 rounded-sm transition duration-150"
+                  className="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-white hover:text-blue-500 border border-blue-500 hover:border-white rounded-sm transition duration-150"
                   href="#"
                 >
-                  Dwonload Free Test Engine
+                  <span >
+                    Get PDF & Test Engine Unlimited Access
+                  </span>
                 </Link>
               </div>
             </div>
