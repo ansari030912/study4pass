@@ -14,7 +14,7 @@ export default async function sitemap() {
 
   return data?.exams?.map((item) => ({
     url: `https://study4pass.com/study-meterial/${item?.vendor_perma}/${item?.exam_perma}`,
-    lastModified: "2024-04-17",
+    lastModified: "2024-08-18",
     priority: 0.6,
   }));
 }

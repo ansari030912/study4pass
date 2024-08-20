@@ -14,7 +14,7 @@ export default async function sitemap() {
 
   return data.map((item) => ({
     url: `https://study4pass.com/training-course/${item.course_perma}`,
-    lastModified: "2024-04-17",
+    lastModified: "2024-08-18",
     priority: 0.6,
   }));
 }

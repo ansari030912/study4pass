@@ -19,7 +19,7 @@ export default async function sitemap() {
     url: `https://study4pass.com/study-meterial-certification/${
       item?.vendor_perma
     }/${item?.cert_perma.replace(/&/g, "&amp;")}`,
-    lastModified: "2024-04-17",
+    lastModified: "2024-08-18",
     priority: 0.6,
   }));
 }
