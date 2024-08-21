@@ -42,10 +42,10 @@ const ExamCart = ({ examData }) => {
             <div className="flex justify-center flex-wrap gap-1 mb-2">
               <img
                 className="rounded-md object-cover"
-                src="/product2.png"
+                src="/PDF-TE.png"
                 alt=""
-                height={"300px"}
-                width={"300px"}
+                height={"350px"}
+                width={"350px"}
               />
             </div>
             <p className="text-gray-500 font-semibold mb-4 text-lg max-w-4xl">

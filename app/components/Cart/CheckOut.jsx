@@ -290,7 +290,7 @@ const CheckOut = () => {
                         <div className="w-auto p-2">
                           <img
                             className="w-24 h-24 object-cover rounded-lg"
-                            src="/product2.png"
+                            src="/PDF-TE.png"
                             alt=""
                           />
                         </div>

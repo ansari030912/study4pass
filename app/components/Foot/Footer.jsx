@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-full lg:w-auto flex justify-center md:justify-start px-2">
                 <img
                   className="h-8"
-                  src="/img/study4pass.png"
+                  src="/img/study4paass.svg"
                   alt="Study4Pass"
                 />
               </div>

@@ -25,6 +25,8 @@ const ExamAddToCartCard = ({ examData }) => {
       cart: selectedExam.cart,
       saveExam: true,
     };
+
+    // Clear any existing cart data and save the new cart data
     localStorage.removeItem("CartProducts");
     localStorage.setItem("CartProducts", JSON.stringify(cartData));
 
@@ -33,6 +35,9 @@ const ExamAddToCartCard = ({ examData }) => {
     setTimeout(() => {
       setShowAlert(false);
     }, 3000); // Hide alert after 3 seconds
+
+    // Reload the page
+    window.location.reload();
   };
 
   const handleBuyNow = () => {
@@ -163,7 +168,7 @@ const ExamAddToCartCard = ({ examData }) => {
                       height: "5rem",
                       marginRight: "0.5rem",
                     }}
-                    src="/product2.png"
+                    src="/PDF-TE.png"
                     alt={option.title}
                   />
                   <div

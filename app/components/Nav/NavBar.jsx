@@ -175,7 +175,7 @@ const NavBar = () => {
             <Link href="/">
               <img
                 className="h-7"
-                src="/img/study4pass.png"
+                src="/img/study4paass.svg"
                 alt="Study 4 Pass"
               />
             </Link>
@@ -206,7 +206,10 @@ const NavBar = () => {
               </li>
             </ul>
             <div className="hidden xl:flex items-center ml-auto">
-              <Link className="text-gray-500 hover:text-blue-500" href="/cart">
+              <Link
+                className={`"text-gray-500 flex hover:text-blue-500"`}
+                href="/cart"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -224,6 +227,18 @@ const NavBar = () => {
                     clip-rule="evenodd"
                   />
                 </svg>
+                <div className="text-base -mt-2 ">
+                  <span
+                    style={{
+                      paddingLeft: "7px",
+                      paddingRight: "8px",
+                      paddingBottom: "2px",
+                    }}
+                    className="rounded-full bg-blue-500 text-white"
+                  >
+                    {cartResponce ? "1" : "0"}
+                  </span>
+                </div>
               </Link>
 
               {!loginResponse?.is_logged_in ? (
@@ -374,11 +389,11 @@ const NavBar = () => {
             onClick={toggleMenu}
           ></div>
           <nav className="relative flex flex-col py-8 h-full w-full bg-white overflow-y-auto">
-            <div className="flex items-center pl-16 mb-8">
+            <div className="flex items-center pl-6 mb-8">
               <Link className="text-2xl text-gray-800 font-bold" href="/">
                 <img
-                  className="h-8"
-                  src="/img/study4pass.png"
+                  className="h-6"
+                  src="/img/study4paass.svg"
                   alt="Study 4 Pass"
                 />
               </Link>
@@ -386,7 +401,7 @@ const NavBar = () => {
 
             <div>
               <ul>
-                <li className="mb-1 px-10">
+                <li className="mb-1">
                   <a
                     className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                     href="#"
@@ -394,7 +409,7 @@ const NavBar = () => {
                     New tools
                   </a>
                 </li>
-                <li className="mb-1 px-10">
+                <li className="mb-1">
                   <a
                     className="flex items-center pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                     href="#"
@@ -415,7 +430,7 @@ const NavBar = () => {
                     </svg>
                   </a>
                 </li>
-                <li className="mb-1 px-10">
+                <li className="mb-1">
                   <a
                     className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                     href="#"
@@ -425,7 +440,7 @@ const NavBar = () => {
                 </li>
               </ul>
             </div>
-            <div className="mt-auto px-10">
+            <div className="mt-auto px-6">
               <button className="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
                 <span className="block mt-px">Login / Register</span>
               </button>

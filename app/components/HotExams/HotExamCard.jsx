@@ -19,7 +19,7 @@ const HotExamCard = ({ data }) => {
             <div className="md:flex items-center -mx-3 -my-3 px-3 rounded-xl min-h-30 border-2 border-gray-200 bg-white">
               <div className="md:flex md:items-center">
                 <div className="flex justify-center md:w-2/12">
-                  <img src="/product2.png" alt="" width={"80%"} />
+                  <img src="/PDF-TE.png" alt="" width={"80%"} />
                 </div>
                 <div className="w-full px-4 mr-auto mb-8 md:mb-0 md:w-9/12">
                   <Link
