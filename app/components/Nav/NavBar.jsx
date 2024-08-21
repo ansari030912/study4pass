@@ -180,14 +180,6 @@ const NavBar = () => {
               />
             </Link>
             <ul className="hidden xl:flex px-4 ml-24">
-              <li className="mr-4">
-                <Link
-                  className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
               <li className="mr-4 relative group">
                 <Link
                   className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
@@ -202,6 +194,14 @@ const NavBar = () => {
                   href="/video-courses"
                 >
                   Video Courses
+                </Link>
+              </li>
+              <li className="mr-4">
+                <Link
+                  className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                  href="/unlimited-access"
+                >
+                  Unlimited Access
                 </Link>
               </li>
             </ul>

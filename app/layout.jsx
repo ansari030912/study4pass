@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <NavBar />
-        <AuthGuard>{children}</AuthGuard>
+        <AuthGuard >
+          {children}
+          </AuthGuard>
         <Footer />
       </body>
     </html>

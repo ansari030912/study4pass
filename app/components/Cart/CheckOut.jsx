@@ -504,18 +504,29 @@ const CheckOut = () => {
             </div>
           </>
         ) : (
-          <Box
-            className="bg-gray-50 rounded-lg p-10"
-            sx={{ padding: "20px", textAlign: "center" }}
+          <div
+            style={{ height: "60vh" }}
+            className="flex flex-col justify-center"
           >
-            <Typography className="text-gray-600 text-4xl" fontWeight={"bold"}>
-              Cart is Empty
-            </Typography>
+            <Box
+              className="bg-gray-50 rounded-lg p-10"
+              sx={{ padding: "20px", textAlign: "center" }}
+            >
+              <Typography
+                className="text-gray-600 text-4xl"
+                fontWeight={"bold"}
+              >
+                Cart is Empty
+              </Typography>
 
-            <Typography className="text-gray-500 text-2xl" fontWeight={"bold"}>
-              Please Add Your Product First
-            </Typography>
-          </Box>
+              <Typography
+                className="text-gray-500 text-2xl"
+                fontWeight={"bold"}
+              >
+                Please Add Your Product First
+              </Typography>
+            </Box>
+          </div>
         )}
       </div>
       <Snackbar

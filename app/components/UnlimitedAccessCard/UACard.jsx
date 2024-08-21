@@ -1,18 +1,50 @@
+"use client";
+import { Icon } from "@iconify/react";
+import { Snackbar, SnackbarContent } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
-const UACard = () => {
+const UACard = ({ data }) => {
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+
+  const handleBoxClick = (item) => {
+    const cartData = {
+      cart: item.cart,
+      saveExam: true,
+    };
+    localStorage.removeItem("CartProducts");
+    localStorage.setItem("CartProducts", JSON.stringify(cartData));
+    setSnackbarOpen(true);
+    // Reload the page
+    window.location.reload();
+  };
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false);
+  };
+
   return (
-    <section className="relative py-24 ">
+    <section className="relative py-12 ">
       <div className="container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto mb-16 text-center">
+        <div className="max-w-4xl mx-auto mb-16 text-left md:text-center">
           <span className="text-blue-400 uppercase font-semibold tracking-widest">
             Unlimited Download Access
           </span>
           <h2 className="mt-8 mb-6 text-4xl font-bold font-heading text-blue-800">
             Get Unlimited Access to the all DumpsArena PREMIUM files!
           </h2>
-          <p className="mb-2 text-xl text-gray-500">
+          <p className="text-xl text-blue-500 md:flex justify-between">
+            <div className="mb-1">✔ Latest & Valid Questions</div>
+            <div className="mb-1">✔ Accurate & Verified Answers</div>
+          </p>
+          <p className="text-xl text-blue-500 md:flex justify-between">
+            <div className="mb-1">✔ Fast Free Updates</div>
+            <div className="mb-1">✔ Instant Download</div>
+          </p>
+          <p className="mb-2 text-xl text-blue-500 md:flex justify-between">
+            <div className="mb-1">✔ 99.5% Pass Rate</div>
+            <div className="mb-1">✔ Download Any 15 Files Monthly</div>
+          </p>
+          <p className="mb-2 mt-4 text-xl text-gray-500">
             Take advantage of premium Files which are Latest and valid by
             DumpsArena!
           </p>
@@ -32,19 +64,19 @@ const UACard = () => {
               </span>
               <div className="mt-8 mb-8">
                 <p className="text-4xl font-semibold text-blue-800">
-                  $227.99
+                  ${data?.pdf_price}
                   <span className="text-xl text-gray-500 mx-2">/</span>
                   <span className="text-xl text-red-600 line-through">
-                    $379.99
+                    ${data?.pdf_full_price}
                   </span>
                 </p>
               </div>
-              <a
-                className="block py-5 text-sm text-center text-blue-800 uppercase font-bold leading-normal border-2 border-blue-800 hover:bg-blue-200 bg-white transition duration-200"
-                href="#"
+              <button
+                className="block py-5 text-sm text-center text-blue-800 uppercase font-bold w-full leading-normal border-2 border-blue-800 hover:bg-blue-200 bg-white transition duration-200"
+                onClick={() => handleBoxClick({ cart: data.pdf_cart })}
               >
                 Buy Now
-              </a>
+              </button>
               <ul className="mt-6 text-left">
                 <li className="flex items-center mb-4">
                   <svg
@@ -191,19 +223,19 @@ const UACard = () => {
               </span>
               <div className="mt-8 mb-8">
                 <p className="text-4xl font-semibold text-blue-800">
-                  $203.99
+                  ${data?.te_price}
                   <span className="text-xl text-gray-500 mx-2">/</span>
                   <span className="text-xl text-red-600 line-through">
-                    $339.99
+                    ${data?.te_full_price}
                   </span>
                 </p>
               </div>
-              <a
-                className="block py-5 text-sm text-center text-blue-800 uppercase font-bold leading-normal border-2 border-blue-800 hover:bg-blue-200 bg-white transition duration-200"
-                href="#"
+              <button
+                className="block py-5 text-sm text-center text-blue-800 uppercase font-bold w-full leading-normal border-2 border-blue-800 hover:bg-blue-200 bg-white transition duration-200"
+                onClick={() => handleBoxClick({ cart: data.te_cart })}
               >
                 Buy Now
-              </a>
+              </button>
               <ul className="mt-6 text-left">
                 <li className="flex items-center mb-4">
                   <svg
@@ -347,6 +379,29 @@ const UACard = () => {
           </div>
         </div>
       </div>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <SnackbarContent
+          sx={{
+            backgroundColor: "green",
+          }}
+          message={
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <Icon
+                icon="mdi:cart-outline"
+                width="1.6em"
+                height="1.4em"
+                style={{ color: "white", marginRight: "2px" }}
+              />
+              Product added to cart!
+            </span>
+          }
+        />
+      </Snackbar>
     </section>
   );
 };
