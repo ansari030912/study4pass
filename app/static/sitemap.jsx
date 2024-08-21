@@ -1,67 +1,69 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://study4pass.com</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>1</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/study-meterial-providers</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/video-courses</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/cart</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/login</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/register</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/forgot-password</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/unlimited-access</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/about</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/faqs</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/privacy-policy</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/refund-policy</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://study4pass.com/terms-and-conditions</loc>
-    <lastmod>2024-08-18</lastmod>
-    <priority>0.8</priority>
-  </url>
-</urlset>;
+export default function sitemap() {
+  return [
+    {
+      url: "https://examprince.com",
+      lastModified: "2024-08-18",
+      priority: 1,
+    },
+    {
+      url: "https://examprince.com/study-meterial-providers",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/video-courses",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/cart",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/login",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/register",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/forgot-password",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/unlimited-access",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/about",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/faqs",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/privacy-policy",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/refund-policy",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+    {
+      url: "https://examprince.com/terms-and-conditions",
+      lastModified: "2024-08-18",
+      priority: 0.8,
+    },
+  ];
+}
