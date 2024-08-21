@@ -175,7 +175,7 @@ const NavBar = () => {
             <Link href="/">
               <img
                 className="h-7"
-                src="/img/study4paass.svg"
+                src="/img/study4paass.com.svg"
                 alt="Study 4 Pass"
               />
             </Link>
@@ -393,7 +393,7 @@ const NavBar = () => {
               <Link className="text-2xl text-gray-800 font-bold" href="/">
                 <img
                   className="h-6"
-                  src="/img/study4paass.svg"
+                  src="/img/study4paass.com.svg"
                   alt="Study 4 Pass"
                 />
               </Link>
