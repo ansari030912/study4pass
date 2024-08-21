@@ -12,13 +12,13 @@ const UACard = () => {
           <h2 className="mt-8 mb-6 text-4xl font-bold font-heading text-blue-800">
             Get Unlimited Access to the all DumpsArena PREMIUM files!
           </h2>
-          <p className="mb-8 text-xl text-gray-500">
+          <p className="mb-2 text-xl text-gray-500">
             Take advantage of premium Files which are Latest and valid by
             DumpsArena!
           </p>
           <Link
-            href={"/"}
-            className="mb-8 text-xl hover:text-blue-500 hover:underline text-gray-500"
+            href={"#"}
+            className="mb-8 text-lg hover:text-blue-600 hover:underline text-blue-500"
           >
             All Exams List Available in Unlimited Test Engine & PDF Download
             Access
