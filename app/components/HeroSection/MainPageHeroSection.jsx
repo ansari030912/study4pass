@@ -35,11 +35,9 @@ const MainPageHeroSection = () => {
                 </Link> */}
                 <Link
                   className="inline-block w-full sm:w-auto py-4 px-6 text-center font-heading font-medium text-base text-white hover:text-blue-500 border border-blue-500 hover:border-white rounded-sm transition duration-150"
-                  href="#"
+                  href="/unlimited-access"
                 >
-                  <span >
-                    Get PDF & Test Engine Unlimited Access
-                  </span>
+                  <span>Get PDF & Test Engine Unlimited Access</span>
                 </Link>
               </div>
             </div>

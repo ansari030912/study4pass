@@ -1,14 +1,30 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import moment from "moment";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 
 const ExamsStats = ({ examData }) => {
+  const router = useRouter();
   const [startCount, setStartCount] = useState(false);
   const [randomNumber, setRandomNumber] = useState(0);
   const [randomBuyedNumber, setRandomBuyedNumber] = useState(0);
   const sectionRef = useRef(null);
+
+  useEffect(() => {
+    // Check if required examData properties are missing or if exam_prices is empty
+    if (
+      !examData?.exam_perma ||
+      !examData?.exam_title ||
+      !examData?.exam_code ||
+      !examData?.exam_id ||
+      !examData?.exam_prices?.length
+    ) {
+      // Redirect to the home page if any required property is missing
+      router.push("/");
+    }
+  }, [examData, router]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
