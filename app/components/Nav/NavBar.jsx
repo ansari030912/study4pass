@@ -292,20 +292,23 @@ const NavBar = () => {
                         onClose={handleClose}
                         className="mt-6"
                       >
-                        <Link href={"/products"}>
+                        <Link href={"/account/products"}>
                           <MenuItem onClick={handleClose}>Products</MenuItem>
                         </Link>
-                        <Link href={"/login-history"}>
+                        <Link href={"/account/login-history"}>
                           <MenuItem onClick={handleClose}>
                             Login History
                           </MenuItem>
                         </Link>
-                        <Link href={"/download-history"}>
+                        <Link href={"/account/download-history"}>
                           <MenuItem onClick={handleClose}>
                             Download History
                           </MenuItem>
                         </Link>
-                        <Link href={"/setting"}>
+                        <Link href={"/account/invoices"}>
+                          <MenuItem onClick={handleClose}>Invoices</MenuItem>
+                        </Link>
+                        <Link href={"/account/setting"}>
                           <MenuItem onClick={handleClose}>Setting</MenuItem>
                         </Link>
                         <div>

@@ -65,13 +65,14 @@ const ExamAddToCartCard = ({ examData }) => {
       )}
 
       <div
-        style={{
-          boxShadow:
-            "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
-          borderRadius: "1.5rem",
-          border: "1px solid #e5e7eb",
-          padding: "1.5rem",
-        }}
+        // style={{
+        //   boxShadow:
+        //     "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
+        //   borderRadius: "1.5rem",
+        //   border: "1px solid #e5e7eb",
+        //   padding: "1.5rem",
+        // }}
+        className="md:mt-6"
       >
         <div
           style={{ paddingBottom: "1rem", borderBottom: "1px solid #e5e7eb" }}

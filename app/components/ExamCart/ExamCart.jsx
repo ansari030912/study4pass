@@ -8,11 +8,8 @@ const ExamCart = ({ examData }) => {
       <div className="flex flex-wrap -m-4">
         <div className="w-full lg:w-7/12 p-4">
           <div
-            style={{
-              boxShadow:
-                "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
-            }}
-            className="rounded-2xl border border-gray-200 py-3 px-4 mb-4"
+           
+            className="rounded-2xl  py-3 px-4 mb-4"
           >
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div>
@@ -30,11 +27,11 @@ const ExamCart = ({ examData }) => {
           </div>
 
           <div
-            style={{
-              boxShadow:
-                "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
-            }}
-            className="rounded-2xl border border-gray-200 p-8"
+            // style={{
+            //   boxShadow:
+            //     "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
+            // }}
+            className="rounded-2xl py-8"
           >
             <h2 className="font-heading uppercase text-3xl mb-4 max-w-4xl">
               Exams Questions - {examData.exam_title}

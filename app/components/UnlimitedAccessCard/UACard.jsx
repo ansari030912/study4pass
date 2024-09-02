@@ -33,16 +33,22 @@ const UACard = ({ data }) => {
             Get Unlimited Access to the all DumpsArena PREMIUM files!
           </h2>
           <p className="text-xl text-blue-500 md:flex justify-between">
-            <div className="mb-1">✔ Latest & Valid Questions</div>
-            <div className="mb-1">✔ Accurate & Verified Answers</div>
+            <span className="mb-1 inline-block">
+              ✔ Latest & Valid Questions
+            </span>
+            <span className="mb-1 inline-block">
+              ✔ Accurate & Verified Answers
+            </span>
           </p>
           <p className="text-xl text-blue-500 md:flex justify-between">
-            <div className="mb-1">✔ Fast Free Updates</div>
-            <div className="mb-1">✔ Instant Download</div>
+            <span className="mb-1 inline-block">✔ Fast Free Updates</span>
+            <span className="mb-1 inline-block">✔ Instant Download</span>
           </p>
           <p className="mb-2 text-xl text-blue-500 md:flex justify-between">
-            <div className="mb-1">✔ 99.5% Pass Rate</div>
-            <div className="mb-1">✔ Download Any 15 Files Monthly</div>
+            <span className="mb-1 inline-block">✔ 99.5% Pass Rate</span>
+            <span className="mb-1 inline-block">
+              ✔ Download Any 15 Files Monthly
+            </span>
           </p>
           <p className="mb-2 mt-4 text-xl text-gray-500">
             Take advantage of premium Files which are Latest and valid by
