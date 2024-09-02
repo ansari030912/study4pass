@@ -2,22 +2,48 @@
 import { Icon } from "@iconify/react";
 import { Snackbar, SnackbarContent } from "@mui/material";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const UACard = ({ data }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [cartProducts, setCartProducts] = useState([]);
+
+  useEffect(() => {
+    // Retrieve the existing cart data from local storage on component mount
+    const existingCartData =
+      JSON.parse(localStorage.getItem("CartProducts")) || [];
+    setCartProducts(existingCartData);
+  }, []);
 
   const handleBoxClick = (item) => {
-    const cartData = {
-      cart: item.cart,
-      saveExam: true,
-    };
-    localStorage.removeItem("CartProducts");
-    localStorage.setItem("CartProducts", JSON.stringify(cartData));
-    setSnackbarOpen(true);
-    // Reload the page
-    window.location.reload();
+    // Check if the item is already in the cart
+    const isItemInCart = cartProducts.some(
+      (cartItem) => cartItem.cart === item.cart
+    );
+
+    if (!isItemInCart) {
+      // If the item is not already in the cart, add it
+      const updatedCart = [
+        ...cartProducts,
+        { cart: item.cart, saveExam: true },
+      ];
+      setCartProducts(updatedCart);
+
+      // Save the updated cart data to local storage
+      localStorage.setItem("CartProducts", JSON.stringify(updatedCart));
+
+      // Set success message and open the snackbar
+      setSnackbarMessage("Product added to cart!");
+      setSnackbarOpen(true);
+      window.location.reload();
+    } else {
+      // Set the message that the item is already in the cart and open the snackbar
+      setSnackbarMessage("Product already in cart");
+      setSnackbarOpen(true);
+    }
   };
+
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
@@ -393,7 +419,9 @@ const UACard = ({ data }) => {
       >
         <SnackbarContent
           sx={{
-            backgroundColor: "green",
+            backgroundColor: snackbarMessage.includes("already")
+              ? "red"
+              : "green",
           }}
           message={
             <span style={{ display: "flex", alignItems: "center" }}>
@@ -403,7 +431,7 @@ const UACard = ({ data }) => {
                 height="1.4em"
                 style={{ color: "white", marginRight: "2px" }}
               />
-              Product added to cart!
+              {snackbarMessage}
             </span>
           }
         />

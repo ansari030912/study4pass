@@ -114,10 +114,10 @@ const TeAccess = ({ params }) => {
           How To Use Test Engine Access?
         </div>
         <p className="text-gray-500 font-semibold max-w-7xl" fontWeight={600}>
-          <span className="text-red-500 font-bold">NOTE</span> : Download the ExamPrince
+          <span className="text-red-500 font-bold">NOTE</span> : Download the study4pass
           Test Engine Simulator and install it, then download the premium
           .study4pass file using above yellow button and you will get .zip file,
-          unzip it, and add it to ExamPrince Test Engine Simulator. Activate the
+          unzip it, and add it to study4pass Test Engine Simulator. Activate the
           premium .study4pass file with above purchase and activation keys.
         </p>
       </Box>

@@ -1,43 +1,62 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Alert, Box } from "@mui/material";
+import { Icon } from "@iconify/react";
+import { Box, Snackbar, SnackbarContent } from "@mui/material";
 import { useState } from "react";
 
 const ExamAddToCartCard = ({ examData }) => {
   const [selectedOption, setSelectedOption] = useState(
     examData?.exam_prices?.length > 0 ? examData?.exam_prices[0].type : ""
   );
-  const [showAlert, setShowAlert] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
 
   const handleChange = (optionId) => {
     setSelectedOption(optionId);
   };
 
   const handleAddToCart = () => {
-    const selectedExam = examData?.exam_prices?.find(
+    // Retrieve the existing cart data from local storage
+    const existingCartData =
+      JSON.parse(localStorage.getItem("CartProducts")) || [];
+
+    // Find the selected exam data based on the selected option
+    const selectedExam = examData.exam_prices.find(
       (option) => option.type === selectedOption
     );
 
-    if (selectedExam) {
-      // Save the cart value to local storage with the specified structure
+    // Check if the item is already in the cart
+    const isItemInCart = existingCartData.some(
+      (cartItem) => cartItem.cart === selectedExam.cart
+    );
+
+    if (!isItemInCart) {
+      // If the item is not already in the cart, add it
       const cartData = {
-        cart: selectedExam.cart,
+        cart: selectedExam.cart, // Save the unique cart identifier
         saveExam: true,
       };
 
-      // Clear any existing cart data and save the new cart data
-      localStorage.removeItem("CartProducts");
-      localStorage.setItem("CartProducts", JSON.stringify(cartData));
+      existingCartData.push(cartData);
 
-      // Show alert notification
-      setShowAlert(true);
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 3000); // Hide alert after 3 seconds
+      // Save the updated array back to local storage
+      localStorage.setItem("CartProducts", JSON.stringify(existingCartData));
 
-      // Reload the page
+      // Set the success message and open the snackbar
+      setSnackbarMessage("Product added to cart!");
+      setSnackbarOpen(true);
+
+      // Optionally reload the page
       window.location.reload();
+    } else {
+      // Set the message that the item is already in the cart and open the snackbar
+      setSnackbarMessage("Product already in cart");
+      setSnackbarOpen(true);
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -49,31 +68,33 @@ const ExamAddToCartCard = ({ examData }) => {
         position: "relative",
       }}
     >
-      {showAlert && (
-        <div
-          style={{
-            position: "fixed",
-            top: "1rem",
-            right: "1rem",
-            zIndex: 1000,
-          }}
-        >
-          <Alert sx={{ backgroundColor: "#D1FAE5" }} severity="success">
-            <span className="font-semibold">Product added to cart!</span>
-          </Alert>
-        </div>
-      )}
-
-      <div
-        // style={{
-        //   boxShadow:
-        //     "0px 4px 4px rgba(0, 0, 0, 0.05),0px -4px 4px rgba(0, 0, 0, 0.05),4px 0px 4px rgba(0, 0, 0, 0.05),-4px 0px 4px rgba(0, 0, 0, 0.05)",
-        //   borderRadius: "1.5rem",
-        //   border: "1px solid #e5e7eb",
-        //   padding: "1.5rem",
-        // }}
-        className="md:mt-6"
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
       >
+        <SnackbarContent
+          sx={{
+            backgroundColor: snackbarMessage.includes("already")
+              ? "red"
+              : "green",
+          }}
+          message={
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <Icon
+                icon="mdi:cart-outline"
+                width="1.6em"
+                height="1.4em"
+                style={{ color: "white", marginRight: "2px" }}
+              />
+              {snackbarMessage}
+            </span>
+          }
+        />
+      </Snackbar>
+
+      <div className="md:mt-6">
         <div
           style={{ paddingBottom: "1rem", borderBottom: "1px solid #e5e7eb" }}
         >
@@ -237,7 +258,6 @@ const ExamAddToCartCard = ({ examData }) => {
             fontWeight: "bold",
             fontSize: "0.875rem",
             cursor: "pointer",
-            // marginBottom: "0.5rem",
             transition: "background-color 0.2s",
           }}
         >

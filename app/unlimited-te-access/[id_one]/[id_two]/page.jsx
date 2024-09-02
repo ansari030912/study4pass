@@ -316,10 +316,10 @@ const UnlimitedTeAccessPage = ({ params }) => {
                     are checking your payment so this might take a few hours.
                     Please contact our sales chat support or send an email to{" "}
                     <Link
-                      href="mailto:sales@examprince.com"
+                      href="mailto:sales@study4pass.com"
                       className="text-blue-600"
                     >
-                      sales@examprince.com
+                      sales@study4pass.com
                     </Link>{" "}
                     for fast approval. Thank you.
                   </p>

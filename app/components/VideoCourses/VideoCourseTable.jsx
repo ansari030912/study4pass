@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const VideoCourseTable = ({ data }) => {
@@ -126,12 +127,12 @@ const VideoCourseTable = ({ data }) => {
 
 const ProductCard = ({ product }) => (
   <div className="w-full sm:w-1/2 mb-10 lg:w-1/3 px-4">
-    <a
+    <Link
       className="block  text-gray-600 hover:text-blue-500 bg-white group"
-      href="#"
+      href={`training-courses/${product.perma}`}
     >
       <div className="w-full relative flex-1 p-6 border-2 border-transparent group-hover:border-blue-300 transition duration-150">
-        <img src="/video-file-formats.png" alt={product.title} />
+        <img src={`https://video.dumpsarena.com/img/${product?.image}`} alt={product.title} />
         <p
           style={{ fontSize: "14px", fontWeight: 500 }}
           className="text-center mt-4 font-black"
@@ -139,7 +140,7 @@ const ProductCard = ({ product }) => (
           {product.title}
         </p>
       </div>
-    </a>
+    </Link>
   </div>
 );
 
