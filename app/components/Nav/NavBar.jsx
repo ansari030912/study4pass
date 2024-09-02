@@ -124,31 +124,32 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  const truncatedEmail =
-    loginResponse?.email?.length > 10
-      ? `${loginResponse?.email?.slice(0, 10)}...`
-      : loginResponse?.email;
-  const truncatedName =
-    loginResponse?.name?.length > 12
-      ? `${loginResponse?.name?.slice(0, 12)}...`
-      : loginResponse?.name;
+  const normalizeSearchValue = (value) => {
+    return value.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+  };
 
   const filteredData = searchData
-    .filter((item) =>
-      item.code.toLowerCase().startsWith(searchValue.toLowerCase())
-    )
+    .filter((item) => {
+      const normalizedCode = normalizeSearchValue(item.code);
+      const normalizedSearchValue = normalizeSearchValue(searchValue);
+      return normalizedCode.includes(normalizedSearchValue);
+    })
     .slice(0, 30);
 
   const filteredVendors = vendorData
-    .filter((item) =>
-      item.slug.toLowerCase().startsWith(searchValue.toLowerCase())
-    )
+    .filter((item) => {
+      const normalizedSlug = normalizeSearchValue(item.slug);
+      const normalizedSearchValue = normalizeSearchValue(searchValue);
+      return normalizedSlug.includes(normalizedSearchValue);
+    })
     .slice(0, 10);
 
   const filteredCertifications = certificationData
-    .filter((item) =>
-      item.slug.toLowerCase().startsWith(searchValue.toLowerCase())
-    )
+    .filter((item) => {
+      const normalizedSlug = normalizeSearchValue(item.slug);
+      const normalizedSearchValue = normalizeSearchValue(searchValue);
+      return normalizedSlug.includes(normalizedSearchValue);
+    })
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
@@ -236,21 +237,13 @@ const NavBar = () => {
                     }}
                     className="rounded-full bg-blue-500 text-white"
                   >
-                    {cartResponce ? "1" : "0"}
+                    {cartResponce ? cartResponce.length : "0"}
                   </span>
                 </div>
               </Link>
 
               {!loginResponse?.is_logged_in ? (
                 <>
-                  {/* {!isSearchOpen && (
-                  <button
-                    className="uppercase text-sm ml-4 font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300"
-                    onClick={toggleSearch}
-                  >
-                    <span className="block mt-px">Search</span>
-                  </button>
-                )} */}
                   <button className="uppercase ml-4 text-sm font-bold font-body border-2 border-gray-200 border-opacity-50 rounded-full py-3 px-5 tracking-wide hover:border-gray-300">
                     <span className="block text-gray-600 mt-px">
                       <Link href={"/login"}>Login</Link> /{" "}
@@ -356,7 +349,7 @@ const NavBar = () => {
         </nav>
 
         {isSearchOpen && (
-          <div className="container mx-auto bg-transparent">
+          <div className="container hidden xl:block mx-auto bg-transparent">
             <div className="flex justify-between items-center px-6 lg:px-12 py-3">
               <input
                 type="text"
@@ -382,6 +375,18 @@ const NavBar = () => {
           </div>
         )}
 
+        <div className="container xl:hidden mx-auto w-full bg-transparent">
+          <div className="flex justify-between items-center px-6 lg:px-12 py-3">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+            />
+          </div>
+        </div>
+
         <div
           className={`navbar-menu xl:hidden ${
             isMenuOpen ? "" : "hidden"
@@ -405,51 +410,184 @@ const NavBar = () => {
             <div>
               <ul>
                 <li className="mb-1">
-                  <a
+                  <Link
                     className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
-                    href="#"
+                    href="/study-meterial-providers"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    New tools
-                  </a>
+                    Vendors & Certifications
+                  </Link>
                 </li>
                 <li className="mb-1">
-                  <a
-                    className="flex items-center pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
-                    href="#"
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="/video-courses"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    <span>Products</span>
-                    <svg
-                      className="ml-4"
-                      width="8"
-                      height="5"
-                      viewbox="0 0 8 5"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.97291 0.193232C7.20854 -0.0644107 7.58938 -0.0644107 7.82328 0.193232C8.05804 0.450875 8.05978 0.867141 7.82328 1.12478L4.42529 4.80677C4.19053 5.06441 3.81056 5.06441 3.57406 4.80677L0.176073 1.12478C-0.0586909 0.868102 -0.0586909 0.450875 0.176073 0.193232C0.411706 -0.0644107 0.792544 -0.0644107 1.02644 0.193232L4.00098 3.21284L6.97291 0.193232Z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </a>
+                    Video Courses
+                  </Link>
                 </li>
                 <li className="mb-1">
-                  <a
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="/unlimited-access"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Unlimited Access
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="/test-engine"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Test Engine
+                  </Link>
+                </li>
+
+                <li className="pt-3 border-t">
+                  <span className="block pl-8 text-body text-xs text-gray-400 rounded-full hover:shadow-2xl">
+                    Other Pages
+                  </span>
+                </li>
+                <li className="mb-1">
+                  <Link
                     className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
                     href="#"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    Pricing
-                  </a>
+                    About
+                  </Link>
                 </li>
+                <li className="mb-1">
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="#"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="#"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Return Policy
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="#"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="#"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    FAQs
+                  </Link>
+                </li>
+                {loginResponse?.is_logged_in && (
+                  <>
+                    <li className="pt-3 border-t">
+                      <span className="block pl-8 text-body text-xs text-gray-400 rounded-full hover:shadow-2xl">
+                        Account
+                      </span>
+                    </li>
+                    <li className="mb-1">
+                      <Link
+                        className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                        href="/account/products"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Products
+                      </Link>
+                    </li>
+                    <li className="mb-1">
+                      <Link
+                        className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                        href="/account/invoices"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Invoices
+                      </Link>
+                    </li>
+                    <li className="mb-1">
+                      <Link
+                        className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                        href="/account/login-history"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Login History
+                      </Link>
+                    </li>
+                    <li className="mb-1">
+                      <Link
+                        className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                        href="/account/download-history"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Download History
+                      </Link>
+                    </li>
+                    <li className="mb-1">
+                      <Link
+                        className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                        href="/account/update-profile"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Update Profile
+                      </Link>
+                    </li>
+                    <li className="mb-1">
+                      <div
+                        className="block pl-8 py-4 cursor-pointer text-body text-lg rounded-full hover:shadow-2xl"
+                        onClick={handleSignOut}
+                      >
+                        Log Out
+                      </div>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
             <div className="mt-auto px-6">
-              <button className="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
-                <span className="block mt-px">Login / Register</span>
-              </button>
+              {!loginResponse?.is_logged_in ? (
+                <button className="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
+                  <span className="block mt-px">
+                    {" "}
+                    <Link onClick={() => setIsMenuOpen(false)} href={"/login"}>
+                      Login
+                    </Link>{" "}
+                    /{" "}
+                    <Link
+                      onClick={() => setIsMenuOpen(false)}
+                      href={"/register"}
+                    >
+                      Register
+                    </Link>
+                  </span>
+                </button>
+              ) : (
+                <button className="py-3 px-5 mt-6 w-full font-body font-bold uppercase tracking-wide text-sm border-2 border-gray-200 hover:border-gray-300 border-opacity-50 rounded-full">
+                  <span className="block mt-px">{loginResponse?.name}</span>
+                  <span className="block text-xs text-gray-500 mt-px">
+                    {loginResponse?.email}
+                  </span>
+                </button>
+              )}
               <p className="mt-6 mb-4 text-center">
                 <span className="text-sm text-darkBlueGray-400">
-                  2021 © Uinel. All rights reserved.
+                  2024 © study4pass.com All rights reserved.
                 </span>
               </p>
             </div>

@@ -51,7 +51,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     onClick={() => handleTabClick("vendors")}
                     class={`font-heading ${
                       activeTab === "vendors" && "border-2 border-blue-300"
-                    } text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105`}
+                    } text-sm font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105`}
                   >
                     Vendors
                   </h3>
@@ -60,7 +60,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     onClick={() => handleTabClick("certs")}
                     class={`font-heading ${
                       activeTab === "certs" && "border-2 border-blue-300"
-                    } text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4`}
+                    } text-sm font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4`}
                   >
                     Certifications
                   </h3>
@@ -69,7 +69,7 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     onClick={() => handleTabClick("exams")}
                     class={`font-heading ${
                       activeTab === "exams" && "border-2 border-blue-300"
-                    } text-base font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4`}
+                    } text-sm font-semibold bg-blue-100 cursor-pointer px-4 py-2 rounded-full transition transform duration-200 hover:scale-105 md:ml-4`}
                   >
                     Hot Exams
                   </h3>

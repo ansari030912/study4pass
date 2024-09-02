@@ -1,16 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import ExamAddToCartCard from "./ExamAddToCartCard";
+import BackCountDown from "../BackCountDown";
 
 const ExamCart = ({ examData }) => {
   return (
     <section className="pt-14 pb-12 px-2">
       <div className="flex flex-wrap -m-4">
         <div className="w-full lg:w-7/12 p-4">
-          <div
-           
-            className="rounded-2xl  py-3 px-4 mb-4"
-          >
+          <div className="rounded-2xl  py-3 px-4 mb-4">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div>
                 <h2 className="font-heading uppercase px-2 font-semibold text-3xl mb-1">
@@ -21,7 +19,7 @@ const ExamCart = ({ examData }) => {
                 </p>
               </div>
               <span className="inline-block px-4 py-3 bg-red-50 rounded-md text-red-700 text-sm font-semibold">
-                Until Jun, 2023
+              Sale End in <BackCountDown />
               </span>
             </div>
           </div>
@@ -49,8 +47,12 @@ const ExamCart = ({ examData }) => {
               <div className="flex justify-between my-2">
                 <span>Exam Question Provider:</span>{" "}
                 <span className="text-sky-500">
-                  <Link className="hover:underline" href={`/study-meterial-provider/${examData?.exam_vendor_perma}`}>
-                  {examData?.exam_vendor_title}</Link>
+                  <Link
+                    className="hover:underline"
+                    href={`/study-meterial-provider/${examData?.exam_vendor_perma}`}
+                  >
+                    {examData?.exam_vendor_title}
+                  </Link>
                 </span>
               </div>
               <hr />
@@ -141,7 +143,7 @@ const ExamCart = ({ examData }) => {
           </div>
         </div>
         <div className="w-full lg:w-5/12 ">
-        <ExamAddToCartCard examData={examData} />
+          <ExamAddToCartCard examData={examData} />
         </div>
       </div>
     </section>

@@ -57,6 +57,10 @@ const VendorExamsTable = ({ vendorData }) => {
             !
           </h2>
         </div>
+        <p className="my-4 text-lg text-red-600 font-bold mx-4">
+          Click on Vendors and Certifications on title to see Vendors Exams and
+          Cetifications.
+        </p>
         <div className="py-5 bg-neutral-50 border border-neutral-100 rounded-xl">
           <div className="px-6">
             <div className="mb-5 w-full overflow-x-auto">
