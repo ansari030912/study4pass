@@ -10,16 +10,18 @@ const Footer = () => {
           <div className="py-2 border-b border-gray-200">
             <div className="flex flex-wrap items-center">
               <div className="w-full lg:w-auto flex justify-center md:justify-start px-2">
-                <img
-                  className="h-8"
-                  src="/img/study4paass.com.svg"
-                  alt="Study4Pass"
-                />
+                <Link href={"/"}>
+                  <img
+                    className="h-8"
+                    src="/img/study4paass.com.svg"
+                    alt="Study4Pass"
+                  />
+                </Link>
               </div>
               <div className="w-full flex justify-center md:justify-end text-center mb-6 md:-mb-20 lg:mb-0 lg:flex-1 p-4">
                 <ul className="md:flex md:justify-end h-24 lg:h-auto md:gap-4 lg:gap-14">
                   <li className="w-full lg:w-auto">
-                    <Link href="#">
+                    <Link href="/faqs">
                       <span className="text-nowrap text-lg hover:text-blue-500 font-medium transition duration-200">
                         FAQ&apos;s
                       </span>
@@ -27,7 +29,7 @@ const Footer = () => {
                   </li>
                   <hr className="w-full" />
                   <li className="w-full lg:w-auto">
-                    <Link href="#">
+                    <Link href="/refund-policy">
                       <span className="text-nowrap text-lg hover:text-blue-500 font-medium transition duration-200">
                         Refund Policy
                       </span>
@@ -35,7 +37,7 @@ const Footer = () => {
                   </li>
                   <hr className="w-full" />
                   <li className="w-full lg:w-auto">
-                    <Link href="#">
+                    <Link href="/about">
                       <span className="text-nowrap text-lg hover:text-blue-500 font-medium transition duration-200">
                         About
                       </span>
@@ -43,7 +45,7 @@ const Footer = () => {
                   </li>
                   <hr className="w-full" />
                   <li className="w-full lg:w-auto">
-                    <Link href="#">
+                    <Link href="/privacy-policy">
                       <span className="text-nowrap text-lg hover:text-blue-500 font-medium transition duration-200">
                         Privacy Policy
                       </span>
@@ -51,7 +53,7 @@ const Footer = () => {
                   </li>
                   <hr className="w-full" />
                   <li className="w-full lg:w-auto">
-                    <Link href="#">
+                    <Link href="terms-and-conditions">
                       <span className="text-nowrap text-lg hover:text-blue-500 font-medium transition duration-200">
                         Terms & Conditions
                       </span>
@@ -110,7 +112,10 @@ const Footer = () => {
               </h3> */}
               <ul>
                 <li className="mb-4 pt-8 flex items-center gap-4">
-                  <Link href="#" className="group flex items-center gap-4">
+                  <Link
+                    href="/test-engine-access"
+                    className="group flex items-center gap-4"
+                  >
                     <div className="flex items-center justify-center w-10 h-10 bg-gray-50 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -125,12 +130,15 @@ const Footer = () => {
                       </svg>
                     </div>
                     <span className="text-xl group-hover:text-blue-500 font-medium transition duration-200">
-                      Home
+                      Test Engine Access
                     </span>
                   </Link>
                 </li>
                 <li className="mb-4 flex items-center gap-4">
-                  <Link href="#" className="group flex items-center gap-4">
+                  <Link
+                    href="/study-meterial-providers"
+                    className="group flex items-center gap-4"
+                  >
                     <div className="flex items-center justify-center w-10 h-10 bg-gray-50 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -145,12 +153,15 @@ const Footer = () => {
                       </svg>
                     </div>
                     <span className="text-xl group-hover:text-blue-500 font-medium transition duration-200">
-                      Vendors & Certs
+                      Vendors & Certifications
                     </span>
                   </Link>
                 </li>
                 <li className="mb-4 flex items-center gap-4">
-                  <Link href="#" className="group flex items-center gap-4">
+                  <Link
+                    href="/video-courses"
+                    className="group flex items-center gap-4"
+                  >
                     <div className="flex items-center justify-center w-10 h-10 bg-gray-50 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +181,10 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="mb-6 flex items-center gap-4">
-                  <Link href="#" className="group flex items-center gap-4">
+                  <Link
+                    href="/unlimited-access"
+                    className="group flex items-center gap-4"
+                  >
                     <div className="flex items-center justify-center w-10 h-10 bg-gray-50 rounded-full">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

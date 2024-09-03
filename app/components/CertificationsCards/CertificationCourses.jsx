@@ -1,43 +1,31 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
 import { useState } from "react";
 
 const CertificationCourses = ({ data }) => {
   const [category, setCategory] = useState(
-    data.cert_multiple_exams.some((exam) => !exam.exam_retired)
+    data?.cert_multiple_exams.some((exam) => !exam.exam_retired)
       ? "New Arrival"
       : "Retired Exam"
   );
-  const [accordion, setAccordion] = useState({});
-
-  // const handleAccordionToggle = (index) => {
-  //   setAccordion((prevState) => ({
-  //     ...prevState,
-  //     [index]: !prevState[index],
-  //   }));
-  // };
-
-  const retiredExams = data.cert_multiple_exams.filter(
+  const retiredExams = data?.cert_multiple_exams.filter(
     (exam) => exam.exam_retired
   );
-  const newExams = data.cert_multiple_exams.filter(
+  const newExams = data?.cert_multiple_exams.filter(
     (exam) => !exam.exam_retired
   );
 
   return (
-    <section className="bg-gray-100 p-6">
+    <section className="bg-gray-100 py-6">
       <div className="container px-4 mx-auto">
         <div className="flex flex-wrap mt-6 -mx-4">
           <div className="w-full lg:w-3/12 px-4 mb-8 lg:mb-0">
             <div className="bg-indigo-500 rounded">
               <div className="mx-4 py-4 mb-3">
-                <span className="py-4 lg:py-0 text-center">
-                  <h2 className="text-2xl text-white font-bold">
-                    {data.cert_full_name}
-                  </h2>
-                  <p className="text-indigo-50">{data.vendor_title}</p>
-                </span>
+                <h2 className="text-2xl text-white font-bold">
+                  {data?.cert_full_name}
+                </h2>
+                <p className="text-indigo-50">{data?.vendor_title}</p>
               </div>
             </div>
             <div className="p-2 bg-white rounded">
@@ -123,46 +111,37 @@ const CertificationCourses = ({ data }) => {
                         <h3 className="text-xl font-bold">New Arrivals</h3>
                       </div>
                       <div className="p-4 overflow-x-auto">
-                        <table className="table-auto w-full">
-                          <thead>
-                            <tr className="text-xs text-gray-500 text-left">
-                              <th className="pb-3 font-medium">Exam Title</th>
-                              <th className="pb-3 font-medium">Questions</th>
-                              <th className="pb-3 font-medium">Vendor</th>
-                              <th className="pb-3 font-medium">Status</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {newExams.map((exam, index) => (
-                              <tr
-                                className={`text-xs ${
-                                  index % 2 === 0 ? "bg-gray-50" : ""
-                                }`}
-                                key={exam.exam_id}
-                              >
-                                <td className="py-5 px-6 font-medium">
-                                  <Link
-                                    className="hover:text-blue-500"
-                                    href={`/study-meterial/${exam.exam_vendor_perma}/${exam.exam_perma}`}
-                                  >
-                                    {exam.exam_title}
-                                  </Link>
-                                </td>
-                                <td className="font-medium">
-                                  {exam.exam_questions}
-                                </td>
-                                <td className="font-medium">
-                                  {exam.exam_vendor_title}
-                                </td>
-                                <td>
-                                  <span className="inline-block py-1 px-2 text-white bg-green-500 rounded-full">
-                                    Active
-                                  </span>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                        {newExams.map((exam, index) => (
+                          <Link
+                            href={`/study-meterial/${exam.exam_vendor_perma}/${exam.exam_perma}`}
+                            key={exam.exam_id}
+                          >
+                            <div
+                              className={`py-4 mb-4 bg-white border-b text-gray-600 hover:text-blue-500 ${
+                                index % 2 === 0 ? "bg-gray-50" : ""
+                              }`}
+                            >
+                              <div className="text-base font-semibold text-blue-500">
+                                {exam.exam_vendor_title}
+                              </div>
+                              <div className="lg:flex justify-between items-center">
+                                <div className="text-lg font-semibold ">
+                                  <div>{exam.exam_title}</div>
+                                  <div className="text-sm text-green-500">
+                                    {exam.exam_questions} Questions
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="text-xs flex justify-end text-white ">
+                                    <div className="px-2 py-1 rounded-full bg-green-500">
+                                      Active
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </section>
@@ -174,46 +153,37 @@ const CertificationCourses = ({ data }) => {
                         <h3 className="text-xl font-bold">Retired Exams</h3>
                       </div>
                       <div className="p-4 overflow-x-auto">
-                        <table className="table-auto w-full">
-                          <thead>
-                            <tr className="text-xs text-gray-500 text-left">
-                              <th className="pb-3 font-medium">Exam Title</th>
-                              <th className="pb-3 font-medium">Questions</th>
-                              <th className="pb-3 font-medium">Vendor</th>
-                              <th className="pb-3 font-medium">Status</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {retiredExams.map((exam, index) => (
-                              <tr
-                                className={`text-xs ${
-                                  index % 2 === 0 ? "bg-gray-50" : ""
-                                }`}
-                                key={exam.exam_id}
-                              >
-                                <td className="py-5 px-6 font-medium">
-                                  <Link
-                                    className="hover:text-blue-500"
-                                    href={`/study-meterial/${exam.exam_vendor_perma}/${exam.exam_perma}`}
-                                  >
-                                    {exam.exam_title}
-                                  </Link>
-                                </td>
-                                <td className="font-medium">
-                                  {exam.exam_questions}
-                                </td>
-                                <td className="font-medium">
-                                  {exam.exam_vendor_title}
-                                </td>
-                                <td>
-                                  <span className="inline-block py-1 px-2 text-white bg-red-500 rounded-full">
-                                    Retired
-                                  </span>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                        {retiredExams.map((exam, index) => (
+                          <Link
+                            href={`/study-meterial/${exam.exam_vendor_perma}/${exam.exam_perma}`}
+                            key={exam.exam_id}
+                          >
+                            <div
+                              className={`py-4 mb-4 bg-white border-b text-gray-600 hover:text-blue-500 ${
+                                index % 2 === 0 ? "bg-gray-50" : ""
+                              }`}
+                            >
+                              <div className="text-base font-semibold text-blue-500">
+                                {exam.exam_vendor_title}
+                              </div>
+                              <div className="lg:flex justify-between items-center">
+                                <div className="text-lg font-semibold ">
+                                  <div>{exam.exam_title}</div>
+                                  <div className="text-sm text-green-500">
+                                    {exam.exam_questions} Questions
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="text-xs flex justify-end text-white ">
+                                    <div className="px-2 py-1 rounded-full bg-red-500">
+                                      Retired
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Link>
+                        ))}
                       </div>
                     </div>
                   </section>

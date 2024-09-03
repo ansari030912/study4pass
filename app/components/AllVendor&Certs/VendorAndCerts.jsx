@@ -34,9 +34,12 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
   };
 
   return (
-    <section class="py-12 bg-gray-50">
+    <section class="py-2 bg-gray-50">
       <div class="container px-4 mx-auto">
-        <Card className="my-2 py-3 px-3 bg-gray-900 text-white">
+        <Card
+          sx={{ bgcolor: "#222222", color: "white" }}
+          className="my-2 py-3 px-3 text-white"
+        >
           <h2 className="text-2xl font-bold">
             <span className="text-blue-400">Vendors & Certifications</span> -
             Provide By IT Professional
@@ -125,7 +128,9 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                       alt={item.vendor_title}
                       src="/static/images/avatar/1.jpg"
                     />
-                    <Link href={`/study-meterial-provider/${item.vendor_perma}`}>
+                    <Link
+                      href={`/study-meterial-provider/${item.vendor_perma}`}
+                    >
                       <h4
                         class="text-xl ml-3 text-blue-500 font-medium"
                         style={{ marginTop: "6px" }}
@@ -135,7 +140,9 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                     </Link>
                   </div>
                   <div className="flex mb-5 justify-center">
-                    <Link href={`/study-meterial-provider/${item.vendor_perma}`}>
+                    <Link
+                      href={`/study-meterial-provider/${item.vendor_perma}`}
+                    >
                       <img
                         className="h-36"
                         src="/allvendors.png"
@@ -182,7 +189,9 @@ const VendorAndCerts = ({ vendorData, data, certData }) => {
                       alt={item.vendor_title}
                       src="/static/images/avatar/1.jpg"
                     />
-                    <Link href={`/study-meterial-provider/${item.vendor_perma}`}>
+                    <Link
+                      href={`/study-meterial-provider/${item.vendor_perma}`}
+                    >
                       <h4
                         class="text-lg ml-3 text-blue-500 font-medium"
                         style={{ marginTop: "6px" }}

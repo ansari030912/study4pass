@@ -47,7 +47,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -61,7 +61,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -75,7 +75,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -116,7 +116,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -130,7 +130,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -144,7 +144,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -185,7 +185,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -199,7 +199,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -213,7 +213,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -254,7 +254,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -268,7 +268,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -282,7 +282,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -323,7 +323,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -337,7 +337,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -351,7 +351,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -392,7 +392,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -406,7 +406,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -420,7 +420,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -461,7 +461,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -475,7 +475,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -489,7 +489,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -530,7 +530,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -544,7 +544,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -558,7 +558,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -599,7 +599,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -613,7 +613,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -627,7 +627,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -668,7 +668,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -682,7 +682,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -696,7 +696,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -737,7 +737,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -751,7 +751,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -765,7 +765,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -806,7 +806,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -820,7 +820,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -834,7 +834,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -875,7 +875,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -889,7 +889,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -903,7 +903,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -944,7 +944,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -958,7 +958,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -972,7 +972,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -1013,7 +1013,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -1027,7 +1027,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="18"
                       height="18"
-                      viewbox="0 0 18 18"
+                      viewBox="0 0 18 18"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -1041,7 +1041,7 @@ const TrainigCourseTable = () => {
                     <svg
                       width="20"
                       height="20"
-                      viewbox="0 0 20 20"
+                      viewBox="0 0 20 20"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -1077,7 +1077,7 @@ const TrainigCourseTable = () => {
               <svg
                 width="6"
                 height="8"
-                viewbox="0 0 6 8"
+                viewBox="0 0 6 8"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -1096,7 +1096,7 @@ const TrainigCourseTable = () => {
             <span class="inline-block mr-3">
               <svg
                 class="h-3 w-3 text-gray-200"
-                viewbox="0 0 12 4"
+                viewBox="0 0 12 4"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -1127,7 +1127,7 @@ const TrainigCourseTable = () => {
             <span class="inline-block mr-3">
               <svg
                 class="h-3 w-3 text-gray-200"
-                viewbox="0 0 12 4"
+                viewBox="0 0 12 4"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -1150,7 +1150,7 @@ const TrainigCourseTable = () => {
               <svg
                 width="6"
                 height="8"
-                viewbox="0 0 6 8"
+                viewBox="0 0 6 8"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >

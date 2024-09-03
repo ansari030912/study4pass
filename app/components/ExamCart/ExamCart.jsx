@@ -5,7 +5,7 @@ import BackCountDown from "../BackCountDown";
 
 const ExamCart = ({ examData }) => {
   return (
-    <section className="pt-14 pb-12 px-2">
+    <section className="pt-4 pb-12 px-2">
       <div className="flex flex-wrap -m-4">
         <div className="w-full lg:w-7/12 p-4">
           <div className="rounded-2xl  py-3 px-4 mb-4">
@@ -19,18 +19,12 @@ const ExamCart = ({ examData }) => {
                 </p>
               </div>
               <span className="inline-block px-4 py-3 bg-red-50 rounded-md text-red-700 text-sm font-semibold">
-              Sale End in <BackCountDown />
+                Sale End in <BackCountDown />
               </span>
             </div>
           </div>
 
-          <div
-            // style={{
-            //   boxShadow:
-            //     "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
-            // }}
-            className="rounded-2xl py-8"
-          >
+          <div className="rounded-2xl py-8">
             <h2 className="font-heading uppercase text-3xl mb-4 max-w-4xl">
               Exams Questions - {examData.exam_title}
             </h2>
@@ -44,6 +38,26 @@ const ExamCart = ({ examData }) => {
               />
             </div>
             <p className="text-gray-500 font-semibold mb-4 text-lg max-w-4xl">
+              {examData.exam_retired && (
+                <>
+                  <div className="my-2 text-red-500">
+                    <span>NOTE :</span> {examData?.exam_code} (
+                    {examData?.exam_title}) will not receive any new updates.
+                  </div>
+                  {examData?.exam_alternate.exam_alternate_code && (
+                    <div className="text-sky-500 flex justify-end mb-2">
+                      <span className="text-gray-500 mr-2">New Exam Code:</span>{" "}
+                      <Link
+                        href={`/exam-questions/${examData?.exam_vendor_perma}/${examData?.exam_alternate?.exam_alternate_perma}`}
+                        className="hover:text-blue-600 text-blue-500 font-semibold hover:underline"
+                      >
+                        {examData?.exam_alternate.exam_alternate_code}
+                      </Link>
+                    </div>
+                  )}
+                  <hr />
+                </>
+              )}
               <div className="flex justify-between my-2">
                 <span>Exam Question Provider:</span>{" "}
                 <span className="text-sky-500">
@@ -79,7 +93,7 @@ const ExamCart = ({ examData }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="none"
                 >
                   <path
@@ -91,7 +105,7 @@ const ExamCart = ({ examData }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="none"
                 >
                   <path
@@ -103,7 +117,7 @@ const ExamCart = ({ examData }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="none"
                 >
                   <path
@@ -115,7 +129,7 @@ const ExamCart = ({ examData }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="none"
                 >
                   <path
@@ -127,7 +141,7 @@ const ExamCart = ({ examData }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
-                  viewbox="0 0 24 24"
+                  viewBox="0 0 24 24"
                   fill="none"
                 >
                   <path

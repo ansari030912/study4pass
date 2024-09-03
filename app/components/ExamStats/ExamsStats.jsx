@@ -73,10 +73,6 @@ const ExamsStats = ({ examData }) => {
             <div className="flex flex-wrap items-center -mx-3 -mb-6">
               <div className="w-full sm:w-1/2 xl:w-1/4 px-3 mb-6">
                 <div
-                  // style={{
-                  //   boxShadow:
-                  //     "inset 0px 4px 4px rgba(0, 0, 0, 0.05), inset 0px -4px 4px rgba(0, 0, 0, 0.05), inset 4px 0px 4px rgba(0, 0, 0, 0.05), inset -4px 0px 4px rgba(0, 0, 0, 0.05)",
-                  // }}
                   className="max-w-xs md:max-w-none border border-gray-200 mx-auto p-6 bg-gray-50 rounded-xl"
                 >
                   <div className="flex flex-wrap items-center -m-2">

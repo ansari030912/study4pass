@@ -2,12 +2,13 @@
 import VideoTrainingCourseAddToCart from "@/app/components/VideoCards/VideoTrainingCourseAddToCart";
 import { X_API_Key } from "@/app/URL's/Api_X_Key";
 import { Base_URL } from "@/app/URL's/Base_URL";
+import Link from "next/link";
 
 export async function generateMetadata({ params }) {
   return {
     title: `Updated Study Meterial by Tech Professionals`,
     description: `Study4Pass is a premium provider of Real and Valid Study Meterial of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
-   robots: {
+    robots: {
       index: true,
     },
     icons: {
@@ -38,15 +39,44 @@ const page = async ({ params }) => {
       },
     }
   );
-  const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
   const data = await response.json();
+  
+  const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
   return (
     <>
-      {/* <section className="pt-6 pb-6 px-6 bg-white">
+      <section className="pt-6 pb-6 px-6 bg-white">
         <Link href={imageUrl?.banner_link} className="flex justify-center mb-4">
           <img src={imageUrl?.banner_src} alt={imageUrl?.banner_website} />
         </Link>
-      </section> */}
+      </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            name: data.title,
+            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            review: {
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 4,
+                bestRating: 5,
+              },
+              author: {
+                "@type": "Person",
+                name: "Fred Benson",
+              },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: 4.4,
+              reviewCount: randomReviewCount,
+            },
+          }),
+        }}
+      />
       <section className="pt-12 pb-12 bg-white overflow-hidden">
         <div className=" container px-4 mx-auto">
           <div className="flex flex-wrap -mx-4 ">

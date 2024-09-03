@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 
 const VendorExamsTable = ({ vendorData }) => {
@@ -9,6 +8,7 @@ const VendorExamsTable = ({ vendorData }) => {
   const handleClick = (type) => {
     setSelected(type);
   };
+
   const commonStyle = {
     cursor: "pointer",
     textDecoration: "none",
@@ -28,17 +28,15 @@ const VendorExamsTable = ({ vendorData }) => {
   };
 
   return (
-    <section className="py-4 overflow-hidden">
+    <section className="py-4">
       <div className="container px-4 mx-auto">
         <div className="py-10">
-          <h2 className="font-heading text-xl md:text-2xl lg:text-3xl text-center text-blue-500 font-black tracking-tight">
+          <h2 className="font-heading text-base md:text-2xl lg:text-3xl text-center text-blue-500 font-black tracking-tight">
             {vendorData.vendor_title}{" "}
             <span
               className="text-gray-600 font-black"
               onClick={() => handleClick("vendor")}
-              style={{
-                ...commonStyle,
-              }}
+              style={commonStyle}
             >
               Vendors
               {selected === "vendor" && <div style={underlineStyle}></div>}
@@ -47,9 +45,7 @@ const VendorExamsTable = ({ vendorData }) => {
             <span
               className="text-gray-600 font-black"
               onClick={() => handleClick("cert")}
-              style={{
-                ...commonStyle,
-              }}
+              style={commonStyle}
             >
               Certifications
               {selected === "cert" && <div style={underlineStyle}></div>}
@@ -59,171 +55,109 @@ const VendorExamsTable = ({ vendorData }) => {
         </div>
         <p className="my-4 text-lg text-red-600 font-bold mx-4">
           Click on Vendors and Certifications on title to see Vendors Exams and
-          Cetifications.
+          Certifications.
         </p>
-        <div className="py-5 bg-neutral-50 border border-neutral-100 rounded-xl">
+        <div className="py-5 rounded-xl">
           <div className="px-6">
-            <div className="mb-5 w-full overflow-x-auto">
+            <div className="mb-5">
               {selected === "vendor" && (
-                <table className="w-full min-w-max">
-                  <thead>
-                    <tr className="text-left">
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium uppercase"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Id</span>
-                        </a>
-                      </th>
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Exam Name</span>
-                        </a>
-                      </th>
-
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Exam Code</span>
-                        </a>
-                      </th>
-
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Questions</span>
-                        </a>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
+                <div className="w-full">
+                  <div className="text-left flex justify-between">
+                    <div className="pb-3.5 border-b border-neutral-100">
+                      <span className="inline-flex items-center text-sm text-gray-500 font-medium uppercase">
+                        <span className="mr-1.5">Name</span>
+                      </span>
+                    </div>
+                    <div className="pb-3.5 border-b border-neutral-100">
+                      <span className="inline-flex items-center text-sm text-gray-500 font-medium">
+                        <span className="mr-1.5">Questions</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="overflow-x-auto">
                     {Array.isArray(vendorData.vendor_exams) &&
                       vendorData.vendor_exams.map((item, i) => (
-                        <tr key={i}>
-                          <td className="py-2.5 pr-4">
-                            #{" "}
-                            <span className="font-medium text-blue-500">
-                              {item.exam_id}
-                            </span>
-                          </td>
-                          <td className="py-2.5 pr-4">
-                            <div className="flex flex-wrap items-center">
-                              <span className="font-semibold hover:text-blue-500">
-                                <Link
-                                  href={`/study-meterial/${vendorData?.vendor_perma}/${item?.exam_perma}`}
-                                >
-                                  {item.exam_title}
-                                </Link>
+                        <Link
+                          className="w-full text-gray-700  hover:text-blue-500"
+                          href={`/study-meterial/${vendorData?.vendor_perma}/${item?.exam_perma}`}
+                          key={i}
+                        >
+                          <div className="border-b lg:flex lg:justify-between items-center">
+                            <div className="py-2.5 pr-4 w-full">
+                              <div className="font-medium text-blue-500">
+                                {vendorData.vendor_title} - {item.exam_code}
+                              </div>
+                              <Link
+                                className="break-words "
+                                href={`/study-meterial/${vendorData?.vendor_perma}/${item?.exam_perma}`}
+                              >
+                                {item.exam_title}
+                              </Link>
+                            </div>
+
+                            <div className="py-2.5 pr-4">
+                              <span className="text-nowrap flex justify-end  text-sm font-medium ">
+                                <span className="px-2.5 py-1 text-green-500 bg-green-500 bg-opacity-10 rounded-full">
+                                  # {item.exam_questions} Questions
+                                </span>
                               </span>
                             </div>
-                          </td>
-                          <td className="py-2.5 pr-4">
-                            <span className="font-medium">
-                              {item.exam_code}
-                            </span>
-                          </td>
-                          <td className="py-2.5 pr-4">
-                            <span className="px-2.5 py-1 text-sm font-medium text-green-500 bg-green-500 bg-opacity-10 rounded-full">
-                              # {item.exam_questions}
-                            </span>
-                          </td>
-                        </tr>
+                          </div>
+                        </Link>
                       ))}
-                  </tbody>
-                </table>
+                  </div>
+                </div>
               )}
               {selected === "cert" && (
-                <table className="w-full min-w-max">
-                  <thead>
-                    <tr className="text-left">
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium uppercase"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Id</span>
-                        </a>
-                      </th>
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Certification Title</span>
-                        </a>
-                      </th>
-
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Certification Name</span>
-                        </a>
-                      </th>
-
-                      <th className="pb-3.5 border-b border-neutral-100">
-                        <a
-                          className="inline-flex items-center text-sm text-gray-500 font-medium"
-                          href="#"
-                        >
-                          <span className="mr-1.5">Status</span>
-                        </a>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
+                <div className="w-full">
+                  <div className="text-left flex justify-between">
+                    <div className="pb-3.5 border-b border-neutral-100">
+                      <span className="inline-flex items-center text-sm text-gray-500 font-medium uppercase">
+                        <span className="mr-1.5">Name</span>
+                      </span>
+                    </div>
+                    <div className="pb-3.5 border-b border-neutral-100">
+                      <span className="inline-flex items-center text-sm text-gray-500 font-medium">
+                        <span className="mr-1.5">Questions</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div className="overflow-x-auto">
                     {Array.isArray(vendorData.vendor_certs) &&
                       vendorData.vendor_certs.map((item, i) => (
-                        <tr key={i}>
-                          <td className="py-2.5 pr-4">
-                            #{" "}
-                            <span className="font-medium text-blue-500">
-                              {item.cert_id}
-                            </span>
-                          </td>
-                          <td className="py-2.5 pr-4">
-                            <div className="flex flex-wrap items-center">
-                              <span className="font-semibold hover:text-blue-500">
-                                <Link
-                                  href={`/study-meterial-certification/${vendorData?.vendor_perma}/${item?.cert_perma}`}
-                                >
-                                  {item.cert_title}
-                                </Link>
-                              </span>
-                            </div>
-                          </td>
-
-                          <td className="py-2.5 pr-4">
-                            <span className="font-semibold hover:text-blue-500">
+                        <Link
+                          className="w-full text-gray-700  hover:text-blue-500"
+                          href={`/study-meterial-certification/${vendorData?.vendor_perma}/${item?.cert_perma}`}
+                          key={i}
+                        >
+                          <div className="border-b lg:flex lg:justify-between items-center">
+                            <div className="py-2.5 pr-4 w-full">
+                              <div className="font-medium text-blue-500">
+                                {vendorData.vendor_title} - {item.cert_name}
+                              </div>
                               <Link
+                                className="break-words "
                                 href={`/study-meterial-certification/${vendorData?.vendor_perma}/${item?.cert_perma}`}
                               >
                                 {item.cert_title}
                               </Link>
-                            </span>
-                          </td>
+                            </div>
 
-                          <td className="py-2.5 pr-4">
-                            <span className="px-2.5 py-1 text-sm font-medium text-green-500 bg-green-500 bg-opacity-10 rounded-full">
-                              Confirmed
-                            </span>
-                          </td>
-                        </tr>
+                            <div className="py-2.5 pr-4">
+                              <span className="text-nowrap flex justify-end  text-sm font-medium ">
+                                <span className="px-2.5 py-1 text-green-500 bg-green-500 bg-opacity-10 rounded-full">
+                                  # {item.cert_id}
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                        </Link>
                       ))}
-                  </tbody>
-                </table>
+                  </div>
+                </div>
               )}
             </div>
-            <div className="flex flex-wrap items-center justify-between -m-2">
+            {/* <div className="flex flex-wrap items-center justify-between -m-2">
               <div className="w-auto p-2">
                 <div className="flex flex-wrap -m-0.5">
                   <div className="w-auto p-0.5">
@@ -295,7 +229,7 @@ const VendorExamsTable = ({ vendorData }) => {
                   </p>
                 )}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

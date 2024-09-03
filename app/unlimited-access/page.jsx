@@ -1,3 +1,4 @@
+import Link from "next/link";
 import UACard from "../components/UnlimitedAccessCard/UACard";
 import { X_API_Key } from "../URL's/Api_X_Key";
 import { Base_URL } from "../URL's/Base_URL";
@@ -13,7 +14,25 @@ const Page = async () => {
   );
 
   const data = await response.json();
-  return <UACard data={data} />;
+
+  const bannerResponec = await fetch(`${Base_URL}/v1/banner`, {
+    headers: {
+      "x-api-key": X_API_Key,
+    },
+  });
+
+  const imageUrl = await bannerResponec.json();
+
+  return (
+    <>
+      <section className="pt-6 px-6 bg-white">
+        <Link href={imageUrl?.banner_link} className="flex justify-center mb-4">
+          <img src={imageUrl?.banner_src} alt={imageUrl?.banner_website} />
+        </Link>
+      </section>
+      <UACard data={data} />
+    </>
+  );
 };
 
 export default Page;

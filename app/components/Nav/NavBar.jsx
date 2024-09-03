@@ -180,18 +180,18 @@ const NavBar = () => {
                 alt="Study 4 Pass"
               />
             </Link>
-            <ul className="hidden xl:flex px-4 ml-24">
+            <ul className="hidden xl:flex px-4 ml-6">
               <li className="mr-4 relative group">
                 <Link
-                  className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                  className="flex items-center text-xs 2xl:text-base bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
                   href="/study-meterial-providers"
                 >
-                  <span>Vendors / Certs</span>
+                  <span>Vendors / Certifications</span>
                 </Link>
               </li>
               <li className="mr-4">
                 <Link
-                  className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                  className="flex items-center text-xs 2xl:text-base bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
                   href="/video-courses"
                 >
                   Video Courses
@@ -199,10 +199,18 @@ const NavBar = () => {
               </li>
               <li className="mr-4">
                 <Link
-                  className="flex items-center bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                  className="flex items-center text-xs 2xl:text-base bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
                   href="/unlimited-access"
                 >
                   Unlimited Access
+                </Link>
+              </li>
+              <li className="mr-4">
+                <Link
+                  className="flex items-center text-xs 2xl:text-base bg-blue-50 px-4 rounded-3xl py-2 text-gray-600 hover:text-blue-500"
+                  href="/test-engine-access"
+                >
+                  Test Engine
                 </Link>
               </li>
             </ul>
@@ -260,12 +268,12 @@ const NavBar = () => {
                         {loginResponse?.name}
                       </span>
 
-                      <img
+                      {/* <img
                         onMouseEnter={handleHover}
                         className="ml-6"
                         src="/avatar-online.png"
                         alt=""
-                      />
+                      /> */}
                       <IconButton
                         aria-controls="simple-menu"
                         aria-haspopup="true"
@@ -443,6 +451,15 @@ const NavBar = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Test Engine
+                  </Link>
+                </li>
+                <li className="mb-1">
+                  <Link
+                    className="block pl-8 py-4 text-body text-lg rounded-full hover:shadow-2xl"
+                    href="/cart"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Cart
                   </Link>
                 </li>
 

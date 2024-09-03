@@ -36,7 +36,6 @@ const CheckOut = () => {
   useEffect(() => {
     fetchIpAddress();
     loadCartData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchIpAddress = async () => {
@@ -56,13 +55,15 @@ const CheckOut = () => {
     const storedCartResponse = localStorage.getItem("CartProducts");
     if (storedCartResponse) {
       const cartProducts = JSON.parse(storedCartResponse);
-      if (cartProducts.saveExam) {
+      setCartResponse(cartProducts);
+      const saveExamItems = cartProducts.filter((item) => item.saveExam);
+      if (saveExamItems.length > 0) {
         axios
           .post(
             `${Base_URL}/v1/update-cart`,
             {
               coupon: promoCode,
-              cart_items: [cartProducts.cart],
+              cart_items: saveExamItems.map((item) => item.cart),
             },
             {
               headers: {
@@ -122,14 +123,15 @@ const CheckOut = () => {
     }
   };
 
-  const handlePromoSubmit = () => {
+  const handlePromoSubmit = (event) => {
+    event.preventDefault();
     if (cartResponse.length > 0) {
       axios
         .post(
           `${Base_URL}/v1/update-cart`,
           {
             coupon: promoCode,
-            cart_items: [cartResponse[0].cart],
+            cart_items: cartResponse.map((item) => item.cart),
           },
           {
             headers: {
@@ -183,7 +185,7 @@ const CheckOut = () => {
             coupon: apiPromoCode,
             IsInvoice: false,
             invoice_perma: "",
-            cart_items: [cartResponse[0].cart],
+            cart_items: cartResponse.map((item) => item.cart),
           },
           {
             headers: {
@@ -218,12 +220,43 @@ const CheckOut = () => {
 
   const handleRemoveData = () => {
     localStorage.removeItem("CartProducts");
+    setCartResponse([]);
     window.location.reload();
   };
 
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
+
+  const handleRemoveItem = (itemToRemove) => {
+    const updatedCartResponse = cartResponse.filter(
+      (item) => item.cart !== itemToRemove.cart
+    );
+    setCartResponse(updatedCartResponse);
+
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("CartProducts", JSON.stringify(updatedCartResponse));
+    }
+  };
+
+  const calculateTotals = () => {
+    const subtotal = cartResponse.reduce(
+      (acc, item) => acc + parseFloat(item.full_price),
+      0
+    );
+    const discount = cartResponse.reduce(
+      (acc, item) =>
+        acc + (parseFloat(item.full_price) - parseFloat(item.price)),
+      0
+    );
+    const total = cartResponse.reduce(
+      (acc, item) => acc + parseFloat(item.price),
+      0
+    );
+    return { subtotal, discount, total };
+  };
+
+  const totals = calculateTotals();
 
   return (
     <section className="overflow-x-hidden bg-gray-50">
@@ -253,8 +286,8 @@ const CheckOut = () => {
                 </div>
               </Link>
               <Link href="#" className="group">
-                <div className="flex flex-wrap items-center">
-                  <span className="text-xs text-gray-900 transition duration-200 font-semibold">
+                <div className="flex flex-wrap items=center">
+                  <span className="text-xs text-gray-500 group-hover:text-gray-900 transition duration-200">
                     Checkout
                   </span>
                   <div className="text-gray-500 group-hover:text-gray-900 transition duration-200">
@@ -284,35 +317,64 @@ const CheckOut = () => {
               <div className="w-full md:w-5/12 px-8 xl:px-16">
                 <h6 className="mb-6 text-lg font-semibold">Billing Address</h6>
                 <div className="pb-6 border-b border-dashed border-gray-200">
-                  <div className="flex flex-wrap -m-2">
-                    <div className="w-full md:w-3/4 p-2">
-                      <div className="flex flex-wrap -m-2">
-                        <div className="w-auto p-2">
-                          <img
-                            className="w-24 h-24 object-cover rounded-lg"
-                            src="/PDF-TE.png"
-                            alt=""
-                          />
-                        </div>
-                        <div className="flex-1 p-2">
-                          <p className="mb-1.5 font-semibold text-blue-500">
-                            {cartResponse[0]?.exam_code} -{" "}
-                            <span className="text-gray-700">
-                              {cartResponse[0]?.exam_vendor_title}
-                            </span>
-                          </p>
-                          <p className="mb-1.5 font-semibold">
-                            {cartResponse[0]?.exam_title}
-                          </p>
-                          <p>x1</p>
+                  {cartResponse.map((item, i) => (
+                    <div key={i} className="flex flex-wrap -m-2">
+                      <div className="w-full md:w-3/4 p-2">
+                        <div className="flex flex-wrap -m-2">
+                          <div className="w-auto p-2">
+                            <img
+                              className="h-24 object-cover rounded-lg"
+                              src="/PDF-TE.png"
+                              alt=""
+                            />
+                          </div>
+                          <div className="flex-1 p-2">
+                            <p className="mb-1.5 font-semibold text-blue-500">
+                              {item?.exam_code} -{" "}
+                              <span className="text-gray-700">
+                                {item?.exam_vendor_title}
+                              </span>
+                            </p>
+                            <p className="mb-1.5 font-semibold">
+                              {item?.exam_title}
+                            </p>
+                            <p>x1</p>
+                          </div>
                         </div>
                       </div>
+                      <div className="w-full md:w-1/4 p-2 flex justify-end items-center">
+                        <div>
+                          <p className="font-bold text-lg">${item?.price}</p>
+                          <p className="font-bold text-sm text-red-500 line-through">
+                            ${item?.full_price}
+                          </p>
+                        </div>
+                        {cartResponse.length >= 2 && (
+                          <button
+                            onClick={() => handleRemoveItem(item)}
+                            className="ml-4"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              fill="red"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z" />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
                     </div>
-                    <div className="w-full md:w-1/4 p-2">
-                      <p className="flex justify-end font-bold text-lg">
-                        ${cartResponse[0]?.price}
-                      </p>
-                    </div>
+                  ))}
+                  <div className="w-full mt-4">
+                    <button
+                      onClick={handleRemoveData}
+                      className="py-2 px-4 bg-red-500 w-full text-white  hover:bg-red-600 transition"
+                    >
+                      Clear Cart
+                    </button>
                   </div>
                 </div>
                 <div className="pt-6 pb-4 border-b border-dashed border-gray-200">
@@ -357,7 +419,7 @@ const CheckOut = () => {
                     </div>
                     <div className="w-auto px-2">
                       <span className="font-semibold text-red-500">
-                        ${cartResponse[0]?.full_price}
+                        ${totals.subtotal.toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -367,19 +429,19 @@ const CheckOut = () => {
                     </div>
                     <div className="w-auto px-2">
                       <span className="font-semibold text-green-500">
-                        -$ {discountAmount || "0"}
+                        -$ {totals.discount.toFixed(2)}
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="pt-2.5 ">
-                  <div className="flex flex-wrap items-center justify-between -mx-2">
+                  <div className="flex flex-wrap items=center justify-between -mx-2">
                     <div className="w-auto px-2">
                       <p className="font-semibold">Grand total</p>
                     </div>
                     <div className="w-auto px-2">
                       <p className="text-2xl font-semibold">
-                        $ {cartResponse[0]?.price}
+                        ${totals.total.toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -408,23 +470,6 @@ const CheckOut = () => {
                         placeholder="Enter your first name"
                       />
                     </div>
-                    {/* <div className="mb-6  md:hidden">
-                      <label
-                        htmlFor="input-01-4"
-                        className="mb-1.5 inline-block text-sm font-semibold"
-                      >
-                        Last name
-                      </label>
-                      <input
-                        id="input-01-4"
-                        name="lastName"
-                        value={lastName}
-                        onChange={handleChange}
-                        type="text"
-                        className="py-3 px-4 w-full text-sm placeholder-gray-500 outline-none border border-gray-100 focus:border-gray-300 focus:ring focus:ring-gray-100 rounded-md transition duration-200"
-                        placeholder="Enter your last name"
-                      />
-                    </div> */}
                     <div className="mb-6 md:hidden">
                       <label
                         htmlFor="input-01-2"

@@ -81,7 +81,7 @@ const UACard = ({ data }) => {
             DumpsArena!
           </p>
           <Link
-            href={"#"}
+            href={"/all-te-exams-list"}
             className="mb-8 text-lg hover:text-blue-600 hover:underline text-blue-500"
           >
             All Exams List Available in Unlimited Test Engine & PDF Download
