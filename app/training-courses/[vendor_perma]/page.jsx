@@ -40,7 +40,7 @@ const page = async ({ params }) => {
     }
   );
   const data = await response.json();
-  
+
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
   return (
     <>
@@ -56,7 +56,7 @@ const page = async ({ params }) => {
             "@context": "https://schema.org/",
             "@type": "Product",
             name: data.title,
-            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            description: `Study4Pass is a premium provider of Real and Valid Study Meterial of ${data.title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
             review: {
               "@type": "Review",
               reviewRating: {

@@ -37,21 +37,17 @@ const AllComments = ({ examData }) => {
   };
 
   useEffect(() => {
-    const fetchUserIP = async () => {
+    const fetchIp = async () => {
       try {
-        const response = await axios.get(`${Base_URL}/v1/my-ip`, {
-          headers: {
-            "x-api-key": X_API_Key,
-          },
-        });
-        setUserIP(response.data);
+        const response = await fetch("/api/get-client-ip");
+        const data = await response.json();
+        setUserIP(data.ip);
       } catch (error) {
-        console.error("Error fetching user's IP address:", error);
+        console.error("Error fetching IP:", error);
       }
-      fetchData();
     };
 
-    fetchUserIP();
+    fetchIp();
   }, [examData]);
 
   const toggleShowMore = () => {

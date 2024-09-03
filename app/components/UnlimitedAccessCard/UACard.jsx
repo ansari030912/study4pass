@@ -56,7 +56,7 @@ const UACard = ({ data }) => {
             Unlimited Download Access
           </span>
           <h2 className="mt-8 mb-6 text-4xl font-bold font-heading text-blue-800">
-            Get Unlimited Access to the all DumpsArena PREMIUM files!
+            Get Unlimited Access to the all Study4Pass PREMIUM files!
           </h2>
           <p className="text-xl text-blue-500 md:flex justify-between">
             <span className="mb-1 inline-block">
@@ -78,7 +78,7 @@ const UACard = ({ data }) => {
           </p>
           <p className="mb-2 mt-4 text-xl text-gray-500">
             Take advantage of premium Files which are Latest and valid by
-            DumpsArena!
+            Study4Pass!
           </p>
           <Link
             href={"/all-te-exams-list"}

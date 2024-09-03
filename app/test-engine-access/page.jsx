@@ -64,9 +64,7 @@ const page = async () => {
               </div>
               <div className="mt-2 -pb-6">
                 <Link
-                  href={
-                    "https://releases.examprince.com/ExamPrinceTestEngine.zip"
-                  }
+                  href="https://releases.study4pass.com/Study4PassTestEngine.zip"
                   type="button"
                   className="text-gray-700 flex justify-center border-2 hover:bg-blue-500 hover:text-white border-gray-700 font-medium  text-sm px-5 py-2.5 text-center mb-2"
                 >
@@ -76,9 +74,7 @@ const page = async () => {
                 </Link>
                 <Link
                   type="button"
-                  href={
-                    "https://releases.examprince.com/ExamPrinceTestEngine.exe"
-                  }
+                  href="https://releases.study4pass.com/Study4assTestEngine.exe"
                   className="text-gray-700 flex justify-center border-2 hover:bg-blue-500 hover:text-white border-gray-700 font-medium  text-sm px-5 py-2.5 text-center mb-2"
                 >
                   <b>Download for windows (.exe)</b>

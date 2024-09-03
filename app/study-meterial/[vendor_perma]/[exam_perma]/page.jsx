@@ -50,11 +50,11 @@ const page = async ({ params, searchParams }) => {
   });
 
   const imageUrl = await bannerResponec.json();
-  
+
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
   return (
     <>
-          <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -78,7 +78,7 @@ const page = async ({ params, searchParams }) => {
             "@context": "https://schema.org/",
             "@type": "Product",
             name: examData?.exam_title,
-            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${examData?.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            description: `Study4Pass is a premium provider of Real and Valid Study Meterial of ${examData?.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
             review: {
               "@type": "Review",
               reviewRating: {

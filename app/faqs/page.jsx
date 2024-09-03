@@ -29,7 +29,7 @@ const page = async () => {
           <div className="flex flex-wrap lg:items-center -mx-4">
             <div className="w-full md:w-12/12 px-4">
               <div className="inline-block py-1 px-3 mb-6 text-xs leading-5 text-blue-500 font-medium uppercase bg-blue-100 rounded-full shadow-sm">
-                ExamPrince.com Frequently Asked Questions
+              Study4Pass.com Frequently Asked Questions
               </div>
               <h2 className="mb-4 text-2xl md:text-3xl leading-tight text-gray-800 font-bold tracking-tighter">
                 Frequently Asked Questions
@@ -48,9 +48,9 @@ const page = async () => {
                 Products Classification
               </h3>
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
-                <strong>1. What products does ExamPrince.com offer?</strong>
+                <strong>1. What products does Study4Pass.com offer?</strong>
                 <br />
-                ExamPrince.com provides a wide range of study materials,
+                Study4Pass.com provides a wide range of study materials,
                 primarily in the form of Questions and Answers for exam
                 preparation. These materials are available in PDF format, which
                 can be downloaded to your computer. We recommend a two-week
@@ -61,20 +61,20 @@ const page = async () => {
 
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
                 <strong>
-                  2. Can I pass the exam with ExamPrince.com&apos;s Questions
+                  2. Can I pass the exam with Study4Pass.com&apos;s Questions
                   and Answers product only?
                 </strong>
                 <br />
-                Absolutely! Since all ExamPrince.com products are of the latest
+                Absolutely! Since all Study4Pass.com products are of the latest
                 version, we are confident in their quality. Ensure that you
                 study the relevant Questions and Answers product for two weeks
                 before attempting the actual exam.
               </p>
 
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
-                <strong>3. How long is my ExamPrince.com product valid?</strong>
+                <strong>3. How long is my Study4Pass.com product valid?</strong>
                 <br />
-                ExamPrince.com products are valid for 90 days from the date of
+                Study4Pass.com products are valid for 90 days from the date of
                 purchase. This validity includes any updates to the products,
                 ensuring you receive the latest exam preparation materials
                 during those 90 days.
@@ -94,10 +94,10 @@ const page = async () => {
               </h3>
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
                 <strong>
-                  1. What is the latest version of my ExamPrince.com product?
+                  1. What is the latest version of my Study4Pass.com product?
                 </strong>
                 <br />
-                ExamPrince.com products are regularly updated whenever questions
+                Study4Pass.com products are regularly updated whenever questions
                 change. This ensures that you always have the most current
                 materials for your exam preparation.
               </p>
@@ -109,14 +109,14 @@ const page = async () => {
                 </strong>
                 <br />
                 We update our products regularly when questions change. You can
-                double-check by logging into your ExamPrince.com Member&apos;s
+                double-check by logging into your Study4Pass.com Member&apos;s
                 Area and downloading the latest product version.
               </p>
 
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
                 <strong>3. How often are your products updated?</strong>
                 <br />
-                There is no fixed date for exam updates. All ExamPrince.com
+                There is no fixed date for exam updates. All Study4Pass.com
                 products are reviewed weekly by our Product Manager, and updates
                 are made whenever certification vendors change the exam
                 questions.
@@ -157,7 +157,7 @@ const page = async () => {
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
                 <strong>2. Will I receive updates for the PDF version?</strong>
                 <br />
-                Yes, ExamPrince.com provides updates for the PDF version along
+                Yes, Study4Pass.com provides updates for the PDF version along
                 with the Questions and Answers product. Updated versions will be
                 available in your Member&apos;s Area for download.
               </p>
@@ -171,7 +171,7 @@ const page = async () => {
                 </strong>
                 <br />
                 If your payment was successful and you received a confirmation
-                email from ExamPrince.com, you can download the product
+                email from Study4Pass.com, you can download the product
                 immediately.
               </p>
 
@@ -206,7 +206,7 @@ const page = async () => {
                 Ensure that you are entering the correct email and password. If
                 the problem continues, try restarting your computer or changing
                 your internet browser. If the issue persists, please email
-                sales@examprince.com for further assistance.
+                sales@study4pass.com for further assistance.
               </p>
 
               <p className="pb-6 text-lg text-gray-500 border-gray-100">
@@ -231,13 +231,13 @@ export default page;
 
 export async function generateMetadata() {
   return {
-    title: `ExamPrince FAQ's`,
-    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
-    robots: {
+    title: `Study4Pass FAQ's`,
+   description: `Study4Pass is a premium provider of Real and Valid Study Meterial of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+   robots: {
       index: true,
     },
     alternates: {
-      canonical: "https://examprince.com/faqs",
+      canonical: "https://study4pass.com/faqs",
     },
   };
 }

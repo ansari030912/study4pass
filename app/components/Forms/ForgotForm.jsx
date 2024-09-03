@@ -8,16 +8,13 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Alert, Snackbar } from "@mui/material";
 
-const LoginForm = () => {
+const ForgotForm = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
-  const router = useRouter();
-  const [isLogin, setIsLogin] = useState({});
   const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
   const [ip, setIp] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("info");
 
   useEffect(() => {
     async function fetchIp() {
@@ -28,35 +25,22 @@ const LoginForm = () => {
     fetchIp();
   }, []);
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setEmailError("");
-    setPasswordError("");
 
     if (!email) {
       setEmailError("Email is required");
-    }
-
-    if (!password) {
-      setPasswordError("Password is required");
-    }
-
-    if (password.length < 8) {
-      setPasswordError("Password must be at least 8 characters long");
-    }
-
-    if (emailError || passwordError) {
       return;
     }
 
     try {
       const response = await axios.post(
-        `${Base_URL}/v1/account/login`,
+        `${Base_URL}/v1/account/forgot-password`,
         {
           email,
-          password,
           ip,
+          reset_url: "/reset-password/",
         },
         {
           headers: {
@@ -64,25 +48,22 @@ const LoginForm = () => {
           },
         }
       );
-      setIsLogin(response.data);
-      setOpenSnackbar(true);
 
-      if (response.data.is_logged_in) {
-        const currentTime = Date.now();
-        const twoHoursInMillis = 2 * 60 * 60 * 1000;
-        const expiryTime = currentTime + twoHoursInMillis;
-
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify({ ...response.data, expiryTime })
-        );
-        window.location.reload();
+      // Check the response and show the appropriate Snackbar message
+      if (response.data.email_sent) {
+        setSnackbarMessage(response.data.message);
+        setSnackbarSeverity("success");
       } else {
-        router.push("/login");
+        setSnackbarMessage(response.data.message);
+        setSnackbarSeverity("error");
       }
+
+      setOpenSnackbar(true);
     } catch (error) {
       console.error("Error:", error);
-      alert("Something went wrong. Please try again later.");
+      setSnackbarMessage("Something went wrong. Please try again later.");
+      setSnackbarSeverity("error");
+      setOpenSnackbar(true);
     }
   };
 
@@ -99,11 +80,11 @@ const LoginForm = () => {
       >
         <Alert
           onClose={() => setOpenSnackbar(false)}
-          severity={isLogin?.is_logged_in ? "success" : "error"}
+          severity={snackbarSeverity}
           variant="filled"
           sx={{ width: "100%" }}
         >
-          {isLogin && isLogin?.message}
+          {snackbarMessage}
         </Alert>
       </Snackbar>
       <section className="relative py-20 2xl:py-10 overflow-hidden">
@@ -116,19 +97,8 @@ const LoginForm = () => {
                     Welcome!
                   </h3>
                   <p className="text-lg text-gray-500 mb-15">
-                    Forgot Your Account And Save Your Progress.
+                    Sign Up Your Account And Save Your Progress.
                   </p>
-                  <div className="flex flex-wrap mb-6 items-center -mx-2">
-                    <div className="w-full md:w-1/2 px-2 mb-3 md:mb-0"></div>
-                    <div className="w-full md:w-1/2 px-2"></div>
-                  </div>
-                  <div className="flex mb-6 items-center">
-                    <div className="w-full h-px bg-gray-300"></div>
-                    <span className="mx-4 text-sm font-semibold text-gray-500">
-                      Study4Pass.com
-                    </span>
-                    <div className="w-full h-px bg-gray-300"></div>
-                  </div>
                   <form onSubmit={handleSubmit}>
                     <div className="mb-6">
                       <label
@@ -151,74 +121,29 @@ const LoginForm = () => {
                         </p>
                       )}
                     </div>
-                    <div className="mb-6">
-                      <label
-                        className="block mb-1.5 text-sm text-gray-900 font-semibold"
-                        htmlFor="password"
-                      >
-                        Password
-                      </label>
-                      <div className="relative">
-                        <input
-                          className="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-purple-500 focus:outline-purple rounded-lg"
-                          type="password"
-                          id="password"
-                          placeholder="********"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <button className="absolute top-1/2 right-0 mr-3 transform -translate-y-1/2 inline-block hover:scale-110 transition duration-100">
-                          <img
-                            src="saturn-assets/images/sign-up/icon-eye.svg"
-                            alt=""
-                          />
-                        </button>
-                      </div>
-                      {passwordError && (
-                        <p className="text-red-500 text-xs mt-1">
-                          {passwordError}
-                        </p>
-                      )}
-                    </div>
-                    <div className="flex justify-between">
-                      <div className="flex mb-6 items-center">
-                        <input
-                          type="checkbox"
-                          id="rememberMe"
-                          checked={rememberMe}
-                          onChange={(e) => setRememberMe(e.target.checked)}
-                        />
-                        <label
-                          className="ml-2 text-xs text-gray-800"
-                          htmlFor="rememberMe"
-                        >
-                          Remember me
-                        </label>
-                      </div>
-                      <Link
-                        href={"/forgot-password"}
-                        className="flex mb-6 items-center"
-                      >
-                        <div className="ml-2 text-xs text-blue-500">
-                          Forgot Password ?
-                        </div>
-                      </Link>
-                    </div>
                     <button
                       className="relative group block w-full mb-8 py-3 px-5 text-center text-sm font-semibold text-orange-50 bg-blue-600 rounded-full overflow-hidden"
                       type="submit"
                     >
                       <div className="absolute top-0 right-full w-full h-full bg-gray-900 transform group-hover:translate-x-full group-hover:scale-102 transition duration-500"></div>
-                      <span className="relative">LOGIN</span>
+                      <span className="relative">Forgot Password</span>
                     </button>
 
                     <div className="flex mb-6 items-center">
                       <div className="w-full h-px bg-gray-300"></div>
-
+                      <span className="mx-4 text-sm font-semibold text-gray-500">
+                        Study4Pass.com
+                      </span>
                       <div className="w-full h-px bg-gray-300"></div>
                     </div>
                     <div className="text-center">
                       <span className="text-base font-semibold text-gray-700">
+                        <Link
+                          className="inline-block ml-1 text-blue-600 hover:text-blue-700"
+                          href="/login"
+                        >
+                          Login Now.
+                        </Link>{" "}
                         <span>Don&apos;t have an account?</span>
                         <Link
                           className="inline-block ml-1 text-blue-600 hover:text-blue-700"
@@ -341,4 +266,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default ForgotForm;

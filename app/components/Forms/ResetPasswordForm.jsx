@@ -6,41 +6,34 @@ import { Icon } from "@iconify/react";
 import { Alert, IconButton, Snackbar } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const RegisterForm = () => {
+const ResetPasswordForm = () => {
+  const searchParams = useSearchParams();
+  const searchEmail = searchParams.get("email");
+  const token = searchParams.get("token");
   const router = useRouter();
+
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [userRegiter, setUserRegiter] = useState("");
-  const [ip, setIp] = useState("");
   const [passwordMatchError, setPasswordMatchError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [emailError, setEmailError] = useState("");
   const [formError, setFormError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex =
-    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z\d\W]).{8,}$/;
 
-  useEffect(() => {
-    async function fetchIp() {
-      const response = await fetch("/api/get-client-ip");
-      const data = await response.json();
-      setIp(data.ip);
-    }
-    fetchIp();
-  }, []);
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     // Check if any field is empty
-    if (!name || !email || !password || !confirmPassword) {
+    if (!password || !confirmPassword) {
       setFormError(true);
       return;
     }
@@ -60,22 +53,14 @@ const RegisterForm = () => {
     }
     setPasswordError(false);
 
-    // Check if email format is correct
-    if (!emailRegex.test(email)) {
-      setEmailError("Invalid email format");
-      return;
-    }
-    setEmailError("");
-
     // Proceed with form submission
     try {
       const response = await axios.post(
-        `${Base_URL}/v1/account/register`,
+        `${Base_URL}/v1/account/reset-password`,
         {
-          name,
-          email,
-          password,
-          ip,
+          email: searchEmail,
+          new_password: password,
+          reset_token: token,
         },
         {
           headers: {
@@ -83,21 +68,25 @@ const RegisterForm = () => {
           },
         }
       );
-      setUserRegiter(response.data);
-      setOpen(true);
-      if (response.data.is_active === true) {
-        // Reset form fields
-        setConfirmPassword("");
-        setName("");
-        setEmail("");
-        setPassword("");
-        setPasswordMatchError(false);
-        setPasswordError(false);
-        setEmailError("");
-        setFormError(false);
-        router.push("/login");
+
+      if (response.data === true) {
+        setSnackbarMessage("Password reset successfully!");
+        setSnackbarSeverity("success");
+        setOpen(true);
+
+        // Redirect to login after 3 seconds
+        setTimeout(() => {
+          router.push("/login");
+        }, 3000);
+      } else {
+        setSnackbarMessage("Reset link has expired.");
+        setSnackbarSeverity("error");
+        setOpen(true);
       }
     } catch (error) {
+      setSnackbarMessage("An error occurred. Please try again.");
+      setSnackbarSeverity("error");
+      setOpen(true);
       console.error("Error:", error);
     }
   };
@@ -107,7 +96,6 @@ const RegisterForm = () => {
       return;
     }
     setOpen(false);
-    setPasswordError(false);
   };
 
   return (
@@ -115,13 +103,11 @@ const RegisterForm = () => {
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert
           onClose={handleClose}
-          severity={
-            userRegiter.message === "Email already exist." ? "error" : "success"
-          }
+          severity={snackbarSeverity}
           variant="filled"
           sx={{ width: "100%", marginTop: "10px", marginLeft: "16px" }}
         >
-          {userRegiter?.message}
+          {snackbarMessage}
         </Alert>
       </Snackbar>
       <section className="relative py-20 2xl:py-10 overflow-hidden">
@@ -236,12 +222,8 @@ const RegisterForm = () => {
                     Welcome!
                   </h3>
                   <p className="text-lg text-gray-500 mb-15">
-                    Sign Up Your Account And Save Your Progress.
+                    Reset Your Account.
                   </p>
-                  <div className="flex flex-wrap mb-6 items-center -mx-2">
-                    <div className="w-full md:w-1/2 px-2 mb-3 md:mb-0"></div>
-                    <div className="w-full md:w-1/2 px-2"></div>
-                  </div>
                   <div className="flex mb-6 items-center">
                     <div className="w-full h-px bg-gray-300"></div>
                     <span className="mx-4 text-sm font-semibold text-gray-500">
@@ -253,22 +235,6 @@ const RegisterForm = () => {
                     <div className="mb-6">
                       <label
                         className="block mb-1.5 text-sm text-gray-900 font-semibold"
-                        htmlFor="name"
-                      >
-                        Name
-                      </label>
-                      <input
-                        className="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-purple-500 focus:outline-purple rounded-lg"
-                        type="text"
-                        id="name"
-                        placeholder="Your Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                    </div>
-                    <div className="mb-6">
-                      <label
-                        className="block mb-1.5 text-sm text-gray-900 font-semibold"
                         htmlFor="email"
                       >
                         Email
@@ -277,15 +243,9 @@ const RegisterForm = () => {
                         className="w-full py-3 px-4 text-sm text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-purple-500 focus:outline-purple rounded-lg"
                         type="email"
                         id="email"
-                        placeholder="Your Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={searchEmail || ""}
+                        disabled
                       />
-                      {emailError && (
-                        <span style={{ color: "red" }} className="text-sm">
-                          {emailError}
-                        </span>
-                      )}
                     </div>
                     <div className="mb-6">
                       <label
@@ -343,21 +303,12 @@ const RegisterForm = () => {
                         </span>
                       )}
                     </div>
-                    <div className="flex mb-6 items-center">
-                      <input type="checkbox" id="rememberMe" className="mr-2" />
-                      <label
-                        className="text-xs text-gray-800"
-                        htmlFor="rememberMe"
-                      >
-                        Remember me
-                      </label>
-                    </div>
                     <button
                       className="relative group block w-full mb-8 py-3 px-5 text-center text-sm font-semibold text-orange-50 bg-blue-600 rounded-full overflow-hidden"
                       type="submit"
                     >
                       <div className="absolute top-0 right-full w-full h-full bg-gray-900 transform group-hover:translate-x-full group-hover:scale-102 transition duration-500"></div>
-                      <span className="relative">REGISTER</span>
+                      <span className="relative">Reset Password</span>
                     </button>
                     <div className="flex mb-6 items-center">
                       <div className="w-full h-px bg-gray-300"></div>
@@ -390,4 +341,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default ResetPasswordForm;

@@ -34,23 +34,22 @@ const CheckOut = () => {
   const [snackbarBgColor, setSnackbarBgColor] = useState("");
 
   useEffect(() => {
-    fetchIpAddress();
     loadCartData();
   }, []);
 
-  const fetchIpAddress = async () => {
-    try {
-      const response = await axios.get(`${Base_URL}/v1/my-ip`, {
-        headers: {
-          "x-api-key": X_API_Key,
-        },
-      });
-      setIpAddress(response.data);
-    } catch (error) {
-      console.error("Error fetching IP address:", error);
-    }
-  };
+  useEffect(() => {
+    const fetchIp = async () => {
+      try {
+        const response = await fetch("/api/get-client-ip");
+        const data = await response.json();
+        setIpAddress(data.ip);
+      } catch (error) {
+        console.error("Error fetching IP:", error);
+      }
+    };
 
+    fetchIp();
+  }, []);
   const loadCartData = () => {
     const storedCartResponse = localStorage.getItem("CartProducts");
     if (storedCartResponse) {
