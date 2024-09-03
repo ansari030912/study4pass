@@ -309,8 +309,10 @@ const NavBar = () => {
                         <Link href={"/account/invoices"}>
                           <MenuItem onClick={handleClose}>Invoices</MenuItem>
                         </Link>
-                        <Link href={"/account/setting"}>
-                          <MenuItem onClick={handleClose}>Setting</MenuItem>
+                        <Link href={"/account/update-profile"}>
+                          <MenuItem onClick={handleClose}>
+                            Update Profile
+                          </MenuItem>
                         </Link>
                         <div>
                           <MenuItem onClick={handleSignOut}>Logout</MenuItem>
